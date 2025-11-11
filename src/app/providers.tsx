@@ -60,9 +60,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
             disabled: mode === "dark" ? "#FFB804" : "#BA5C12",
           },
+          // action: {
+          //   primary: mode === "dark" ? "#BA5C12" : "#BA5C12",
+          // },
           divider:
             mode === "dark" ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.1)",
           action: {
+            active: mode === "dark" ? "#3B240F" : "#BA5C12",
             hover:
               mode === "dark"
                 ? "rgba(255, 184, 4, 0.1)"
@@ -75,59 +79,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
               mode === "dark" ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.3)",
           },
         },
-        typography: {
-          fontFamily: "Inter, sans-serif",
-          h1: {
-            fontWeight: 700,
-            fontSize: "2.5rem",
-            color: mode === "dark" ? "#FFD56B" : "#1A1A1A",
-          },
-          h2: {
-            fontWeight: 600,
-            fontSize: "2rem",
-          },
-          h6: {
-            fontWeight: 600,
-          },
-          body1: {
-            lineHeight: 1.7,
-          },
-          button: {
-            textTransform: "none",
-            fontWeight: 600,
-          },
-        },
-        shape: {
-          borderRadius: 10,
-        },
-        // components: {
-        //   MuiAppBar: {
-        //     styleOverrides: {
-        //       root: {
-        //         backgroundColor:
-        //           mode === "dark"
-        //             ? "rgba(43, 28, 3, 0.9)"
-        //             : "rgba(255, 255, 255, 0.9)",
-        //         backdropFilter: "blur(8px)",
-        //       },
-        //     },
-        //   },
-        //   MuiButton: {
-        //     styleOverrides: {
-        //       root: {
-        //         borderRadius: 10,
-        //         padding: "8px 20px",
-        //       },
-        //     },
-        //   },
-        //   MuiPaper: {
-        //     styleOverrides: {
-        //       root: {
-        //         backgroundImage: "none",
-        //       },
-        //     },
-        //   },
-        // },
       }),
     [mode]
   );

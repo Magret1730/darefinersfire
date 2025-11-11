@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://www.darefinersfire.com",
     siteName: "Da Refiner's Fire",
     images: [ {
-      url: "https://www.darefinersfire.com/og-image.jpg",
+      url: "https://www.darefinersfire.com/logo.svg",
       width: 1200,
       height: 630,
       alt: "Da Refiner's Fire Drama Ministry"
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Da Refiner's Fire Drama Ministry | Inspirational Christian Skits & Videos",
     description: "Uplifting Christian dramas and inspirational videos from Da Refiner's Fire Drama Ministry.",
-    images: ["https://www.darefinersfire.com/og-image.jpg"],
+    images: ["https://www.darefinersfire.com/logo.svg"],
     creator: "@DaRefinersFire",
     site: "@DaRefinersFire",
   },
@@ -52,9 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className=""
-      >
+      <body className="">
         <Providers>{children}</Providers>
       </body>
     </html>

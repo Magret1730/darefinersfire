@@ -17,7 +17,6 @@ import {
   Whatshot,
   DarkMode,
   LightMode,
-  Padding,
 } from "@mui/icons-material";
 import { useThemeMode } from "../providers";
 
@@ -34,7 +33,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Header() {
+const HeaderComponent = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { mode, toggleMode } = useThemeMode();
   const theme = useTheme();
@@ -54,7 +53,6 @@ export default function Header() {
         elevation={0}
         sx={{
           backgroundColor: theme.palette.background.paper,
-          borderBottom: isDark ? "1px solid #333" : "1px solid #eee",
         }}
       >
         <Toolbar
@@ -63,7 +61,7 @@ export default function Header() {
             justifyContent: "space-between",
             alignItems: "center",
             px: { xs: 1.5, md: 6 },
-            py: 2,
+            // py: 2,
           }}
         >
           {/* Logo Section */}
@@ -72,6 +70,7 @@ export default function Header() {
               display: "flex",
               alignItems: "center",
               gap: { md: 1, xs: 0.5 },
+              cursor: "pointer"
             }}
           >
             <Whatshot sx={{ color: theme.palette.text.primary }} />
@@ -141,7 +140,6 @@ export default function Header() {
           sx={{
             position: "fixed",
             inset: 0,
-            // zIndex: 120,
             backgroundColor: theme.palette.background.default,
             display: "flex",
             flexDirection: "column",
@@ -171,3 +169,5 @@ export default function Header() {
     </>
   );
 }
+
+export default HeaderComponent;
