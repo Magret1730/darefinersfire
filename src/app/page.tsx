@@ -1,41 +1,37 @@
-import Image from "next/image";
+"use client";
+
 import HeaderComponent from "./components/header.component";
+import { Box, Typography, useTheme } from "@mui/material";
 
 export default function Home() {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
   return (
     <>
-    <HeaderComponent />
-    <main className="mt-200 border">
-      <div className="container">
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>src/app/page.tsx</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://nextjs.org/deployment"
-            className="card"
-          >
-            <h2>Deployment &rarr;</h2>
-            <p>Learn how to deploy your Next.js application to production.</p>
-          </a>
-        </div>
-      </div>
-    </main>
+      <HeaderComponent />
+      <Box
+        sx={{
+          mt: 10,
+          p: { xs: 2, md: 4 },
+          textAlign: "center",
+          color: isDark ? "#FFB804" : "#BA5C12",
+        }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            fontWeight: 700,
+          }}
+        >
+          Welcome to Da Refiner&apos;s Fire Media
+        </Typography>
+        <Typography sx={{ fontSize: "1.1rem", maxWidth: 600, mx: "auto" }}>
+          Explore our inspirational Christian skits and videos that refine,
+          inspire, and ignite faith through storytelling.
+        </Typography>
+      </Box>
     </>
   );
 }

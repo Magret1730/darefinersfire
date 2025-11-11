@@ -1,12 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { AppBar, Box, Toolbar, IconButton, Typography } from "@mui/material";
-import { Close, Menu, Whatshot } from "@mui/icons-material";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
+import {
+  Menu,
+  Close,
+  Whatshot,
+  DarkMode,
+  LightMode,
+  Padding,
+} from "@mui/icons-material";
+import { useThemeMode } from "../providers";
 
-const navLinks = [
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Videos", href: "#videos" },
@@ -16,84 +36,138 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { mode, toggleMode } = useThemeMode();
+  const theme = useTheme();
 
-  const [isMobile, setIsMobile] = useState(false);
+  const isDark = theme.palette.mode === "dark";
+
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.matchMedia("(max-width: 767px)").matches);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // Automatically close mobile menu when resizing to desktop
-  useEffect(() => {
-    if (!isMobile) setMenuOpen(false);
-  }, [isMobile]);
+    if (isDesktop) setMenuOpen(false);
+  }, [isDesktop]);
 
   return (
-    <header>
+    <>
       <AppBar
         position="fixed"
-        color="transparent"
         elevation={0}
-        className="backdrop-blur-md z-50"
+        sx={{
+          backgroundColor: theme.palette.background.paper,
+          borderBottom: isDark ? "1px solid #333" : "1px solid #eee",
+        }}
       >
-        <Toolbar className="flex justify-between items-center px-4 md:px-12 py-4">
-          {/* Logo */}
-          <Box className="flex items-center gap-2">
-            {/* <Image src="/globe.svg" alt="Logo" width={30} height={30} /> */}
-            <Whatshot />
-            <Typography variant="h6" sx={{ fontWeight: 700 }}>
-              Da Refiners Fire
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            px: { xs: 1.5, md: 6 },
+            py: 2,
+          }}
+        >
+          {/* Logo Section */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: { md: 1, xs: 0.5 },
+            }}
+          >
+            <Whatshot sx={{ color: theme.palette.text.primary }} />
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                color: theme.palette.text.primary,
+              }}
+            >
+              Da Refiner's Fire
             </Typography>
           </Box>
 
-          {/* Desktop Nav */}
-          <Box className="hidden md:flex gap-6">
-            {navLinks.map((link) => (
+          {/* Desktop Navigation */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              alignItems: "center",
+              gap: 4,
+            }}
+          >
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                style={{
+                  fontWeight: 500,
+                  color: theme.palette.text.primary,
+                  textDecoration: "none",
+                }}
               >
                 {link.label}
               </Link>
             ))}
-            {/* Mobile Menu Icon */}
-            {isMobile && (
-              <IconButton
-                edge="end"
-                color="inherit"
-                aria-label="menu"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                {menuOpen ? <Close /> : <Menu />}
-              </IconButton>
-            )}
+            <IconButton onClick={toggleMode}>
+              {mode === "dark" ? (
+                <LightMode sx={{ color: theme.palette.text.primary }} />
+              ) : (
+                <DarkMode sx={{ color: theme.palette.text.primary }} />
+              )}
+            </IconButton>
+          </Box>
+
+          {/* Mobile Menu Button */}
+          <Box sx={{ display: { xs: "flex", md: "none", gap: 6} }}>
+            <IconButton onClick={toggleMode} sx={{padding: 0}}>
+              {mode === "dark" ? (
+                <LightMode sx={{ color: theme.palette.text.primary }} />
+              ) : (
+                <DarkMode sx={{ color: theme.palette.text.primary }} />
+              )}
+            </IconButton>
+            <IconButton
+              onClick={() => setMenuOpen(!menuOpen)}
+              sx={{ color: theme.palette.text.primary, padding: 0 }}
+            >
+              {menuOpen ? <Close /> : <Menu />}
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Overlay Menu */}
+      {/* Mobile Menu Overlay */}
       {menuOpen && (
         <Box
-          className="fixed inset-0 bg-white flex flex-col items-center justify-center z-40 transition-all duration-300"
+          sx={{
+            position: "fixed",
+            inset: 0,
+            // zIndex: 120,
+            backgroundColor: theme.palette.background.default,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            transition: "opacity 0.3s ease",
+          }}
         >
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-2xl font-semibold text-gray-800 hover:text-blue-600 mb-8 transition-colors"
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: 600,
+                color: theme.palette.text.disabled,
+                textDecoration: "none",
+                marginBottom: "1.5rem",
+              }}
             >
               {link.label}
             </Link>
           ))}
         </Box>
       )}
-    </header>
+    </>
   );
 }
