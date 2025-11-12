@@ -53,6 +53,7 @@ const HeaderComponent = () => {
         elevation={0}
         sx={{
           backgroundColor: theme.palette.background.paper,
+          // background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.light} 100%)`,
         }}
       >
         <Toolbar
@@ -70,7 +71,7 @@ const HeaderComponent = () => {
               display: "flex",
               alignItems: "center",
               gap: { md: 1, xs: 0.5 },
-              cursor: "pointer"
+              cursor: "pointer",
             }}
           >
             <Whatshot sx={{ color: theme.palette.text.primary }} />
@@ -116,8 +117,8 @@ const HeaderComponent = () => {
           </Box>
 
           {/* Mobile Menu Button */}
-          <Box sx={{ display: { xs: "flex", md: "none", gap: 6} }}>
-            <IconButton onClick={toggleMode} sx={{padding: 0}}>
+          <Box sx={{ display: { xs: "flex", md: "none", gap: 6 } }}>
+            <IconButton onClick={toggleMode} sx={{ padding: 0 }}>
               {mode === "dark" ? (
                 <LightMode sx={{ color: theme.palette.text.primary }} />
               ) : (
@@ -146,6 +147,8 @@ const HeaderComponent = () => {
             justifyContent: "center",
             alignItems: "center",
             transition: "opacity 0.3s ease",
+            top: 55,
+            zIndex: 1300,
           }}
         >
           {NAV_LINKS.map((link) => (
@@ -168,6 +171,6 @@ const HeaderComponent = () => {
       )}
     </>
   );
-}
+};
 
 export default HeaderComponent;

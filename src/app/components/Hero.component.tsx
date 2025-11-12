@@ -1,6 +1,6 @@
 "use client";
 
-import { Margin, Palette } from "@mui/icons-material";
+import { PlayCircleOutline } from "@mui/icons-material";
 import {
   Box,
   Toolbar,
@@ -20,18 +20,26 @@ interface ICarousel {
 }
 
 const CarouselImages: ICarousel[] = [
-  // {
-  //   name: "Beyond Ignorance",
-  //   src: "/BeyondIgnorance.png",
-  // },
-  // {
-  //   name: "Reflection",
-  //   src: "/Reflection.png",
-  // },
-  // {
-  //   name: "watchman",
-  //   src: "/watchman.png",
-  // },
+  {
+    name: "Picture1",
+    src: "/1.png",
+  },
+  {
+    name: "Picture2",
+    src: "/2.jpeg",
+  },
+  {
+    name: "Picture3",
+    src: "/3.png",
+  },
+  {
+    name: "Picture4",
+    src: "/4.png",
+  },
+  {
+    name: "Picture5",
+    src: "/5.png",
+  },
   {
     name: "jolly",
     src: "/jolly.png",
@@ -74,11 +82,14 @@ const HeroComponent = () => {
             alt={carouselImage.name}
             sx={{
               width: "100%",
-              height: { md: 600, xs: 400 },
+              height: { xs: 400, sm: 400, md: 600 },
+              objectPosition: "center",
+              display: "block",
+              objectFit: "cover",
+              // height: { md: 600, xs: 600 },
               margin: 0,
               padding: 0,
               boxShadow: 3,
-              objectFit: "cover",
             }}
           />
         ))}
@@ -92,9 +103,6 @@ const HeroComponent = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          // backgroundColor: isDark
-          //   ? "rgba(100, 100, 100, 0.6)"
-          //   : "rgba(250, 240, 210, 0.1)",
           backdropFilter: "brightness(0.5)",
           zIndex: 1,
         }}
@@ -104,13 +112,14 @@ const HeroComponent = () => {
       <Box
         sx={{
           position: "absolute",
-          top: "40%",
+          top: { lg: "45%", md: "40%", xs: "45%" },
           left: "50%",
           transform: "translate(-50%, -50%)",
           textAlign: "center",
           color: theme.palette.text.primary,
           zIndex: 2,
-          px: 2,
+          px: { xs: 4, md: 2 },
+          width: { xs: "100%" },
         }}
       >
         <Typography
@@ -118,15 +127,17 @@ const HeroComponent = () => {
           gutterBottom
           sx={{
             fontWeight: 700,
+            fontSize: { xs: "2.5rem", md: "4rem" },
+            mb: 0,
           }}
         >
           Da Refiner's Fire Media
         </Typography>
         <Typography
           sx={{
-            fontSize: "1.1rem",
-            maxWidth: 600,
+            fontSize: { xs: "0.8rem", md: "1.1rem" },
             mx: "auto",
+            maxWidth: 600,
           }}
         >
           Explore our inspirational Christian skits and videos that refine,
@@ -136,19 +147,41 @@ const HeroComponent = () => {
           variant="contained"
           href="https://www.youtube.com/@darefinersfire"
           target="_blank"
-          sx={{
-            mt: 3,
-            px: 3,
-            py: 1.2,
-            fontWeight: 600,
-            fontSize: "1rem",
+          rel="noopener noreferrer"
+          // sx={{
+          //   mt: 3,
+          //   px: { xs: 3, md: 3 },
+          //   py: 2,
+          //   fontWeight: 600,
+          //   fontSize: "1.2rem",
+          //   textTransform: "none",
+          //   borderRadius: 3,
+          //   backgroundColor: theme.palette.action.active,
+          //   color: theme.palette.text.primary,
+          // }}
+          sx={(theme) => ({
+            mt: 6,
+            px: { xs: 3, md: 4 },
+            py: 1.6,
+            fontWeight: 700,
+            fontSize: { xs: "1rem", md: "1.2rem" },
             textTransform: "none",
-            borderRadius: 3,
-            backgroundColor: theme.palette.action.active,
-            color: theme.palette.text.primary,
-          }}
+            borderRadius: "50px",
+            color: "#fff",
+            background: isDark
+              ? `linear-gradient(90deg, ${theme.palette.primary.light} 0%, ${theme.palette.background.paper} 100%)`
+              : `linear-gradient(90deg, ${theme.palette.primary.light} 0%, ${theme.palette.secondary.main} 100%)`,
+            boxShadow: "0px 4px 12px rgba(0,0,0,0.25)",
+            transition: "all 0.3s ease",
+            "&:hover": {
+              background: `linear-gradient(90deg, ${theme.palette.primary.dark} 0%, ${theme.palette.secondary.main} 100%)`,
+              transform: "scale(1.05)",
+              boxShadow: "0px 6px 18px rgba(0,0,0,0.35)",
+            },
+          })}
+          startIcon={<PlayCircleOutline sx={{ fontSize: 40 }} />}
         >
-          Watch Our Films on YouTube
+          Watch on YouTube
         </Button>
       </Box>
     </Box>

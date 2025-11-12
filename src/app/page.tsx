@@ -9,18 +9,17 @@ export default function Home() {
   const isDark = theme.palette.mode === "dark";
 
   return (
-    <>
+    <Box sx={{minWidth: 300}}>
       <HeaderComponent />
       <Box
         sx={{
           mt: 7,
-          // p: { xs: 2, md: 4 },
           textAlign: "center",
           color: isDark ? "#FFB804" : "#BA5C12",
         }}
       >
         <HeroComponent />
       </Box>
-    </>
+    </Box>
   );
 }
