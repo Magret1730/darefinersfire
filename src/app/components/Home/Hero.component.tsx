@@ -1,5 +1,3 @@
-"use client";
-
 import { PlayCircleOutline } from "@mui/icons-material";
 import {
   Box,
@@ -41,6 +39,10 @@ const CarouselImages: ICarousel[] = [
     src: "/5.png",
   },
   {
+    name: "Picture6",
+    src: "/6.png",
+  },
+  {
     name: "jolly",
     src: "/jolly.png",
   },
@@ -63,9 +65,15 @@ const settings = {
   pauseOnHover: false,
 };
 
-const HeroComponent = () => {
+interface THeroComponent {
+  isDark: boolean
+}
+
+const HeroComponent = ({
+  isDark
+}: THeroComponent) => {
   const theme = useTheme();
-  const isDark = theme.palette.mode === "dark";
+  // const isDark = theme.palette.mode === "dark";
 
   return (
     <Box
@@ -127,7 +135,7 @@ const HeroComponent = () => {
           gutterBottom
           sx={{
             fontWeight: 700,
-            fontSize: { xs: "2.5rem", md: "4rem" },
+            fontSize: { xs: "2rem", md: "4rem" },
             mb: 0,
           }}
         >
@@ -140,7 +148,7 @@ const HeroComponent = () => {
             maxWidth: 600,
           }}
         >
-          Explore our inspirational Christian skits and videos that refine,
+          Explore our inspirational Christian skits that refine,
           inspire, and ignite faith through storytelling.
         </Typography>
         <Button

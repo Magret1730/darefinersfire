@@ -57,7 +57,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           },
           text: {
             primary: mode === "dark" ? "#C6C6C6" : "#FFFFFF",
-            secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
+            secondary: mode === "dark" ? "#C6C6C6" : "#000000",
+            // secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
             disabled: mode === "dark" ? "#FFB804" : "#BA5C12",
           },
           // action: {
