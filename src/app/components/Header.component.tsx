@@ -130,14 +130,17 @@ const HeaderComponent = () => {
           <Box sx={{ display: { xs: "flex", md: "none", gap: 6 } }}>
             <IconButton onClick={toggleMode} sx={{ padding: 0 }}>
               {mode === "dark" ? (
-                <LightMode sx={{ color: theme.palette.text.primary }} />
+                <LightMode sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
               ) : (
-                <DarkMode sx={{ color: theme.palette.text.primary }} />
+                <DarkMode sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
               )}
             </IconButton>
             <IconButton
               onClick={() => setMenuOpen(!menuOpen)}
-              sx={{ color: theme.palette.text.primary, padding: 0 }}
+              sx={{ 
+                color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+                padding: 0
+              }}
             >
               {menuOpen ? <Close /> : <Menu />}
             </IconButton>

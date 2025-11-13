@@ -135,7 +135,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
-              backgroundColor: theme.palette.secondary.contrastText,
+              backgroundColor: theme.palette.primary.dark,
               color: theme.palette.text.primary,
               p: { xs: 2, md: 3 },
               boxShadow: 6,
