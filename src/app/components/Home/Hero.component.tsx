@@ -139,7 +139,7 @@ const HeroComponent = ({
             mb: 0,
           }}
         >
-          Da Refiner's Fire Movies
+          Da Refiner&apos;s Fire Movies
         </Typography>
         <Typography
           sx={{

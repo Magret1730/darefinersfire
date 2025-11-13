@@ -85,7 +85,7 @@ const HeaderComponent = () => {
                 color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
               }}
             >
-              Da Refiner's Fire
+              Da Refiner&apos;s Fire
             </Typography>
           </Box>
 

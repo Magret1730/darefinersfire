@@ -82,11 +82,11 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
       >
         <Box sx={{ flex: 1 }}>
           <Typography sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 3, textAlign: "left" }}>
-            Da Refiner’s Fire was born out of a divine calling — a vision to use the transformative power
+            Da Refiner&apos;s Fire was born out of a divine calling — a vision to use the transformative power
             of drama and film to reach souls and refine hearts through the Gospel of Christ.
           </Typography>
           <Typography sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 3, textAlign: "left" }}>
-            Like silver in the refiner’s fire, we believe that through trials, faith, and the work of the
+            Like silver in the refiner&apos;s fire, we believe that through trials, faith, and the work of the
             Holy Spirit, lives can be purified and transformed. Our ministry creates short gospel skits that
             illuminate biblical truths, inspire deeper faith, and encourage believers to walk in obedience
             and purpose.
