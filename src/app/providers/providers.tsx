@@ -12,7 +12,7 @@ type ThemeModeContextType = {
 
 const ThemeModeContext = createContext<ThemeModeContextType>({
   mode: "light",
-  toggleMode: () => {},
+  toggleMode: () => { },
 });
 
 // Exports a hook for easy use

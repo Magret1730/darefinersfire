@@ -18,7 +18,7 @@ import {
   DarkMode,
   LightMode,
 } from "@mui/icons-material";
-import { useThemeMode } from "../providers";
+import { useThemeMode } from "../providers/providers";
 
 interface NavLink {
   label: string;
@@ -76,7 +76,7 @@ const HeaderComponent = () => {
             }}
           >
             {/* <Whatshot sx={{ color: theme.palette.text.primary }} /> */}
-            <Whatshot sx={{color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText}} />
+            <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
             <Typography
               variant="h6"
               sx={{
@@ -113,7 +113,7 @@ const HeaderComponent = () => {
             ))}
             <IconButton onClick={toggleMode}>
               {mode === "dark" ? (
-                <LightMode sx={{ 
+                <LightMode sx={{
                   // color: theme.palette.text.primary
                   color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
                 }} />
@@ -137,7 +137,7 @@ const HeaderComponent = () => {
             </IconButton>
             <IconButton
               onClick={() => setMenuOpen(!menuOpen)}
-              sx={{ 
+              sx={{
                 color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
                 padding: 0
               }}

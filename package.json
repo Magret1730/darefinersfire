@@ -15,6 +15,7 @@
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
     "next": "15.5.5",
+    "posthog-js": "^1.292.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-slick": "^0.31.0",
