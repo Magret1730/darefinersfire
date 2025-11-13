@@ -15,7 +15,8 @@ const verses: IVerse[] = [
     ref: "Habakkuk 2:14",
   },
   {
-    text: "He will sit as a refiner and purifier of silver; He will purify the Levites and refine them like gold and silver.",
+    text: "He will sit as a refiner and purifier of silver and He will purify the priests, the sons of Levi, and refine \
+      them like gold and silver, that they may offer to the Lord offerings in righteousness",
     ref: "Malachi 3:3",
   },
 ];
@@ -115,7 +116,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               left: "50%",
               transform: "translateX(-50%) rotate(-4deg)",
               width: { xs: 300, sm: 380, md: 450 },
-              height: { xs: 240, sm: 300, md: 350 },
+              height: { xs: 300, sm: 300, md: 350 },
               borderRadius: "24px",
               backgroundColor: theme.palette.background.paper,
               boxShadow: 4,
@@ -129,7 +130,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               left: "50%",
               transform: "translateX(-50%)",
               width: { xs: 300, sm: 380, md: 450 },
-              height: { xs: 240, sm: 300, md: 350 },
+              height: { xs: 300, sm: 300, md: 350 },
               borderRadius: "24px",
               display: "flex",
               justifyContent: "center",

@@ -9,8 +9,6 @@ import {
   Button,
 } from "@mui/material";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 interface ICarousel {
   name: string;
@@ -73,7 +71,6 @@ const HeroComponent = ({
   isDark
 }: THeroComponent) => {
   const theme = useTheme();
-  // const isDark = theme.palette.mode === "dark";
 
   return (
     <Box
@@ -94,7 +91,6 @@ const HeroComponent = ({
               objectPosition: "center",
               display: "block",
               objectFit: "cover",
-              // height: { md: 600, xs: 600 },
               margin: 0,
               padding: 0,
               boxShadow: 3,
@@ -139,7 +135,7 @@ const HeroComponent = ({
             mb: 0,
           }}
         >
-          Da Refiner&apos;s Fire Movies
+          Da Refiner&apos;s Fire
         </Typography>
         <Typography
           sx={{
