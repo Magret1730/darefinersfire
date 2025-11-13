@@ -43,7 +43,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           mode,
           primary: {
             main: "#FFB804",
-            dark: "#E0A503",
+            light: "#E0A503",
+            dark: "#FDEBD1",
             contrastText: "#1A1A1A",
           },
           secondary: {
@@ -52,7 +53,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             contrastText: "#FFF9E8",
           },
           background: {
-            default: mode === "dark" ? "#3B240F" : "#FDEBD1",
+            default: mode === "dark" ? "#3B240F" : "#FCF6F0",
+            // default: mode === "dark" ? "#3B240F" : "#FDEBD1",
             paper: mode === "dark" ? "#241507" : "#BA5C12",
           },
           text: {
@@ -61,6 +63,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             // secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
             disabled: mode === "dark" ? "#FFB804" : "#BA5C12",
           },
+          // mode: {
+          //   common: mode === "dark" ? "#C6C6C6" : "#000000"
+          // },
           // action: {
           //   primary: mode === "dark" ? "#BA5C12" : "#BA5C12",
           // },

@@ -9,8 +9,8 @@ import {
   Button,
 } from "@mui/material";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 interface ICarousel {
   name: string;
@@ -139,7 +139,7 @@ const HeroComponent = ({
             mb: 0,
           }}
         >
-          Da Refiner's Fire Media
+          Da Refiner's Fire Movies
         </Typography>
         <Typography
           sx={{

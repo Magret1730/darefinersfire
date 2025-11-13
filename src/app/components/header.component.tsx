@@ -52,7 +52,8 @@ const HeaderComponent = () => {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: theme.palette.background.paper,
+          backgroundColor: isDark ? theme.palette.secondary.main : theme.palette.primary.dark,
+          // backgroundColor: theme.palette.background.paper,
           // background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.light} 100%)`,
         }}
       >
@@ -74,12 +75,14 @@ const HeaderComponent = () => {
               cursor: "pointer",
             }}
           >
-            <Whatshot sx={{ color: theme.palette.text.primary }} />
+            {/* <Whatshot sx={{ color: theme.palette.text.primary }} /> */}
+            <Whatshot sx={{color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText}} />
             <Typography
               variant="h6"
               sx={{
                 fontWeight: 700,
-                color: theme.palette.text.primary,
+                // color: theme.palette.text.primary,
+                color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
               }}
             >
               Da Refiner's Fire
@@ -100,7 +103,8 @@ const HeaderComponent = () => {
                 href={link.href}
                 style={{
                   fontWeight: 500,
-                  color: theme.palette.text.primary,
+                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+                  // color: theme.palette.text.primary,
                   textDecoration: "none",
                 }}
               >
@@ -109,9 +113,15 @@ const HeaderComponent = () => {
             ))}
             <IconButton onClick={toggleMode}>
               {mode === "dark" ? (
-                <LightMode sx={{ color: theme.palette.text.primary }} />
+                <LightMode sx={{ 
+                  // color: theme.palette.text.primary
+                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
+                }} />
               ) : (
-                <DarkMode sx={{ color: theme.palette.text.primary }} />
+                <DarkMode sx={{
+                  // color: theme.palette.text.primary
+                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
+                }} />
               )}
             </IconButton>
           </Box>
