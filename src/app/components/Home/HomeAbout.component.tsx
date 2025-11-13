@@ -11,12 +11,12 @@ interface IVerse {
 
 const verses: IVerse[] = [
   {
-    text: "He will sit as a refiner and purifier of silver; He will purify the Levites and refine them like gold and silver.",
-    ref: "Malachi 3:3",
+    text: "For the earth shall be filled with the knowledge of the glory of the Lord, as the waters cover the sea.",
+    ref: "Habakkuk 2:14",
   },
   {
-    text: "When you pass through the waters, I will be with you.",
-    ref: "Isaiah 43:2",
+    text: "He will sit as a refiner and purifier of silver; He will purify the Levites and refine them like gold and silver.",
+    ref: "Malachi 3:3",
   },
 ];
 
@@ -38,25 +38,13 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
   const theme = useTheme();
 
   return (
-    // <Box
-    //   sx={(theme) => ({
-    //     color: alpha(theme.palette.text.secondary, 0.9),
-    //     py: 8,
-    //     px: 8
-    //   })}
-    // >
     <Box
       sx={{
         py: { xs: 6, md: 10 },
         px: { xs: 3, md: 10 },
         color: alpha(theme.palette.text.secondary, 0.9),
-        // backgroundColor: alpha(
-        //   isDark ? theme.palette.background.default : theme.palette.background.paper,
-        //   0.8
-        // ),
       }}
     >
-      {/* Section Title */}
       <Typography
         sx={{
           typography: { xs: "h4", md: "h2" },
@@ -83,7 +71,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
         Our Story
       </Typography>
 
-      {/* Content */}
       <Box
         sx={{
           display: "flex",
@@ -93,7 +80,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           gap: { xs: 6, md: 10 },
         }}
       >
-        {/* Text Column */}
         <Box sx={{ flex: 1 }}>
           <Typography sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 3, textAlign: "left" }}>
             Da Refiner’s Fire was born out of a divine calling — a vision to use the transformative power
@@ -112,7 +98,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           </Typography>
         </Box>
 
-        {/* Verse Card */}
         <Box
           sx={{
             position: "relative",
@@ -123,7 +108,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
             height: { xs: 320, md: 400 },
           }}
         >
-          {/* Back Card (depth layer) */}
           <Card
             sx={{
               position: "absolute",
@@ -133,14 +117,11 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               width: { xs: 300, sm: 380, md: 450 },
               height: { xs: 240, sm: 300, md: 350 },
               borderRadius: "24px",
-              // backgroundColor: theme.palette.secondary.contrastText,
               backgroundColor: theme.palette.background.paper,
               boxShadow: 4,
               zIndex: 1,
             }}
           />
-
-          {/* Front Card (content) */}
           <Card
             sx={{
               position: "absolute",
@@ -154,7 +135,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
-              // backgroundColor: theme.palette.background.paper,
               backgroundColor: theme.palette.secondary.contrastText,
               color: theme.palette.text.primary,
               p: { xs: 2, md: 3 },
@@ -170,8 +150,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
                       sx={{
                         color: isDark
                           ? theme.palette.secondary.main
-                          // : theme.palette.primary.main,
-                          : theme.palette.primary.contrastText,
+                          : theme.palette.secondary.main,
                         fontSize: 40,
                       }}
                     />
@@ -181,7 +160,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
                         fontSize: "1.05rem",
                         color: isDark
                           ? theme.palette.secondary.main
-                          // : theme.palette.primary.main,
                           : theme.palette.primary.contrastText,
                       }}
                     >
@@ -193,7 +171,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
                         mt: 1,
                         color: isDark
                           ? theme.palette.secondary.main
-                          // : theme.palette.primary.main,
                           : theme.palette.primary.contrastText,
                       }}
                     >— {verse.ref}</Typography>
