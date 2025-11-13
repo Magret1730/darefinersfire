@@ -6,44 +6,58 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Providers from "./providers";
 
-
 export const metadata: Metadata = {
-  title: "Da Refiner's Fire Media | Inspirational Christian Skits & Videos",
-  description: "Explore Da Refiner's Fire Drama Ministry – uplifting Christian dramas, short films, and inspirational videos that refine hearts and transform lives. Watch our latest skits and teachings online.",
+  title: "Da Refiner's Fire | Inspirational Skits & Short Films",
+  description:
+    "Discover Da Refiner's Fire - thought-provoking dramas, short films, and skits that inspire reflection, ignite purpose, and transform lives. Watch our latest productions and stories online.",
   keywords: [
-    "Christian drama ministry",
-    "inspirational Christian videos",
-    "faith-based skits",
+    "inspirational videos",
+    "motivational short films",
+    "purpose-driven dramas",
     "Da Refiner's Fire",
-    "Christian short films",
-    "spiritual growth videos"
+    "uplifting skits",
+    "transformational stories",
+    "hope and inspiration",
   ],
   icons: {
-    icon: "/logo.svg",
+    icon: "/logo1.svg",
   },
   openGraph: {
-    title: "Da Refiner's Fire Drama Media | Inspirational Christian Skits & Videos",
-    description: "Uplifting Christian dramas and inspirational videos from Da Refiner's Fire Drama Ministry. Watch short films and skits that inspire faith and transform lives.",
-    url: "https://www.darefinersfire.com",
+    title: "Da Refiner's Fire | Inspirational Skits & Short Films",
+    description:
+      "Uplifting dramas and short films from Da Refiner's Fire — stories that challenge, inspire, and awaken purpose.",
+    url: "https://darefinersfire.netlify.app/",
     siteName: "Da Refiner's Fire",
-    images: [ {
-      url: "https://www.darefinersfire.com/logo.svg",
-      width: 1200,
-      height: 630,
-      alt: "Da Refiner's Fire Drama Ministry"
-    } ],
+    images: [
+      {
+        url: "https://darefinersfire.netlify.app/logo1.svg",
+        width: 1200,
+        height: 630,
+        alt: "Da Refiner's Fire",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Da Refiner's Fire Drama Ministry | Inspirational Christian Skits & Videos",
-    description: "Uplifting Christian dramas and inspirational videos from Da Refiner's Fire Drama Ministry.",
-    images: ["https://www.darefinersfire.com/logo.svg"],
-    creator: "@DaRefinersFire",
-    site: "@DaRefinersFire",
+    title: "Da Refiner's Fire | Inspirational Skits & Short Films",
+    description:
+      "Watch short films and skits from Da Refiner's Fire — inspiring stories that ignite hope and transform lives.",
+    images: ["https://darefinersfire.netlify.app/logo1.svg"],
+    creator: "@darefinersfire",
+    site: "@darefinersfire",
   },
-};
+  other: {
+    facebookPage: "https://www.facebook.com/share/1C3oxNkxyC/?mibextid=wwXIfr",
+    facebook: "https://www.facebook.com/darefinersfire/",
+    tiktok: "https://www.tiktok.com/@darefinersfire",
+    youtube: "https://www.youtube.com/@darefinersfire",
+    instagram: "https://www.instagram.com/darefinersfire1/",
+    x: "https://x.com/darefinersfire",
+  },
+}
+
 
 export default function RootLayout({
   children,
