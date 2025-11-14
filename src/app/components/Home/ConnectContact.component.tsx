@@ -1,24 +1,21 @@
 "use client";
 
-import { Box, Typography, IconButton, useTheme, alpha } from "@mui/material";
-import {
-  Instagram,
-  YouTube,
-  Facebook,
-} from "@mui/icons-material";
+import { Box, Typography, IconButton, Button, useTheme, alpha } from "@mui/material";
+import { Instagram, YouTube, Facebook } from "@mui/icons-material";
 import XIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
-import { SocialsEnum } from "@/app/enum";
+import { NavLinksEnum, SocialsEnum } from "@/app/enum";
+import { secondaryButtonStyles } from "@/app/styles/buttonStyles";
 
-const SocialConnect = ({ isDark }: { isDark: boolean }) => {
+const ConnectContactSection = ({ isDark }: { isDark: boolean }) => {
   const theme = useTheme();
 
   const iconColor = isDark
     ? theme.palette.secondary.main
-    : theme.palette.primary.main;
+    : theme.palette.primary.contrastText;
 
   const socialLinks = [
-    { icon: <Instagram fontSize="inherit"/>, url: SocialsEnum.INSTAGRAM },
+    { icon: <Instagram fontSize="inherit" />, url: SocialsEnum.INSTAGRAM },
     { icon: <YouTube fontSize="inherit" />, url: SocialsEnum.YOUTUBE },
     { icon: <MusicNoteIcon fontSize="inherit" />, url: SocialsEnum.TIKTOK },
     { icon: <Facebook fontSize="inherit" />, url: SocialsEnum.FACEBOOK },
@@ -30,21 +27,21 @@ const SocialConnect = ({ isDark }: { isDark: boolean }) => {
     <Box
       sx={{
         textAlign: "center",
-        mt: { xs: 50, md: 4 },
-        py: { xs: 6, md: 10 },
+        mt: { xs: 10, md: 12 },
+        py: { xs: 8, md: 12 },
         px: { xs: 3, md: 10 },
         color: alpha(theme.palette.text.secondary, 0.9),
-        backgroundColor: isDark ? theme.palette.secondary.main : theme.palette.primary.dark,
+        backgroundColor: isDark ? theme.palette.secondary.dark : theme.palette.primary.dark,
       }}
     >
+      {/* Section Title */}
       <Typography
         sx={{
           typography: { xs: "h4", md: "h2" },
-          position: "relative",
           fontWeight: 700,
+          mb: { xs: 3, md: 5 },
+          position: "relative",
           display: "inline-block",
-          textAlign: "center",
-          mb: { xs: 4, md: 4 },
           "&::after": {
             content: '""',
             position: "absolute",
@@ -63,23 +60,25 @@ const SocialConnect = ({ isDark }: { isDark: boolean }) => {
         Connect With Us
       </Typography>
 
+      {/* Subtitle */}
       <Typography
         sx={{
           fontSize: "1.1rem",
-          lineHeight: 1.8,
+          mb: 5,
           color: theme.palette.text.secondary,
-          mb: 4,
         }}
       >
         Follow us on all platforms and be part of what God is doing.
       </Typography>
 
+      {/* Social Icons */}
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
-          gap: { md:8, xs: 2 },
-          flexWrap: "wrap"
+          gap: { md: 6, xs: 3 },
+          flexWrap: "wrap",
+          mb: 6,
         }}
       >
         {socialLinks.map((item, index) => (
@@ -90,15 +89,13 @@ const SocialConnect = ({ isDark }: { isDark: boolean }) => {
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              fontSize: 40,
-              width: 50,
-              height: 50,
-              borderRadius: "12px",
-              // backgroundColor: alpha(iconColor, 0.1),
+              fontSize: 50,
+              width: 60,
+              height: 60,
+              borderRadius: "16px",
               color: iconColor,
               transition: "0.3s ease",
               "&:hover": {
-                // backgroundColor: alpha(iconColor, 0.2),
                 transform: "translateY(-4px)",
               },
             }}
@@ -107,8 +104,17 @@ const SocialConnect = ({ isDark }: { isDark: boolean }) => {
           </IconButton>
         ))}
       </Box>
+
+      <Button
+        variant="contained"
+        href={NavLinksEnum.CONTACT}
+        sx={(theme) => secondaryButtonStyles(theme)}
+      >
+        Contact Us
+      </Button>
     </Box>
   );
 };
 
-export default SocialConnect;
+export default ConnectContactSection;
+

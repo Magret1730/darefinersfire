@@ -107,9 +107,10 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
             sx={[
               (theme) => secondaryButtonStyles(theme),
               {
-                textAlign: "left",
+                textAlign: {md:"left", xs:"center"},
                 mt: 4,
-                width: {xs: "100%"}
+                // justifySelf: {xs: "center"},
+                // border: {md: "1px solid red", lg: "1px solid blue", xs: "1px solid green"}
               }
             ]}
           >

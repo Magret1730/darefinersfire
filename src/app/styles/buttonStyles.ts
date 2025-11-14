@@ -19,7 +19,7 @@ export const primaryButtonStyles = (theme: any, isDark: boolean) => ({
 });
 
 export const secondaryButtonStyles = (theme: any) => ({
-  px: { xs: 3, md: 4 },
+  px: { xs: 0, md: 2, lg: 4 },
   py: 1.3,
   fontWeight: 600,
   fontSize: { xs: "0.95rem", md: "1.05rem" },
@@ -27,7 +27,7 @@ export const secondaryButtonStyles = (theme: any) => ({
   borderRadius: "16px",
   backgroundColor: theme.palette.primary.main,
   color: "#fff",
-  width: "30%",
+  width: "200px",
   boxShadow: "0px 2px 6px rgba(0,0,0,0.18)",
   transition: "all 0.25s ease",
   "&:hover": {

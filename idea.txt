@@ -216,12 +216,12 @@ Global Footer
 2. Specific Sections on the Home Page
 Hero section (already roughly built; needs refinement)
 About Us preview
-Connect With Us (social media section)
+Connect With Us (social media section) / Contact Us banner
 Upcoming Events preview
 Latest Videos preview
 Latest Shorts preview
 Meet Our Team preview
-Contact Us banner
+
 
 3. Design Requirements
 Clean, simple, modern Christian/ministry feel
