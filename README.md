@@ -1,53 +1,63 @@
-### Description
+# Da Refiner’s Fire (DRF) Website
 
-Still in Progress...
+## Description
+Da Refiner’s Fire (DRF) is a ministry-focused website designed to share spirit-filled videos, short messages, upcoming events, and information about the ministry team. The goal of this platform is to spread the gospel, connect with people across nations, and showcase the work God is doing through the ministry.
 
-### Description
+> This project is **still in progress**.
 
-Da Refiner's Fire website
+---
 
+## Features (MVP)
+1. Home page with hero section, ministry intro, and latest content  
+2. About Us page with DRF’s mission, vision, and story  
+3. Teams page showing all ministry members  
+4. Videos page displaying sermons & teachings  
+5. Shorts page displaying short clips  
+6. Contact page (EmailJS integration)  
+7. Reusable components across the site (banner, social links, video cards, etc.)  
+8. PostHog analytics tracking
 
-<!-- FIRST MVP -->
-<!-- Posthog -->
-<!-- Our handles under about us section and a button to lead to contact us page -->
-<!-- Connect with us -->
-<!-- Upcoming events -->
-<!-- Our videos - Latest in front of the newest one with a 'more video' button that will lead to video page -->
-<!-- Shorts - Latest in front of the newest one with a 'more video' button that will lead to short page -->
-<!-- Meet our team with a button that will lead to teams page 
-  1. Home page team - Only Picture and social media handles
-  2. Team page - More info about each team memebers - collect it from each person
--->
-<!-- Contact us banner with contact us button that willl lead to contact us page -->
-<!-- Footer -->
-<!-- About us page -->
-<!-- Contact Page -->
-<!-- Teams page -->
+---
 
-<!-- 
-CHATGPT
-🔹 Meet Our Team Page Template
-🔹 Contact Page Template
-🔹 Upcoming Events Page
-🔹 Shared themed banner component
-🔹 Social media “Connect With Us” section -->
+## Tech Stack
+- **Next.js** (Frontend framework)  
+- **JavaScript / TypeScript**  
+- **Material UI / Tailwind CSS** (UI components & styling)  
+- **EmailJS** (Contact form)  
+- **PostHog** (Analytics)
 
+---
 
+## Project Status
+**In Active Development**  
+Future features will include authentication, comments, user dashboard, newsletter system, and admin dashboard.
 
-<!-- WILL REQUIRE BACKEND -->
-<!-- On each video, drop comments that will lead to login process -->
-<!-- AUTHENTICATION but what will be in their dashboard
-  0. REVIEWS PER VIDEOS 
-  1. Videos they've watched
-  2. Reviews per videos
-  3. AUTH will come in after the first MVP
-  4. Watched Video
-  5. Latest Video (5) with a button to see all videos
-  6. Upcoming events
--->
-<!-- 
-  1.Contact Us using EmailJS and DaRefiner'sFire gmail account
-  2. Contact us will be on its own page
--->
-<!-- NEWSLETTER/SUBSCRIPTION -->
-<!-- Admin Dashboard to view authenticated user activities -->
+---
+
+## How to Run Locally
+```
+# Clone the repository
+git clone <repo-url>
+
+# Navigate into the project directory
+cd da-refiners-fire
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+## Future Features
+
+- User authentication
+- Comments on videos
+- User dashboard
+- Admin dashboard
+- Newsletter subscription
+- Event management
+
+## License
+
+This project is for ministry purposes &copy; Da Refiner’s Fire
