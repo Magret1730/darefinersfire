@@ -60,9 +60,9 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
             content: '""',
             position: "absolute",
             left: "50%",
-            bottom: -14,
+            bottom: -8,
             transform: "translateX(-50%)",
-            width: "60%",
+            width: "100px",
             height: "6px",
             borderRadius: "12px",
             background: isDark
@@ -108,7 +108,8 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               (theme) => secondaryButtonStyles(theme),
               {
                 textAlign: "left",
-                mt: 4
+                mt: 4,
+                width: {xs: "100%"}
               }
             ]}
           >
