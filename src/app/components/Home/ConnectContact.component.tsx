@@ -6,6 +6,7 @@ import XIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import { NavLinksEnum, SocialsEnum } from "@/app/enum";
 import { secondaryButtonStyles } from "@/app/styles/buttonStyles";
+import { ReactNode } from "react";
 
 const ConnectContactSection = ({ isDark }: { isDark: boolean }) => {
   const theme = useTheme();
@@ -14,7 +15,12 @@ const ConnectContactSection = ({ isDark }: { isDark: boolean }) => {
     ? theme.palette.secondary.main
     : theme.palette.primary.contrastText;
 
-  const socialLinks = [
+  interface TSocialLinks {
+    icon: ReactNode;
+    url: typeof SocialsEnum[keyof typeof SocialsEnum];
+  }
+
+  const socialLinks: TSocialLinks[] = [
     { icon: <Instagram fontSize="inherit" />, url: SocialsEnum.INSTAGRAM },
     { icon: <YouTube fontSize="inherit" />, url: SocialsEnum.YOUTUBE },
     { icon: <MusicNoteIcon fontSize="inherit" />, url: SocialsEnum.TIKTOK },
@@ -89,14 +95,16 @@ const ConnectContactSection = ({ isDark }: { isDark: boolean }) => {
             target="_blank"
             rel="noopener noreferrer"
             sx={{
-              fontSize: 50,
-              width: 60,
-              height: 60,
-              borderRadius: "16px",
+              fontSize: 30,
+              width: 50,
+              height: 50,
+              borderRadius: "12px",
               color: iconColor,
+              backgroundColor: alpha(iconColor, 0.1),
               transition: "0.3s ease",
               "&:hover": {
                 transform: "translateY(-4px)",
+                backgroundColor: alpha(iconColor, 0.2),
               },
             }}
           >

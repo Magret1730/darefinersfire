@@ -34,7 +34,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Contact", href: `${NavLinksEnum.CONTACT}` },
 ];
 
-const HeaderComponent = () => {
+const HeaderComponent = ({}) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { mode, toggleMode } = useThemeMode();
   const theme = useTheme();
