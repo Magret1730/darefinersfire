@@ -4,8 +4,9 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import Providers from "./providers/providers";
-import { PostHogProvider } from "./providers/PosthogProvider";
+import Providers from "@/app/providers/providers";
+import { PostHogProvider } from "@/app/providers/PosthogProvider";
+import HeaderComponent from "@/app/components/Header.component";
 
 export const metadata: Metadata = {
   title: "Da Refiner's Fire | Inspirational Skits & Short Films",
@@ -69,6 +70,7 @@ export default function RootLayout({
       <body className="">
         <PostHogProvider>
           <Providers>
+            <HeaderComponent/>
             {children}
           </Providers>
         </PostHogProvider>

@@ -1,8 +1,10 @@
 "use client";
 
 import { Whatshot } from "@mui/icons-material";
-import { alpha, Box, Card, Typography, useTheme } from "@mui/material";
+import { alpha, Box, Button, Card, Typography, useTheme } from "@mui/material";
 import Slider from "react-slick";
+import { secondaryButtonStyles } from "@/app/styles/buttonStyles";
+import { NavLinksEnum } from "@/app/enum";
 
 interface IVerse {
   text: string;
@@ -81,7 +83,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           gap: { xs: 6, md: 10 },
         }}
       >
-        <Box sx={{ flex: 1 }}>
+        <Box sx={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "left" }}>
           <Typography sx={{ fontSize: "1.1rem", lineHeight: 1.8, mb: 3, textAlign: "left" }}>
             Da Refiner&apos;s Fire was born out of a divine calling — a vision to use the transformative power
             of drama and film to reach souls and refine hearts through the Gospel of Christ.
@@ -97,6 +99,21 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
             impact lives. From stories of transformation to moments of divine encounter, our skits carry
             the light of Christ into a world that desperately needs His love.
           </Typography>
+          <Button
+            variant="contained"
+            href={NavLinksEnum.ABOUT}
+            // target="_blank"
+            rel="noopener noreferrer"
+            sx={[
+              (theme) => secondaryButtonStyles(theme),
+              {
+                textAlign: "left",
+                mt: 4
+              }
+            ]}
+          >
+            More About Us
+          </Button>
         </Box>
 
         <Box
@@ -118,7 +135,8 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               width: { xs: 300, sm: 380, md: 450 },
               height: { xs: 300, sm: 300, md: 350 },
               borderRadius: "24px",
-              backgroundColor: theme.palette.background.paper,
+              // backgroundColor: theme.palette.background.paper,
+              backgroundColor: theme.palette.primary.main,
               boxShadow: 4,
               zIndex: 1,
             }}

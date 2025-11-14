@@ -19,6 +19,7 @@ import {
   LightMode,
 } from "@mui/icons-material";
 import { useThemeMode } from "../providers/providers";
+import { NavLinksEnum } from "@/app/enum/";
 
 interface NavLink {
   label: string;
@@ -26,11 +27,11 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Videos", href: "#videos" },
-  { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: `${NavLinksEnum.HOME}` },
+  { label: "About", href: `${NavLinksEnum.ABOUT}` },
+  { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
+  { label: "Team", href: `${NavLinksEnum.TEAM}` },
+  { label: "Contact", href: `${NavLinksEnum.CONTACT}` },
 ];
 
 const HeaderComponent = () => {
@@ -53,8 +54,6 @@ const HeaderComponent = () => {
         elevation={0}
         sx={{
           backgroundColor: isDark ? theme.palette.secondary.main : theme.palette.primary.dark,
-          // backgroundColor: theme.palette.background.paper,
-          // background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.light} 100%)`,
         }}
       >
         <Toolbar
@@ -63,31 +62,34 @@ const HeaderComponent = () => {
             justifyContent: "space-between",
             alignItems: "center",
             px: { xs: 1.5, md: 6 },
-            // py: 2,
           }}
         >
           {/* Logo Section */}
-          <Box
-            sx={{
+          <Link
+            href={NavLinksEnum.HOME}
+            style={{
               display: "flex",
               alignItems: "center",
-              gap: { md: 1, xs: 0.5 },
               cursor: "pointer",
             }}
           >
-            {/* <Whatshot sx={{ color: theme.palette.text.primary }} /> */}
-            <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 700,
-                // color: theme.palette.text.primary,
-                color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
-              }}
-            >
-              Da Refiner&apos;s Fire
-            </Typography>
-          </Box>
+            {/* <Link
+              href={NavLinksEnum.HOME}
+            > */}
+              <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 700,
+                  pl: { md: 1, xs: 0.5 },
+                  // color: theme.palette.text.primary,
+                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+                }}
+              >
+                Da Refiner&apos;s Fire
+              </Typography>
+            {/* </Link> */}
+          </Link>
 
           {/* Desktop Navigation */}
           <Box

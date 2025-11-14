@@ -10,6 +10,7 @@ Da Refiner's Fire website
 <!-- FIRST MVP -->
 <!-- Posthog -->
 <!-- Our handles under about us section and a button to lead to contact us page -->
+<!-- Connect with us -->
 <!-- Upcoming events -->
 <!-- Our videos - Latest in front of the newest one with a 'more video' button that will lead to video page -->
 <!-- Shorts - Latest in front of the newest one with a 'more video' button that will lead to short page -->
@@ -22,6 +23,14 @@ Da Refiner's Fire website
 <!-- About us page -->
 <!-- Contact Page -->
 <!-- Teams page -->
+
+<!-- 
+CHATGPT
+🔹 Meet Our Team Page Template
+🔹 Contact Page Template
+🔹 Upcoming Events Page
+🔹 Shared themed banner component
+🔹 Social media “Connect With Us” section -->
 
 
 

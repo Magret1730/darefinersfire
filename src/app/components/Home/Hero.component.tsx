@@ -152,17 +152,6 @@ const HeroComponent = ({
           href="https://www.youtube.com/@darefinersfire"
           target="_blank"
           rel="noopener noreferrer"
-          // sx={{
-          //   mt: 3,
-          //   px: { xs: 3, md: 3 },
-          //   py: 2,
-          //   fontWeight: 600,
-          //   fontSize: "1.2rem",
-          //   textTransform: "none",
-          //   borderRadius: 3,
-          //   backgroundColor: theme.palette.action.active,
-          //   color: theme.palette.text.primary,
-          // }}
           sx={(theme) => ({
             mt: 6,
             px: { xs: 3, md: 4 },
