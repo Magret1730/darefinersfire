@@ -71,6 +71,7 @@ const HeaderComponent = ({}) => {
               display: "flex",
               alignItems: "center",
               cursor: "pointer",
+              textDecoration: "none",
             }}
           >
             <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />

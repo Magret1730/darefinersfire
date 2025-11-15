@@ -15,10 +15,11 @@ interface THomeVideosComponent {
 }
 
 export interface IVideos {
+  id: number;
   text: string;
   title: string;
   YouTubeId: string;
-  tittok: string;
+  tiktok: string;
   facebookAccount: string;
   facebookPage: string;
   x: string;
@@ -32,13 +33,13 @@ const HomeVideosComponent = ({
   const theme = useTheme();
 
   const Videos: IVideos[] = VideosData();
-  const slicedVideos = Videos.slice(0, 6);
+  const slicedVideos = Videos.slice(0, 8);
 
   return (
     <Box
       sx={{
         py: { xs: 6, md: 10 },
-        px: { xs: 3, md: 10 },
+        px: { xs: 3, md: 4 },
         color: theme.palette.text.secondary
       }}
     >
@@ -72,7 +73,7 @@ const HomeVideosComponent = ({
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          gap: 8,
+          gap: 4,
           justifyContent: "center",
           alignItems: "center"
         }}

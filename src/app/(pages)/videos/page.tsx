@@ -43,13 +43,13 @@ export default function VideosPage() {
           },
         }}
       >
-        Video
+        Videos
       </Typography>
       <Box
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          gap: 8,
+          gap: 4,
           justifyContent: "center",
           alignItems: "center"
         }}

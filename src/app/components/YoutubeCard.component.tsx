@@ -186,7 +186,7 @@ const YouTubeCard = ({
         </IconButton>
         <IconButton 
           aria-label="tiktok" 
-          href={video.tittok}
+          href={video.tiktok}
           target="_blank"
           sx={{ color: "#000000" }}
         >
