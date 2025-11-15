@@ -102,7 +102,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           <Button
             variant="contained"
             href={NavLinksEnum.ABOUT}
-            // target="_blank"
             rel="noopener noreferrer"
             sx={[
               (theme) => secondaryButtonStyles(theme),

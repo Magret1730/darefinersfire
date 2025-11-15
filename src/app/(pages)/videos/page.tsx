@@ -1,11 +1,16 @@
 "use client";
 
 import { Box, Typography, Container, Card } from "@mui/material";
-import { alpha, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
+import { VideosData } from "@/app/data/videos";
+import { IVideos } from "@/app/components/Home/HomeVideos.component";
+import YouTubeCard from "@/app/components/YoutubeCard.component";
 
 export default function VideosPage() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
+
+  const Videos: IVideos[] = VideosData();
 
   return (
     <Box
@@ -40,6 +45,19 @@ export default function VideosPage() {
       >
         Video
       </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 8,
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        {Videos.map((video, index) => (
+          <YouTubeCard key={index} video={video} />
+        ))}
+      </Box>
     </Box>
   );
 }

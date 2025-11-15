@@ -17,7 +17,8 @@ import {
   X,
   Facebook,
   Instagram,
-  YouTube
+  YouTube,
+  MusicNote
 } from "@mui/icons-material";
 import { IVideos } from "@/app/components/Home/HomeVideos.component";
 import { title } from "process";
@@ -66,8 +67,8 @@ interface TYouTubeCard {
 const YouTubeCard = ({
     video
   }: TYouTubeCard) => {
-    // const [data, setData] = useState<YouTubeVideo | null>(null);
     const theme = useTheme();
+    // const [data, setData] = useState<YouTubeVideo | null>(null);
 
     // useEffect(() => {
     //   async function getVideo() {
@@ -118,7 +119,7 @@ const YouTubeCard = ({
             sx={{ backgroundColor: "orange" }}
           />
         }
-        title="Video"
+        title={video.text}
       />
       <CardMedia
         component="iframe"
@@ -128,34 +129,69 @@ const YouTubeCard = ({
       />
       <CardContent>
         <Typography variant="body2">
-          {/* Title from Youtube title */}
           {video.title}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="facebook account" size="medium" sx={{ color: '#1877F2' }}>
+        <IconButton
+          aria-label="facebook account"
+          href={video.facebookAccount}
+          target="_blank"
+          sx={{ color: '#1877F2' }}
+        >
           <Tooltip title="facebook account">
             <Facebook sx={{ fontSize: 30 }} />
           </Tooltip>
         </IconButton>
-        <IconButton aria-label="facebook page" size="medium" sx={{ color: "#1877F2" }}>
+        <IconButton
+          aria-label="facebook page"
+          href={video.facebookPage}
+          target="_blank"
+          sx={{ color: "#1877F2" }}
+        >
           <Tooltip title="Facebook Page">
             <Facebook sx={{ fontSize: 30 }} />
           </Tooltip>
         </IconButton>
-        <IconButton aria-label="x" size="medium" sx={{ color: "#000000" }}>
+        <IconButton 
+          aria-label="x" 
+          href={video.x}
+          target="_blank"
+          sx={{ color: "#000000" }}
+        >
           <Tooltip title="X">
             <X sx={{ fontSize: 24 }} />
           </Tooltip>
         </IconButton>
-        <IconButton aria-label="instagram" size="medium" sx={{ color: "#E4405F" }}>
+        <IconButton 
+          aria-label="instagram" 
+          href={video.instagram}
+          target="_blank"
+          sx={{ color: "#E4405F" }}
+        >
           <Tooltip title="instagram">
             <Instagram sx={{ fontSize: 26 }} />
           </Tooltip>
         </IconButton>
-        <IconButton aria-label="youtube" size="medium" sx={{ color: "#FF0000" }}>
+
+        <IconButton 
+          aria-label="youtube" 
+          href={video.youtube}
+          target="_blank"
+          sx={{ color: "#FF0000" }}
+        >
           <Tooltip title="youtube">
             <YouTube sx={{ fontSize: 34 }} />
+          </Tooltip>
+        </IconButton>
+        <IconButton 
+          aria-label="tiktok" 
+          href={video.tittok}
+          target="_blank"
+          sx={{ color: "#000000" }}
+        >
+          <Tooltip title="tiktok">
+            <MusicNote sx={{ fontSize: 26 }} />
           </Tooltip>
         </IconButton>
       </CardActions>

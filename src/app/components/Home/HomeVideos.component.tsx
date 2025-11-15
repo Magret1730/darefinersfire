@@ -1,10 +1,13 @@
 import {
   Box,
+  Button,
   Typography,
   useTheme,
 } from "@mui/material";
-import YouTubeCard from "@/app/components/YoutubeMetadata";
+import YouTubeCard from "@/app/components/YoutubeCard.component";
 import { VideosData } from "@/app/data/videos";
+import { secondaryButtonStyles } from "@/app/styles/buttonStyles";
+import { NavLinksEnum } from "@/app/enum";
 
 
 interface THomeVideosComponent {
@@ -12,6 +15,7 @@ interface THomeVideosComponent {
 }
 
 export interface IVideos {
+  text: string;
   title: string;
   YouTubeId: string;
   tittok: string;
@@ -19,6 +23,7 @@ export interface IVideos {
   facebookPage: string;
   x: string;
   instagram: string;
+  youtube: string;
 }
 
 const HomeVideosComponent = ({
@@ -27,6 +32,7 @@ const HomeVideosComponent = ({
   const theme = useTheme();
 
   const Videos: IVideos[] = VideosData();
+  const slicedVideos = Videos.slice(0, 6);
 
   return (
     <Box
@@ -71,10 +77,25 @@ const HomeVideosComponent = ({
           alignItems: "center"
         }}
       >
-        {Videos.map((video, index) => (
+        {slicedVideos.map((video, index) => (
           <YouTubeCard key={index} video={video}/>
         ))}
       </Box>
+
+      <Button
+        variant="contained"
+        href={NavLinksEnum.VIDEOS}
+        rel="noopener noreferrer"
+        sx={[
+          (theme) => secondaryButtonStyles(theme),
+          {
+            textAlign: {md:"left", xs:"center"},
+            mt: 4,
+          }
+        ]}
+      >
+        More Videos
+      </Button>
     </Box>
   )
 }
