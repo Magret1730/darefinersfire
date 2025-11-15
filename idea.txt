@@ -321,3 +321,48 @@ CHATGPT
 -->
 <!-- NEWSLETTER/SUBSCRIPTION -->
 <!-- Admin Dashboard to view authenticated user activities -->
+
+
+
+
+--->>>>>step-by-step guide to create a restricted YouTube API Key for your project:
+
+STEP 1 — Go to Google Cloud Console
+Visit: https://console.cloud.google.com/
+Sign in with your Google account.
+
+STEP 2 — Create a New Project
+Click the project dropdown at the top
+Click New Project
+Name it something like: DRF YouTube API
+Click Create
+
+STEP 3 — Enable YouTube Data API v3
+Left sidebar → APIs & Services → Library
+Search: YouTube Data API v3
+Click it → Click Enable
+
+STEP 4 — Create API Key
+Go to APIs & Services → Credentials
+Click Create Credentials → API Key
+Google will generate a key like:
+AIzaSyB...something
+
+STEP 5 — Restrict Your API Key (HIGHLY RECOMMENDED)
+1️⃣ Application restrictions
+Select Websites
+Add your allowed referrers:
+Development:
+http://localhost:3000/*
+Production (example):
+https://yourdomain.com/*
+2️⃣ API restrictions
+Select Restrict Key
+Choose YouTube Data API v3
+Click Save
+
+STEP 6 — Add Key to Your Project
+In your project root, create .env.local
+Add:
+NEXT_PUBLIC_YOUTUBE_API_KEY=YOUR_KEY_HERE
+Restart your development server

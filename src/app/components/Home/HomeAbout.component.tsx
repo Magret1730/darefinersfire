@@ -45,7 +45,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
       sx={{
         py: { xs: 6, md: 10 },
         px: { xs: 3, md: 10 },
-        color: alpha(theme.palette.text.secondary, 0.9),
+        color: theme.palette.text.secondary
       }}
     >
       <Typography
@@ -109,8 +109,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               {
                 textAlign: {md:"left", xs:"center"},
                 mt: 4,
-                // justifySelf: {xs: "center"},
-                // border: {md: "1px solid red", lg: "1px solid blue", xs: "1px solid green"}
               }
             ]}
           >
@@ -137,7 +135,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
               width: { xs: 300, sm: 380, md: 450 },
               height: { xs: 300, sm: 300, md: 350 },
               borderRadius: "24px",
-              // backgroundColor: theme.palette.background.paper,
               backgroundColor: theme.palette.primary.main,
               boxShadow: 4,
               zIndex: 1,

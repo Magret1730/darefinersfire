@@ -6,6 +6,7 @@ import { Box, useTheme } from "@mui/material";
 import HeroComponent from "@/app/components/Home/Hero.component";
 import HomeAboutComponent from "@/app/components/Home/HomeAbout.component";
 import ConnectContactSection from "@/app/components/Home/ConnectContact.component";
+import HomeVideosComponent from "@/app/components/Home/HomeVideos.component";
 
 export default function Home() {
   const theme = useTheme();
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroComponent isDark={isDark} />
       <HomeAboutComponent isDark={isDark} />
       <ConnectContactSection isDark={isDark} />
+      <HomeVideosComponent isDark={isDark} />
     </Box>
   );
 }
