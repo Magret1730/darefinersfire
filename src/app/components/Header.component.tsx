@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import {
   AppBar,
   Box,
@@ -10,6 +9,7 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
+  Link
 } from "@mui/material";
 import {
   Menu,
@@ -73,22 +73,17 @@ const HeaderComponent = ({}) => {
               cursor: "pointer",
             }}
           >
-            {/* <Link
-              href={NavLinksEnum.HOME}
-            > */}
-              <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  pl: { md: 1, xs: 0.5 },
-                  // color: theme.palette.text.primary,
-                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
-                }}
-              >
-                Da Refiner&apos;s Fire
-              </Typography>
-            {/* </Link> */}
+            <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                pl: { md: 1, xs: 0.5 },
+                color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+              }}
+            >
+              Da Refiner&apos;s Fire
+            </Typography>
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,11 +98,13 @@ const HeaderComponent = ({}) => {
               <Link
                 key={link.label}
                 href={link.href}
-                style={{
+                sx={{
                   fontWeight: 500,
                   color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
-                  // color: theme.palette.text.primary,
                   textDecoration: "none",
+                  "&:hover": {
+                    color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
+                  },
                 }}
               >
                 {link.label}
@@ -116,12 +113,10 @@ const HeaderComponent = ({}) => {
             <IconButton onClick={toggleMode}>
               {mode === "dark" ? (
                 <LightMode sx={{
-                  // color: theme.palette.text.primary
                   color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
                 }} />
               ) : (
                 <DarkMode sx={{
-                  // color: theme.palette.text.primary
                   color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
                 }} />
               )}

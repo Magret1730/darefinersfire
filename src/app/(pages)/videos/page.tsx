@@ -3,7 +3,7 @@
 import { Box, Typography, Container, Card } from "@mui/material";
 import { alpha, useTheme } from "@mui/material/styles";
 
-export default function ContactPage() {
+export default function VideosPage() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
 
@@ -38,7 +38,7 @@ export default function ContactPage() {
           },
         }}
       >
-        Contact Page
+        Video
       </Typography>
     </Box>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Typography, IconButton, useTheme, alpha, Link } from "@mui/material";
-import { Instagram, YouTube, Facebook } from "@mui/icons-material";
+import { Instagram, YouTube, Facebook, Whatshot } from "@mui/icons-material";
 import XIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import { NavLinksEnum, SocialsEnum } from "@/app/enum";
@@ -21,6 +21,11 @@ const FooterComponent = () => {
     url: typeof SocialsEnum[keyof typeof SocialsEnum];
   }
 
+  interface QuickLinks {
+    label: string;
+    href: string;
+  }
+
   const socialLinks: TSocialLinks[] = [
     { icon: <Instagram />, url: SocialsEnum.INSTAGRAM },
     { icon: <YouTube />, url: SocialsEnum.YOUTUBE },
@@ -28,11 +33,6 @@ const FooterComponent = () => {
     { icon: <Facebook />, url: SocialsEnum.FACEBOOK },
     { icon: <XIcon />, url: SocialsEnum.X },
   ];
-
-  interface QuickLinks {
-    label: string;
-    href: string;
-  }
 
   const quickLinks: QuickLinks[] = [
     { label: "Home", href: `${NavLinksEnum.HOME}` },
@@ -49,6 +49,7 @@ const FooterComponent = () => {
         color: theme.palette.primary.contrastText,
         py: { xs: 6, md: 10 },
         px: { xs: 3, md: 10 },
+        width: "100%",
       }}
     >
       {/* Top Section: Quick Links */}
@@ -61,15 +62,27 @@ const FooterComponent = () => {
           mb: 6,
         }}
       >
-        <Typography
-          sx={{
-            fontWeight: 700,
-            typography: { xs: "h6", md: "h5" },
-            mb: { xs: 3, md: 0 },
+        {/* Logo Section */}
+        <Link
+          href={NavLinksEnum.HOME}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
           }}
         >
-          Da Refiner's Fire
-        </Typography>
+          <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 700,
+              pl: { md: 1, xs: 0.5 },
+              color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+            }}
+          >
+            Da Refiner&apos;s Fire
+          </Typography>
+        </Link>
 
         <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", justifyContent: "center" }}>
           {quickLinks.map((link, idx) => (
@@ -92,7 +105,15 @@ const FooterComponent = () => {
       </Box>
 
       {/* Middle Section: Social Icons */}
-      <Box sx={{ display: "flex", justifyContent: "center", gap: 3, mb: 4 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: 3,
+          mb: 4,
+          flexWrap: "wrap"
+          }}
+        >
         {socialLinks.map((item, idx) => (
           <IconButton
             key={idx}
@@ -127,7 +148,7 @@ const FooterComponent = () => {
           color: alpha(theme.palette.primary.contrastText, 0.7),
         }}
       >
-        © {new Date().getFullYear()} Da Refiner's Fire. All rights reserved.
+        &copy; {new Date().getFullYear()} Da Refiner's Fire. All rights reserved.
       </Typography>
     </Box>
   );

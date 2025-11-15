@@ -33,7 +33,7 @@ const ConnectContactSection = ({ isDark }: { isDark: boolean }) => {
     <Box
       sx={{
         textAlign: "center",
-        mt: { xs: 10, md: 12 },
+        mt: { xs: 48, md: 12 },
         py: { xs: 8, md: 12 },
         px: { xs: 3, md: 10 },
         color: alpha(theme.palette.text.secondary, 0.9),
