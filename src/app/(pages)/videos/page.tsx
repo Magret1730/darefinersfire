@@ -6,7 +6,6 @@ import { VideosData } from "@/app/data/videos";
 import { IVideos } from "@/app/components/Home/HomeVideos.component";
 import YouTubeCard from "@/app/components/YoutubeCard.component";
 import { useState } from "react";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 export default function VideosPage() {
   const theme = useTheme();
