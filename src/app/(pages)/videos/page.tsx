@@ -1,16 +1,30 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Pagination, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { VideosData } from "@/app/data/videos";
 import { IVideos } from "@/app/components/Home/HomeVideos.component";
 import YouTubeCard from "@/app/components/YoutubeCard.component";
+import { useState } from "react";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 export default function VideosPage() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
 
-  const Videos: IVideos[] = VideosData();
+  const [page, setPage] = useState(1);
+  const VIDEOS_PER_PAGE = 12;
+
+  const videos: IVideos[] = VideosData();
+
+  const handlePageChange = (_: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
+
+  const totalPages = Math.ceil(videos.length / VIDEOS_PER_PAGE);
+
+  const startIndex = (page - 1) * VIDEOS_PER_PAGE;
+  const currentVideos = videos.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
 
   return (
     <Box
@@ -19,7 +33,6 @@ export default function VideosPage() {
         px: { xs: 3, md: 6 },
       }}
     >
-      {/* PAGE TITLE */}
       <Typography
         sx={{
           color: theme.palette.primary.contrastText,
@@ -34,9 +47,9 @@ export default function VideosPage() {
             left: "50%",
             bottom: -14,
             transform: "translateX(-50%)",
-            width: "70px",
-            height: "6px",
-            borderRadius: "12px",
+            width: 70,
+            height: 6,
+            borderRadius: 12,
             background: isDark
               ? `linear-gradient(90deg, ${theme.palette.primary.light}, ${theme.palette.secondary.main})`
               : `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
@@ -45,19 +58,54 @@ export default function VideosPage() {
       >
         Videos
       </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 4,
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      >
-        {Videos.map((video, index) => (
-          <YouTubeCard key={index} video={video} />
-        ))}
-      </Box>
+
+      <Stack spacing={4} alignItems="center">
+        <Box
+          display="grid"
+          gridTemplateColumns="repeat(auto-fit, minmax(300px, 1fr))"
+          gap={3}
+          width="100%"
+        >
+          {currentVideos.map((video, index) => (
+            <YouTubeCard key={index} video={video} />
+          ))}
+        </Box>
+
+        <Pagination
+          shape="rounded"
+          variant="outlined"
+          count={totalPages}
+          page={page}
+          onChange={handlePageChange}
+          color="primary"
+          size="large"
+          siblingCount={1}
+          boundaryCount={1}
+          sx={{
+            "& .MuiPaginationItem-root": {
+              color: "black",
+              borderColor: "black",
+
+              "&:hover": {
+                backgroundColor: "black",
+                color: "white",
+                borderColor: "black",
+              },
+            },
+
+            "& .MuiPaginationItem-root.Mui-selected": {
+              backgroundColor: "black",
+              color: "white",
+              borderColor: "black",
+            },
+
+            "& .MuiPaginationItem-root.Mui-selected:hover": {
+              backgroundColor: "#111",
+            },
+          }}
+        />
+      </Stack>
     </Box>
   );
 }
+

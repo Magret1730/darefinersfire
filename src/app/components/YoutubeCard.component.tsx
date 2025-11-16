@@ -4,7 +4,6 @@ import {
   CardActions,
   CardContent,
   CardHeader,
-  CardMedia,
   IconButton,
   Tooltip,
   Typography,
@@ -18,6 +17,7 @@ import {
   MusicNote
 } from "@mui/icons-material";
 import { IVideos } from "@/app/components/Home/HomeVideos.component";
+import YouTubeLazyPlayer from "@/app/components/YouTubeLazyPlayer.component";
 
 interface TYouTubeCard {
   video: IVideos;
@@ -90,43 +90,30 @@ const YouTubeCard = ({
   return (
     <Card
       sx={{
-        maxWidth: 345,
+        width: 300,
         borderRadius: 4,
         backgroundColor: theme.palette.primary.dark,
         color: theme.palette.primary.contrastText,
         transition: "0.3s ease",
-        "&:hover": {
-          transform: "translateY(-10px)",
-        },
+        "&:hover": { transform: "translateY(-10px)" },
       }}
     >
       <CardHeader
         sx={{ textAlign: "left" }}
-        slotProps={{
-          title: {
-            fontSize: "1rem"
-          }
-        }}
         avatar={
           <Avatar
-            aria-label="recipe"
-            // src={data.snippet.thumbnails.default?.url}
+            aria-label="video"
             src={`https://img.youtube.com/vi/${video.YouTubeId}/hqdefault.jpg`}
             sx={{ backgroundColor: "orange" }}
           />
         }
         title={video.text}
       />
-      <CardMedia
-        component="iframe"
-        src={`https://www.youtube.com/embed/${video.YouTubeId}`}
-        sx={{ height: 200 }}
-        allowFullScreen
-      />
+
+      <YouTubeLazyPlayer videoId={video.YouTubeId} />
+
       <CardContent>
-        <Typography variant="body2">
-          {video.title}
-        </Typography>
+        <Typography variant="body2">{video.title}</Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton
@@ -139,18 +126,20 @@ const YouTubeCard = ({
             <Facebook sx={{ fontSize: 30 }} />
           </Tooltip>
         </IconButton>
+        {video.facebookPage &&
+          <IconButton
+            aria-label="facebook page"
+            href={video.facebookPage}
+            target="_blank"
+            sx={{ color: "#1877F2" }}
+          >
+            <Tooltip title="Facebook Page">
+              <Facebook sx={{ fontSize: 30 }} />
+            </Tooltip>
+          </IconButton>
+        }
         <IconButton
-          aria-label="facebook page"
-          href={video.facebookPage}
-          target="_blank"
-          sx={{ color: "#1877F2" }}
-        >
-          <Tooltip title="Facebook Page">
-            <Facebook sx={{ fontSize: 30 }} />
-          </Tooltip>
-        </IconButton>
-        <IconButton 
-          aria-label="x" 
+          aria-label="x"
           href={video.x}
           target="_blank"
           sx={{ color: "#000000" }}
@@ -159,8 +148,8 @@ const YouTubeCard = ({
             <X sx={{ fontSize: 24 }} />
           </Tooltip>
         </IconButton>
-        <IconButton 
-          aria-label="instagram" 
+        <IconButton
+          aria-label="instagram"
           href={video.instagram}
           target="_blank"
           sx={{ color: "#E4405F" }}
@@ -170,8 +159,8 @@ const YouTubeCard = ({
           </Tooltip>
         </IconButton>
 
-        <IconButton 
-          aria-label="youtube" 
+        <IconButton
+          aria-label="youtube"
           href={video.youtube}
           target="_blank"
           sx={{ color: "#FF0000" }}
@@ -180,8 +169,8 @@ const YouTubeCard = ({
             <YouTube sx={{ fontSize: 34 }} />
           </Tooltip>
         </IconButton>
-        <IconButton 
-          aria-label="tiktok" 
+        <IconButton
+          aria-label="tiktok"
           href={video.tiktok}
           target="_blank"
           sx={{ color: "#000000" }}
@@ -192,8 +181,5 @@ const YouTubeCard = ({
         </IconButton>
       </CardActions>
     </Card>
-  )
-};
-
+)};
 export default YouTubeCard;
-

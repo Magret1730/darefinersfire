@@ -21,7 +21,7 @@ export interface IVideos {
   YouTubeId: string;
   tiktok: string;
   facebookAccount: string;
-  facebookPage: string;
+  facebookPage?: string;
   x: string;
   instagram: string;
   youtube: string;
