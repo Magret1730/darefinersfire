@@ -1,11 +1,8 @@
 import { PlayCircleOutline } from "@mui/icons-material";
 import {
   Box,
-  Toolbar,
-  IconButton,
   Typography,
   useTheme,
-  useMediaQuery,
   Button,
 } from "@mui/material";
 import Slider from "react-slick";

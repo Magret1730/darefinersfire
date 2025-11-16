@@ -1,7 +1,7 @@
 "use client";
 
 import { Whatshot } from "@mui/icons-material";
-import { alpha, Box, Button, Card, Typography, useTheme } from "@mui/material";
+import { Box, Button, Card, Typography, useTheme } from "@mui/material";
 import Slider from "react-slick";
 import { secondaryButtonStyles } from "@/app/styles/buttonStyles";
 import { NavLinksEnum } from "@/app/enum";

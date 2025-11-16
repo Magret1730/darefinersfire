@@ -8,7 +8,6 @@ import Providers from "@/app/providers/providers";
 import { PostHogProvider } from "@/app/providers/PosthogProvider";
 import HeaderComponent from "@/app/components/Header.component";
 import FooterComponent from "@/app/components/Footer.component";
-import { useTheme } from "@mui/material";
 
 export const metadata: Metadata = {
   title: "Da Refiner's Fire | Inspirational Skits & Short Films",

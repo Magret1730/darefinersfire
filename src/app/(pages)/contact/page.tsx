@@ -1,7 +1,7 @@
 "use client";
 
-import { Box, Typography, Container, Card } from "@mui/material";
-import { alpha, useTheme } from "@mui/material/styles";
+import { Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 export default function ContactPage() {
   const theme = useTheme();

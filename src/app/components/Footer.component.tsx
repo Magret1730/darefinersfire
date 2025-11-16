@@ -149,7 +149,7 @@ const FooterComponent = () => {
           color: alpha(theme.palette.primary.contrastText, 0.7),
         }}
       >
-        &copy; {new Date().getFullYear()} Da Refiner's Fire. All rights reserved.
+        &copy; {new Date().getFullYear()} Da Refiner&apos;s Fire. All rights reserved.
       </Typography>
     </Box>
   );

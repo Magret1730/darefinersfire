@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, Container, Card } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { VideosData } from "@/app/data/videos";
 import { IVideos } from "@/app/components/Home/HomeVideos.component";

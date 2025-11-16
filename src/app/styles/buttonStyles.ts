@@ -1,4 +1,6 @@
-export const primaryButtonStyles = (theme: any, isDark: boolean) => ({
+import { Theme } from "@mui/material/styles";
+
+export const primaryButtonStyles = (theme: Theme, isDark: boolean) => ({
   px: { xs: 3, md: 4 },
   py: 1.6,
   fontWeight: 700,
@@ -18,7 +20,7 @@ export const primaryButtonStyles = (theme: any, isDark: boolean) => ({
   },
 });
 
-export const secondaryButtonStyles = (theme: any) => ({
+export const secondaryButtonStyles = (theme: Theme) => ({
   px: { xs: 0, md: 2, lg: 4 },
   py: 1.3,
   fontWeight: 600,
@@ -36,7 +38,7 @@ export const secondaryButtonStyles = (theme: any) => ({
   }
 });
 
-export const tertiaryButtonStyles = (theme: any) => ({
+export const tertiaryButtonStyles = (theme: Theme) => ({
   px: 0.5,
   py: 0.2,
   fontWeight: 500,

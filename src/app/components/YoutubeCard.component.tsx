@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import {
   Avatar,
-  Box,
   Card,
   CardActions,
   CardContent,
@@ -21,7 +18,6 @@ import {
   MusicNote
 } from "@mui/icons-material";
 import { IVideos } from "@/app/components/Home/HomeVideos.component";
-import { title } from "process";
 
 interface TYouTubeCard {
   video: IVideos;
