@@ -14,7 +14,7 @@ export default function VideosPage() {
   const [page, setPage] = useState(1);
   const VIDEOS_PER_PAGE = 12;
 
-  const videos: IVideos[] = VideosData();
+  const videos: IVideos[] = VideosData().reverse();
 
   const handlePageChange = (_: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);

@@ -91,6 +91,7 @@ const YouTubeCard = ({
     <Card
       sx={{
         width: 300,
+        height: 380,
         borderRadius: 4,
         backgroundColor: theme.palette.primary.dark,
         color: theme.palette.primary.contrastText,
@@ -148,17 +149,18 @@ const YouTubeCard = ({
             <X sx={{ fontSize: 24 }} />
           </Tooltip>
         </IconButton>
-        <IconButton
-          aria-label="instagram"
-          href={video.instagram}
-          target="_blank"
-          sx={{ color: "#E4405F" }}
-        >
-          <Tooltip title="instagram">
-            <Instagram sx={{ fontSize: 26 }} />
-          </Tooltip>
-        </IconButton>
-
+        {video.instagram &&
+          <IconButton
+            aria-label="instagram"
+            href={video.instagram}
+            target="_blank"
+            sx={{ color: "#E4405F" }}
+          >
+            <Tooltip title="instagram">
+              <Instagram sx={{ fontSize: 26 }} />
+            </Tooltip>
+          </IconButton>
+        }
         <IconButton
           aria-label="youtube"
           href={video.youtube}

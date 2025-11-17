@@ -23,7 +23,7 @@ export interface IVideos {
   facebookAccount: string;
   facebookPage?: string;
   x: string;
-  instagram: string;
+  instagram?: string;
   youtube: string;
 }
 
@@ -32,7 +32,7 @@ const HomeVideosComponent = ({
 }: THomeVideosComponent) => {
   const theme = useTheme();
 
-  const Videos: IVideos[] = VideosData();
+  const Videos: IVideos[] = VideosData().reverse();
   const slicedVideos = Videos.slice(0, 8);
 
   return (
