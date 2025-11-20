@@ -17,7 +17,7 @@ export default function YouTubeLazyPlayer({ videoId }: Props) {
         position: "relative",
         width: "100%",
         paddingTop: "56.25%",
-        borderRadius: 2,
+        // borderRadius: 2,
         overflow: "hidden",
         cursor: "pointer",
         backgroundColor: "#000",

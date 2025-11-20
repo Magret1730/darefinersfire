@@ -1,3 +1,6 @@
+To DO
+1. Proper Posthog capturing
+
 DA REFINER’S FIRE (DRF) WEBSITE – PROJECT OUTLINE
 
 ==================================================
@@ -366,3 +369,17 @@ In your project root, create .env.local
 Add:
 NEXT_PUBLIC_YOUTUBE_API_KEY=YOUR_KEY_HERE
 Restart your development server
+
+**BIO**
+List of What You Should Use for Each Member 
+1. Full Name 
+2. Image 
+3. Bio 
+4. Social Links 
+6. Favorite Scripture 
+7. Favourite Passion Line 
+
+Bio Structure 
+1: Who they are + passion
+2: What area they enjoy in ministry / creativity
+3: 

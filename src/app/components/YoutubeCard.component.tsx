@@ -61,31 +61,32 @@ interface TYouTubeCard {
 
 
 const YouTubeCard = ({
-    video
-  }: TYouTubeCard) => {
-    const theme = useTheme();
-    // const [data, setData] = useState<YouTubeVideo | null>(null);
+  video
+}: TYouTubeCard) => {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+  // const [data, setData] = useState<YouTubeVideo | null>(null);
 
-    // useEffect(() => {
-    //   async function getVideo() {
-    //     const res = await axios.get<YouTubeApiResponse>(
-    //       `https://www.googleapis.com/youtube/v3/videos`,
-    //       {
-    //         params: {
-    //           part: "snippet,contentDetails",
-    //           id: video.YouTubeId,
-    //           key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
-    //         },
-    //       }
-    //     );
+  // useEffect(() => {
+  //   async function getVideo() {
+  //     const res = await axios.get<YouTubeApiResponse>(
+  //       `https://www.googleapis.com/youtube/v3/videos`,
+  //       {
+  //         params: {
+  //           part: "snippet,contentDetails",
+  //           id: video.YouTubeId,
+  //           key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
+  //         },
+  //       }
+  //     );
 
-    //     setData(res.data.items[0]);
-    //   }
+  //     setData(res.data.items[0]);
+  //   }
 
-    //   getVideo();
-    // }, [video.YouTubeId]);
+  //   getVideo();
+  // }, [video.YouTubeId]);
 
-    // if (!data) return <p>Loading...</p>;
+  // if (!data) return <p>Loading...</p>;
 
   return (
     <Card
@@ -93,8 +94,12 @@ const YouTubeCard = ({
         width: 300,
         height: 380,
         borderRadius: 4,
-        backgroundColor: theme.palette.primary.dark,
+        backgroundColor: "#ffffffd9",
+        // backgroundColor: isDark ? "#1e1e1e" : "#ffffffd9",
+        // backdropFilter: "blur(6px)",
+        // backgroundColor: theme.palette.text.primary,
         color: theme.palette.primary.contrastText,
+        // boxShadow: 
         transition: "0.3s ease",
         "&:hover": { transform: "translateY(-10px)" },
       }}
@@ -183,5 +188,6 @@ const YouTubeCard = ({
         </IconButton>
       </CardActions>
     </Card>
-)};
+  )
+};
 export default YouTubeCard;
