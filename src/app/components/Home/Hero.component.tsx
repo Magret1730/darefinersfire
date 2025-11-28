@@ -1,4 +1,5 @@
-import { PlayCircleOutline } from "@mui/icons-material";
+import { NavLinksEnum, SocialsEnum } from "@/app/enum";
+import { ArrowRightAltOutlined, EastOutlined, PlayCircleOutline, YouTube } from "@mui/icons-material";
 import {
   Box,
   Typography,
@@ -58,6 +59,7 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   pauseOnHover: false,
+  // fade: true,
 };
 
 interface THeroComponent {
@@ -84,7 +86,7 @@ const HeroComponent = ({
             alt={carouselImage.name}
             sx={{
               width: "100%",
-              height: { xs: 400, sm: 400, md: 600 },
+              height: { xs: 500, sm: 400, md: 650 },
               objectPosition: "center",
               display: "block",
               objectFit: "cover",
@@ -104,8 +106,8 @@ const HeroComponent = ({
           left: 0,
           width: "100%",
           height: "100%",
-          backdropFilter: "brightness(0.5)",
           zIndex: 1,
+          backgroundColor: isDark ? "#00000080" : "#FFFFFF80",
         }}
       />
 
@@ -113,11 +115,11 @@ const HeroComponent = ({
       <Box
         sx={{
           position: "absolute",
-          top: { lg: "45%", md: "40%", xs: "45%" },
+          top: { lg: "50%", md: "50%", xs: "55%" },
           left: "50%",
           transform: "translate(-50%, -50%)",
           textAlign: "center",
-          color: theme.palette.text.primary,
+          color: theme.palette.primary.main,
           zIndex: 2,
           px: { xs: 4, md: 2 },
           width: { xs: "100%" },
@@ -128,8 +130,8 @@ const HeroComponent = ({
           gutterBottom
           sx={{
             fontWeight: 700,
-            fontSize: { xs: "2rem", md: "4rem" },
-            mb: 0,
+            fontSize: { xs: "2rem", md: "4rem", lg: "4rem" },
+            mb: 2,
           }}
         >
           Da Refiner&apos;s Fire
@@ -139,40 +141,49 @@ const HeroComponent = ({
             fontSize: { xs: "0.8rem", md: "1.1rem" },
             mx: "auto",
             maxWidth: 600,
+            fontWeight: 500,
           }}
         >
-          Explore our inspirational Christian skits that refine,
-          inspire, and ignite faith through storytelling.
+          Discover inspirational Christian skits that encourage, challenge, and ignite faith
+          in every believer. Each story draws from God&apos;s Word to teach, inspire, and strengthen
+          hearts, leaving you motivated to live boldly, love deeply, and trust in His plan.
         </Typography>
-        <Button
-          variant="contained"
-          href="https://www.youtube.com/@darefinersfire"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={(theme) => ({
-            mt: 6,
-            px: { xs: 3, md: 4 },
-            py: 1.6,
-            fontWeight: 700,
-            fontSize: { xs: "1rem", md: "1.2rem" },
-            textTransform: "none",
-            borderRadius: "50px",
-            color: "#fff",
-            background: isDark
-              ? `linear-gradient(90deg, ${theme.palette.primary.light} 0%, ${theme.palette.background.paper} 100%)`
-              : `linear-gradient(90deg, ${theme.palette.primary.light} 0%, ${theme.palette.secondary.main} 100%)`,
-            boxShadow: "0px 4px 12px rgba(0,0,0,0.25)",
-            transition: "all 0.3s ease",
-            "&:hover": {
-              background: `linear-gradient(90deg, ${theme.palette.primary.dark} 0%, ${theme.palette.secondary.main} 100%)`,
-              transform: "scale(1.05)",
-              boxShadow: "0px 6px 18px rgba(0,0,0,0.35)",
-            },
-          })}
-          startIcon={<PlayCircleOutline sx={{ fontSize: 40 }} />}
-        >
-          Watch on YouTube
-        </Button>
+        <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+          <Button
+            variant="contained"
+            href={SocialsEnum.YOUTUBE}
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<PlayCircleOutline sx={{ fontSize: 40 }} />}
+            sx={{
+              textTransform: "none",
+              backgroundColor: theme.palette.action.active,
+              color: theme.palette.primary.dark,
+              borderRadius: "10px",
+              py: 1.2,
+            }}
+          >
+            Watch on YouTube
+          </Button>
+          <Button
+            variant="contained"
+            href={NavLinksEnum.CONTACT}
+            target="_blank"
+            endIcon={<EastOutlined sx={{ fontSize: 40 }} />}
+            sx={{
+              textTransform: "none",
+              backgroundColor: theme.palette.primary.dark,
+              color: theme.palette.primary.main,
+              borderRadius: "10px",
+              py: 1.2,
+              "& .MuiButton-endIcon": {
+                ml: 0.5,
+              },
+            }}
+          >
+            Share Your Testimony
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

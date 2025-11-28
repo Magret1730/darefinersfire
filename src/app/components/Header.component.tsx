@@ -19,10 +19,11 @@ import {
   DarkMode,
   LightMode,
   PlayArrowOutlined,
-  YouTube
+  YouTube,
+  PlayCircleOutline
 } from "@mui/icons-material";
 import { useThemeMode } from "../providers/providers";
-import { NavLinksEnum } from "@/app/enum/";
+import { NavLinksEnum, SocialsEnum } from "@/app/enum/";
 
 interface NavLink {
   label: string;
@@ -30,6 +31,14 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
+  { label: "About", href: `${NavLinksEnum.ABOUT}` },
+  { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
+  { label: "Team", href: `${NavLinksEnum.TEAM}` },
+  { label: "Contact", href: `${NavLinksEnum.CONTACT}` },
+];
+
+const MENU_NAV_LINKS: NavLink[] = [
+  { label: "Home", href: `${NavLinksEnum.HOME}` },
   { label: "About", href: `${NavLinksEnum.ABOUT}` },
   { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
   { label: "Team", href: `${NavLinksEnum.TEAM}` },
@@ -63,7 +72,7 @@ const HeaderComponent = ({ }) => {
           backdropFilter: "blur(10px)",
           zIndex: theme.zIndex.appBar + 1,
           margin: "0 auto",
-          mt: 5,
+          mt: 3,
           left: 0,
           right: 0,
         }}
@@ -90,6 +99,7 @@ const HeaderComponent = ({ }) => {
             <Typography
               variant="h6"
               sx={{
+                fontSize: { xs: "0.8rem", md: "1.2rem" },
                 fontWeight: 700,
                 pl: { md: 1, xs: 0.5 },
                 color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
@@ -102,7 +112,8 @@ const HeaderComponent = ({ }) => {
           {/* Desktop Navigation */}
           <Box
             sx={{
-              display: { xs: "none", md: "flex" },
+              // display: { xs: "none", md: "flex" },
+              display: { xs: "none", md: "none", lg: "flex" },
               alignItems: "center",
               gap: 4,
             }}
@@ -112,7 +123,7 @@ const HeaderComponent = ({ }) => {
                 key={link.label}
                 href={link.href}
                 sx={{
-                  fontWeight: 500,
+                  fontWeight: 400,
                   color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
                   textDecoration: "none",
                   "&:hover": {
@@ -136,15 +147,16 @@ const HeaderComponent = ({ }) => {
             </IconButton>
             <Button
               variant="contained"
-              href="https://www.youtube.com/@darefinersfire"
+              href={SocialsEnum.YOUTUBE}
               target="_blank"
               rel="noopener noreferrer"
-              startIcon={<YouTube />}
+              startIcon={<PlayCircleOutline sx={{ fontSize: 40 }} />}
               sx={{
                 textTransform: "none",
                 backgroundColor: theme.palette.action.active,
                 color: theme.palette.primary.dark,
                 borderRadius: "10px",
+                py: 1.2,
               }}
             >
               Watch on YouTube
@@ -152,7 +164,7 @@ const HeaderComponent = ({ }) => {
           </Box>
 
           {/* Mobile Menu Button */}
-          <Box sx={{ display: { xs: "flex", md: "none", gap: 6 } }}>
+          <Box sx={{ display: { xs: "flex", md: "flex", lg: "none" }, gap: {xs: 0, md: 4, lg: 6} }}>
             <IconButton onClick={toggleMode} sx={{ padding: 0 }}>
               {mode === "dark" ? (
                 <LightMode sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
@@ -185,11 +197,11 @@ const HeaderComponent = ({ }) => {
             justifyContent: "center",
             alignItems: "center",
             transition: "opacity 0.3s ease",
-            top: 55,
+            top: 0,
             zIndex: 1300,
           }}
         >
-          {NAV_LINKS.map((link) => (
+          {MENU_NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}

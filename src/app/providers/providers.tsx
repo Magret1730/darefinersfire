@@ -42,7 +42,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         palette: {
           mode,
           primary: {
-            main: "#FFB804",
+            main: mode === "dark" ? "#FFFFFF" : "#212121", // text color
             light: "#E0A503",
             dark: mode === "dark" ?  "#FFFFFA" : "#FFFFFF", // button color
             contrastText: "#1A1A1A",

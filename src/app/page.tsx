@@ -13,7 +13,7 @@ export default function Home() {
   const isDark = theme.palette.mode === "dark";
 
   return (
-    <Box sx={{ minWidth: 300, mt: 7, textAlign: "center", }}>
+    <Box sx={{ minWidth: 300, textAlign: "center", }}>
       <HeroComponent isDark={isDark} />
       <HomeAboutComponent isDark={isDark} />
       <ConnectContactSection isDark={isDark} />
