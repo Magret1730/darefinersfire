@@ -9,7 +9,8 @@ import {
   Typography,
   useTheme,
   useMediaQuery,
-  Link
+  Link,
+  Button
 } from "@mui/material";
 import {
   Menu,
@@ -17,6 +18,8 @@ import {
   Whatshot,
   DarkMode,
   LightMode,
+  PlayArrowOutlined,
+  YouTube
 } from "@mui/icons-material";
 import { useThemeMode } from "../providers/providers";
 import { NavLinksEnum } from "@/app/enum/";
@@ -27,14 +30,13 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: `${NavLinksEnum.HOME}` },
   { label: "About", href: `${NavLinksEnum.ABOUT}` },
   { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
   { label: "Team", href: `${NavLinksEnum.TEAM}` },
   { label: "Contact", href: `${NavLinksEnum.CONTACT}` },
 ];
 
-const HeaderComponent = ({}) => {
+const HeaderComponent = ({ }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { mode, toggleMode } = useThemeMode();
   const theme = useTheme();
@@ -51,9 +53,19 @@ const HeaderComponent = ({}) => {
     <>
       <AppBar
         position="fixed"
-        elevation={0}
         sx={{
-          backgroundColor: isDark ? theme.palette.secondary.main : theme.palette.primary.dark,
+          backgroundColor: theme.palette.background.default,
+          width: "70%",
+          borderRadius: "10px",
+          boxShadow: isDark
+            ? "0 4px 12px rgba(0, 0, 0, 0.8)"
+            : "0 4px 12px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(10px)",
+          zIndex: theme.zIndex.appBar + 1,
+          margin: "0 auto",
+          mt: 5,
+          left: 0,
+          right: 0,
         }}
       >
         <Toolbar
@@ -122,6 +134,21 @@ const HeaderComponent = ({}) => {
                 }} />
               )}
             </IconButton>
+            <Button
+              variant="contained"
+              href="https://www.youtube.com/@darefinersfire"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<YouTube />}
+              sx={{
+                textTransform: "none",
+                backgroundColor: theme.palette.action.active,
+                color: theme.palette.primary.dark,
+                borderRadius: "10px",
+              }}
+            >
+              Watch on YouTube
+            </Button>
           </Box>
 
           {/* Mobile Menu Button */}

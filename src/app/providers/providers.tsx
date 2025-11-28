@@ -44,7 +44,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           primary: {
             main: "#FFB804",
             light: "#E0A503",
-            dark: "#FDEBD1",
+            dark: mode === "dark" ?  "#FFFFFA" : "#FFFFFF", // button color
             contrastText: "#1A1A1A",
           },
           secondary: {
@@ -53,9 +53,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             contrastText: "#FFF9E8",
           },
           background: {
-            default: mode === "dark" ? "#3B240F" : "#FCF6F0",
+            default: mode === "dark" ? "#212121" : "#FEFEFE",
             // default: mode === "dark" ? "#3B240F" : "#FDEBD1",
-            paper: mode === "dark" ? "#241507" : "#BA5C12",
+            paper: mode === "dark" ? "#2B2B2B" : "#FFEFE6",
           },
           text: {
             primary: mode === "dark" ? "#C6C6C6" : "#FFFFFF",
@@ -72,7 +72,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           divider:
             mode === "dark" ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.1)",
           action: {
-            active: mode === "dark" ? "#3B240F" : "#BA5C12",
+            active: mode === "dark" ? "#3B240F" : "#FF5C01",
             hover:
               mode === "dark"
                 ? "rgba(255, 184, 4, 0.1)"
