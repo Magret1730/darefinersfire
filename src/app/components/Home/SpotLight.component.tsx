@@ -5,6 +5,7 @@ import Slider, { Settings } from "react-slick";
 import YouTubeCard from "@/app/components/YoutubeCard.component";
 import { VideosData } from "@/app/data/videos";
 import { IVideos } from "@/app/page";
+import { HorizontalRuleOutlined } from "@mui/icons-material";
 
 type SpotlightTab = "latest" | "shorts" | "behind" | "upcoming";
 
@@ -35,7 +36,7 @@ const sliderSettings: Settings = {
   arrows: true,
 };
 
-export const SpotLightSection = () => {
+const SpotLightSection = () => {
   const [activeTab, setActiveTab] = React.useState<SpotlightTab>("latest");
   const theme = useTheme();
 
@@ -76,9 +77,10 @@ export const SpotLightSection = () => {
       >
         <Typography
           variant="h4"
-          sx={{ fontWeight: 700, mb: 2, color: "#2A1A16" }}
+          sx={{ fontWeight: "700 !important", mb: 2, color: "#2A1A16" }}
         >
-          Spotlight on Our YouTube Stories
+          Spotlight on our Films
+          {/* <HorizontalRuleOutlined sx={{ fontSize: 30 }} /> Spotlight */}
         </Typography>
 
         <Typography
@@ -168,3 +170,4 @@ export const SpotLightSection = () => {
   );
 };
 
+export default SpotLightSection;

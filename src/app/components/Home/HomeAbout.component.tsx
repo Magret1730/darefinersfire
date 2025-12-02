@@ -57,8 +57,8 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
       <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "left" }}>
         <Typography
           sx={{
-            typography: { xs: "h6", md: "h3" },
-            fontWeight: "950",
+            typography: { xs: "h6", md: "h4" },
+            fontWeight: "700 !important",
             textAlign: "left",
             mb: { xs: 6, md: 4 }
           }}

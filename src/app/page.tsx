@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { Box, useTheme } from "@mui/material";
 import HeroComponent from "@/app/components/Home/Hero.component";
 import HomeAboutComponent from "@/app/components/Home/HomeAbout.component";
-import ConnectContactSection from "@/app/components/Home/ConnectContact.component";
-import { SpotLightSection } from "./components/Home/SpotLight.component";
+import SpotLightSection from "@/app/components/Home/SpotLight.component";
+import HomeTeamComponent from "@/app/components/Home/HomeTeam.component";
+// import FaqSection from "@/app/components/Home/Faq.component";
 
 export interface IVideos {
   id: number;
@@ -30,7 +31,8 @@ export default function Home() {
       <HeroComponent isDark={isDark} />
       <HomeAboutComponent isDark={isDark} />
       <SpotLightSection />
-      <ConnectContactSection isDark={isDark} />
+      <HomeTeamComponent />
+      {/* <FaqSection /> */}
     </Box>
   );
 }
