@@ -1,9 +1,8 @@
 import {
-  Avatar,
+  Box,
   Card,
   CardActions,
   CardContent,
-  CardHeader,
   IconButton,
   Tooltip,
   Typography,
@@ -16,178 +15,164 @@ import {
   YouTube,
   MusicNote
 } from "@mui/icons-material";
-import { IVideos } from "@/app/components/Home/HomeVideos.component";
-import YouTubeLazyPlayer from "@/app/components/YouTubeLazyPlayer.component";
+import { useState } from "react";
+import { IVideos } from "@/app/page";
 
 interface TYouTubeCard {
   video: IVideos;
+  wid?: number;
+  paddingTop?: string;
+  bgColor?: string;
 }
 
-// interface YouTubeThumbnails {
-//   default: { url: string; width?: number; height?: number };
-//   medium?: { url: string; width?: number; height?: number };
-//   high?: { url: string; width?: number; height?: number };
-//   standard?: { url: string; width?: number; height?: number };
-// }
-
-// interface YouTubeLocalized {
-//   title: string;
-//   description: string;
-// }
-
-// interface YouTubeSnippet {
-//   publishedAt: string;
-//   channelId: string;
-//   channelTitle: string;
-//   title: string;
-//   description: string;
-//   localized: YouTubeLocalized;
-//   thumbnails: YouTubeThumbnails;
-//   tags?: string[];
-//   categoryId?: string;
-//   defaultAudioLanguage?: string;
-//   defaultLanguage?: string;
-//   liveBroadcastContent?: string;
-// }
-
-// interface YouTubeVideo {
-//   id: string;
-//   snippet: YouTubeSnippet;
-// }
-
-// interface YouTubeApiResponse {
-//   items: YouTubeVideo[];
-// }
-
-
-const YouTubeCard = ({
-  video
-}: TYouTubeCard) => {
+const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const theme = useTheme();
-  const isDark = theme.palette.mode === "dark";
-  // const [data, setData] = useState<YouTubeVideo | null>(null);
-
-  // useEffect(() => {
-  //   async function getVideo() {
-  //     const res = await axios.get<YouTubeApiResponse>(
-  //       `https://www.googleapis.com/youtube/v3/videos`,
-  //       {
-  //         params: {
-  //           part: "snippet,contentDetails",
-  //           id: video.YouTubeId,
-  //           key: process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
-  //         },
-  //       }
-  //     );
-
-  //     setData(res.data.items[0]);
-  //   }
-
-  //   getVideo();
-  // }, [video.YouTubeId]);
-
-  // if (!data) return <p>Loading...</p>;
+  const thumbnail = `https://img.youtube.com/vi/${video.YouTubeId}/hqdefault.jpg`;
 
   return (
     <Card
       sx={{
-        width: 300,
-        height: 380,
+        width: "100%",
+        maxWidth: wid || 320,
         borderRadius: 4,
-        backgroundColor: "#ffffffd9",
-        // backgroundColor: isDark ? "#1e1e1e" : "#ffffffd9",
-        // backdropFilter: "blur(6px)",
-        // backgroundColor: theme.palette.text.primary,
+        backgroundColor: bgColor || "#ffffffd9",
         color: theme.palette.primary.contrastText,
-        // boxShadow: 
+        overflow: "hidden",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
         transition: "0.3s ease",
-        "&:hover": { transform: "translateY(-10px)" },
       }}
     >
-      <CardHeader
-        sx={{ textAlign: "left" }}
-        avatar={
-          <Avatar
-            aria-label="video"
-            src={`https://img.youtube.com/vi/${video.YouTubeId}/hqdefault.jpg`}
-            sx={{ backgroundColor: "orange" }}
+
+      {/* VIDEO PLAYER AREA */}
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          paddingTop: paddingTop || "56.25%",
+          cursor: "pointer",
+          backgroundColor: "#000",
+        }}
+        onClick={() => setIsPlaying(true)}
+      >
+        {!isPlaying && (
+          <>
+            <img
+              src={thumbnail}
+              alt="YouTube thumbnail"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+              loading="lazy"
+            />
+
+            {/* PLAY BUTTON */}
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 70,
+                height: 70,
+                borderRadius: "50%",
+                background: "rgba(0,0,0,0.6)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                sx={{
+                  width: 0,
+                  height: 0,
+                  borderTop: "14px solid transparent",
+                  borderBottom: "14px solid transparent",
+                  borderLeft: "24px solid white",
+                  marginLeft: "6px",
+                }}
+              />
+            </Box>
+          </>
+        )}
+
+        {isPlaying && (
+          <iframe
+            src={`https://www.youtube.com/embed/${video.YouTubeId}?autoplay=1`}
+            title={video.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            loading="lazy"
           />
-        }
-        title={video.text}
-      />
+        )}
+      </Box>
 
-      <YouTubeLazyPlayer videoId={video.YouTubeId} />
+      <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", pb: 2 }}>
+        {/* TITLE */}
+        <CardContent>
+          <Typography sx={{ fontSize: 16, fontWeight: 500, pt: 2, pb: 0, mb: 0 }}>
+            {video.title}
+          </Typography>
+        </CardContent>
 
-      <CardContent>
-        <Typography variant="body2">{video.title}</Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton
-          aria-label="facebook account"
-          href={video.facebookAccount}
-          target="_blank"
-          sx={{ color: '#1877F2' }}
-        >
+        {/* SOCIAL ICONS */}
+        <CardActions disableSpacing sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", pt: 0, mt: 0}}>
           <Tooltip title="facebook account">
-            <Facebook sx={{ fontSize: 30 }} />
-          </Tooltip>
-        </IconButton>
-        {video.facebookPage &&
-          <IconButton
-            aria-label="facebook page"
-            href={video.facebookPage}
-            target="_blank"
-            sx={{ color: "#1877F2" }}
-          >
-            <Tooltip title="Facebook Page">
+            <IconButton href={video.facebookAccount} target="_blank" sx={{ color: "#1877F2" }}>
               <Facebook sx={{ fontSize: 30 }} />
+            </IconButton>
+          </Tooltip>
+
+          {video.facebookPage && (
+            <Tooltip title="Facebook Page">
+              <IconButton href={video.facebookPage} target="_blank" sx={{ color: "#1877F2" }}>
+                <Facebook sx={{ fontSize: 30 }} />
+              </IconButton>
             </Tooltip>
-          </IconButton>
-        }
-        <IconButton
-          aria-label="x"
-          href={video.x}
-          target="_blank"
-          sx={{ color: "#000000" }}
-        >
+          )}
+
           <Tooltip title="X">
-            <X sx={{ fontSize: 24 }} />
+            <IconButton href={video.x} target="_blank" sx={{ color: "#000" }}>
+              <X sx={{ fontSize: 24 }} />
+            </IconButton>
           </Tooltip>
-        </IconButton>
-        {video.instagram &&
-          <IconButton
-            aria-label="instagram"
-            href={video.instagram}
-            target="_blank"
-            sx={{ color: "#E4405F" }}
-          >
-            <Tooltip title="instagram">
-              <Instagram sx={{ fontSize: 26 }} />
+
+          {video.instagram && (
+            <Tooltip title="Instagram">
+              <IconButton href={video.instagram} target="_blank" sx={{ color: "#E4405F" }}>
+                <Instagram sx={{ fontSize: 26 }} />
+              </IconButton>
             </Tooltip>
-          </IconButton>
-        }
-        <IconButton
-          aria-label="youtube"
-          href={video.youtube}
-          target="_blank"
-          sx={{ color: "#FF0000" }}
-        >
-          <Tooltip title="youtube">
-            <YouTube sx={{ fontSize: 34 }} />
+          )}
+
+          <Tooltip title="YouTube">
+            <IconButton href={video.youtube} target="_blank" sx={{ color: "#FF0000" }}>
+              <YouTube sx={{ fontSize: 34 }} />
+            </IconButton>
           </Tooltip>
-        </IconButton>
-        <IconButton
-          aria-label="tiktok"
-          href={video.tiktok}
-          target="_blank"
-          sx={{ color: "#000000" }}
-        >
-          <Tooltip title="tiktok">
-            <MusicNote sx={{ fontSize: 26 }} />
+
+          <Tooltip title="TikTok">
+            <IconButton href={video.tiktok} target="_blank" sx={{ color: "#000" }}>
+              <MusicNote sx={{ fontSize: 26 }} />
+            </IconButton>
           </Tooltip>
-        </IconButton>
-      </CardActions>
-    </Card>
-  )
+        </CardActions>
+      </Box>
+        </Card>
+  );
 };
+
 export default YouTubeCard;

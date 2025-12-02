@@ -86,7 +86,7 @@ const HeroComponent = ({
             alt={carouselImage.name}
             sx={{
               width: "100%",
-              height: { xs: 500, sm: 400, md: 650 },
+              height: { xs: 550, sm: 400, md: 650 },
               objectPosition: "center",
               display: "block",
               objectFit: "cover",
@@ -115,7 +115,7 @@ const HeroComponent = ({
       <Box
         sx={{
           position: "absolute",
-          top: { lg: "50%", md: "50%", xs: "55%" },
+          top: { lg: "50%", md: "50%", xs: "57%" },
           left: "50%",
           transform: "translate(-50%, -50%)",
           textAlign: "center",
@@ -138,7 +138,7 @@ const HeroComponent = ({
         </Typography>
         <Typography
           sx={{
-            fontSize: { xs: "0.8rem", md: "1.1rem" },
+            fontSize: { xs: "1rem", md: "1.1rem" },
             mx: "auto",
             maxWidth: 600,
             fontWeight: 500,
@@ -172,8 +172,8 @@ const HeroComponent = ({
             endIcon={<EastOutlined sx={{ fontSize: 40 }} />}
             sx={{
               textTransform: "none",
-              backgroundColor: theme.palette.primary.dark,
-              color: theme.palette.primary.main,
+              backgroundColor: theme.palette.primary.light,
+              color: theme.palette.text.primary,
               borderRadius: "10px",
               py: 1.2,
               "& .MuiButton-endIcon": {

@@ -42,23 +42,23 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         palette: {
           mode,
           primary: {
-            main: mode === "dark" ? "#FFFFFF" : "#212121", // text color
-            light: "#E0A503",
-            dark: mode === "dark" ?  "#FFFFFA" : "#FFFFFF", // button color
+            main: mode === "dark" ? "#FFFFFF" : "#212121", // text color // Change - not used
+            light: mode === "dark" ? "#212121" : "#FFFFFF", // button text color opposite
+            dark: mode === "dark" ?  "#FFFFFA" : "#FFFFFF", // button text color
             contrastText: "#1A1A1A",
           },
           secondary: {
-            main: "#BA5C12",
-            light: "#D6742A",
-            contrastText: "#FFF9E8",
+            main: "#FFCCB0",
+            light: "#141414",
+            contrastText: "#FF5C01",
           },
           background: {
             default: mode === "dark" ? "#212121" : "#FEFEFE",
             // default: mode === "dark" ? "#3B240F" : "#FDEBD1",
-            paper: mode === "dark" ? "#2B2B2B" : "#FFEFE6",
+            paper: mode === "dark" ? "#2B2B2B" : "#FFEFE6", // homeAbout background
           },
           text: {
-            primary: mode === "dark" ? "#C6C6C6" : "#FFFFFF",
+            primary: mode === "dark" ? "#FFFFFF" : "#212121", // text color
             secondary: mode === "dark" ? "#C6C6C6" : "#000000",
             // secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
             disabled: mode === "dark" ? "#FFB804" : "#BA5C12",

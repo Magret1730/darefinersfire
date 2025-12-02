@@ -18,8 +18,6 @@ import {
   Whatshot,
   DarkMode,
   LightMode,
-  PlayArrowOutlined,
-  YouTube,
   PlayCircleOutline
 } from "@mui/icons-material";
 import { useThemeMode } from "../providers/providers";
@@ -64,7 +62,7 @@ const HeaderComponent = ({ }) => {
         position="fixed"
         sx={{
           backgroundColor: theme.palette.background.default,
-          width: "70%",
+          width: {md: "70%", xs: "85%"},
           borderRadius: "10px",
           boxShadow: isDark
             ? "0 4px 12px rgba(0, 0, 0, 0.8)"
@@ -95,14 +93,14 @@ const HeaderComponent = ({ }) => {
               textDecoration: "none",
             }}
           >
-            <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
+            <Whatshot sx={{ color: theme.palette.text.primary }} />
             <Typography
               variant="h6"
               sx={{
                 fontSize: { xs: "0.8rem", md: "1.2rem" },
                 fontWeight: 700,
                 pl: { md: 1, xs: 0.5 },
-                color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+                color: theme.palette.text.primary,
               }}
             >
               Da Refiner&apos;s Fire
@@ -112,7 +110,6 @@ const HeaderComponent = ({ }) => {
           {/* Desktop Navigation */}
           <Box
             sx={{
-              // display: { xs: "none", md: "flex" },
               display: { xs: "none", md: "none", lg: "flex" },
               alignItems: "center",
               gap: 4,
@@ -124,7 +121,7 @@ const HeaderComponent = ({ }) => {
                 href={link.href}
                 sx={{
                   fontWeight: 400,
-                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+                  color: theme.palette.text.primary,
                   textDecoration: "none",
                   "&:hover": {
                     color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
@@ -137,11 +134,11 @@ const HeaderComponent = ({ }) => {
             <IconButton onClick={toggleMode}>
               {mode === "dark" ? (
                 <LightMode sx={{
-                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
+                  color: theme.palette.text.primary
                 }} />
               ) : (
                 <DarkMode sx={{
-                  color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText
+                  color: theme.palette.text.primary
                 }} />
               )}
             </IconButton>

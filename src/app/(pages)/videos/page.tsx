@@ -3,7 +3,7 @@
 import { Box, Typography, Pagination, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { VideosData } from "@/app/data/videos";
-import { IVideos } from "@/app/components/Home/HomeVideos.component";
+import { IVideos } from "@/app/page";
 import YouTubeCard from "@/app/components/YoutubeCard.component";
 import { useState } from "react";
 

@@ -387,4 +387,26 @@ export const VideosData = () => [
     x: "https://x.com/darefinersfire/status/1988209895729197474",
     instagram:"https://www.instagram.com/p/DQ6iZrkkfaw/",
   },
+  {
+    id: 35,
+    text: "Short",
+    title: "Many Relationships Fail Because of THIS 💔👀",
+    YouTubeId: "z5K3DCyrPfk",
+    youtube: "https://www.youtube.com/shorts/z5K3DCyrPfk",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7576005983265213717",
+    facebookAccount: "https://www.facebook.com/reel/1504296168368134",
+    x: "https://x.com/darefinersfire/status/1992681628892578022",
+    instagram:"https://www.instagram.com/p/DRaTfB8EeBq/",
+  },
+  {
+    id: 36,
+    text: "Video",
+    title: "She forgot who she lives with",
+    YouTubeId: "h8jlu4ak01k",
+    youtube: "https://youtu.be/h8jlu4ak01k",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7578572187439795477",
+    facebookAccount: "https://www.facebook.com/reel/1167915895531017",
+    x: "https://x.com/darefinersfire/status/1995181607020544349",
+    // instagram:"https://www.instagram.com/p/DRm8oWkLz6N/",
+  }
 ]
