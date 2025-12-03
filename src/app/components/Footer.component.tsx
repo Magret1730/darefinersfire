@@ -17,6 +17,7 @@ const FooterComponent = () => {
     : theme.palette.primary.contrastText;
 
   interface TSocialLinks {
+    label: string;
     icon: ReactNode;
     url: typeof SocialsEnum[keyof typeof SocialsEnum];
   }
@@ -27,11 +28,11 @@ const FooterComponent = () => {
   }
 
   const socialLinks: TSocialLinks[] = [
-    { icon: <Instagram />, url: SocialsEnum.INSTAGRAM },
-    { icon: <YouTube />, url: SocialsEnum.YOUTUBE },
-    { icon: <MusicNoteIcon />, url: SocialsEnum.TIKTOK },
-    { icon: <Facebook />, url: SocialsEnum.FACEBOOK },
-    { icon: <XIcon />, url: SocialsEnum.X },
+    { label: "Instagram", icon: <Instagram />, url: SocialsEnum.INSTAGRAM },
+    { label: "YouTube", icon: <YouTube />, url: SocialsEnum.YOUTUBE },
+    { label: "TikTok", icon: <MusicNoteIcon />, url: SocialsEnum.TIKTOK },
+    { label: "Facebook", icon: <Facebook />, url: SocialsEnum.FACEBOOK },
+    { label: "X", icon: <XIcon />, url: SocialsEnum.X },
   ];
 
   const quickLinks: QuickLinks[] = [
@@ -45,100 +46,208 @@ const FooterComponent = () => {
   return (
     <Box
       sx={{
-        backgroundColor: isDark ? theme.palette.secondary.dark : theme.palette.primary.dark,
-        color: theme.palette.primary.contrastText,
-        py: { xs: 6, md: 10 },
-        px: { xs: 3, md: 10 },
+        backgroundColor: theme.palette.background.paper,
+        py: { xs: 6, md: 12 },
+        px: { xs: 3, md: 28 },
         width: "100%",
       }}
     >
-      {/* Top Section: Quick Links */}
+      {/* Above the copyright section */}
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column", md: "column", lg: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
-          mb: 6,
+          alignItems: "flex-start",
         }}
       >
-        {/* Logo Section */}
-        <Link
-          href={NavLinksEnum.HOME}
-          style={{
+        {/* Left Box */}
+        <Box
+          sx={{
             display: "flex",
-            alignItems: "center",
-            cursor: "pointer",
-            textDecoration: "none",
+            flexDirection: { xs: "column", md: "column" },
+            alignItems: "flex-start",
+            mb: 6,
           }}
         >
-          <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 700,
-              pl: { md: 1, xs: 0.5 },
-              color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
+
+          {/* Logo Section */}
+          <Link
+            href={NavLinksEnum.HOME}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+              textDecoration: "none",
             }}
           >
-            Da Refiner&apos;s Fire
-          </Typography>
-        </Link>
-
-        <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", justifyContent: "center" }}>
-          {quickLinks.map((link, idx) => (
-            <Link
-              key={idx}
-              href={link.href}
-              underline="none"
+            <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
+            <Typography
+              variant="h6"
               sx={{
-                color: theme.palette.primary.contrastText,
-                fontWeight: 500,
-                "&:hover": {
-                  color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
-                },
+                fontWeight: 700,
+                pl: { md: 1, xs: 0.5 },
+                color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText,
               }}
             >
-              {link.label}
-            </Link>
-          ))}
-        </Box>
-      </Box>
+              Da Refiner&apos;s Fire
+            </Typography>
+          </Link>
 
-      {/* Middle Section: Social Icons */}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 3,
-          mb: 4,
-          flexWrap: "wrap"
-          }}
-        >
-        {socialLinks.map((item, idx) => (
-          <IconButton
-            key={idx}
-            component="a"
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Text section */}
+          <Typography sx={{ textAlign: "left", maxWidth: { sm: 400, md: 400, lg: 400 }, mt: 2 }}>
+            Sharing the gospel through creative storytelling one movie, show, and testimony
+            at a time. Our mission is to inspire, uplift, and bring hope to every viewer.
+          </Typography>
+
+          {/* Social Icons */}
+          <Box
             sx={{
-              fontSize: 30,
-              width: 50,
-              height: 50,
-              borderRadius: "12px",
-              color: iconColor,
-              backgroundColor: alpha(iconColor, 0.1),
-              transition: "0.3s ease",
-              "&:hover": {
-                transform: "translateY(-4px)",
-                backgroundColor: alpha(iconColor, 0.2),
-              },
+              display: "flex",
+              justifyContent: "center",
+              gap: { xs: 1, sm: 1, md: 1, lg: 3 },
+              flexWrap: "wrap",
+              mt: 4,
             }}
           >
-            {item.icon}
-          </IconButton>
-        ))}
+            {socialLinks.map((item, idx) => (
+              <IconButton
+                key={idx}
+                component="a"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  fontSize: 30,
+                  width: 40,
+                  height: 40,
+                  border: `1px solid ${theme.palette.divider}`,
+                  borderRadius: "50%",
+                  color: iconColor,
+                  backgroundColor: "white",
+                  transition: "0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    backgroundColor: alpha(iconColor, 0.2),
+                  },
+                }}
+              >
+                {item.icon}
+              </IconButton>
+            ))}
+          </Box>
+        </Box>
+
+        {/* Right box */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: {xs: "column", sm: "row", md: "row", lg: "column"},
+            justifyContent: "center",
+            alignItems: "flex-start",
+            width: { xs: "auto", md: "auto", lg: "auto" },
+            gap: {xs: 6, sm: 6, md: 6, lg: 6},
+          }}
+        >
+          {/* Upper Right Box */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              width: "100%",
+              gap: { xs: 6, sm: 10, md: 15, lg: 20},
+
+            }}
+          >
+            {/* Quick Links */}
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Quick Links</Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: "disc",
+                  pl: 3,
+                  m: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+                }}
+              >
+                {quickLinks.map((link, idx) => (
+                  <Box
+                    component="li"
+                    key={idx}
+                    sx={{
+                      color: theme.palette.primary.contrastText,
+                      fontWeight: 400,
+                    }}
+                  >
+                    <Link
+                      href={link.href}
+                      underline="none"
+                      sx={{
+                        color: "inherit",
+                        "&:hover": {
+                          color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+
+            {/* Connect Links */}
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Connect</Typography>
+              <Box
+                component="ul"
+                sx={{
+                  listStyleType: "disc",
+                  pl: 3,
+                  m: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1,
+                }}
+              >
+                {socialLinks.map((link, idx) => (
+                  <Box
+                    component="li"
+                    key={idx}
+                    sx={{
+                      color: theme.palette.primary.contrastText,
+                      fontWeight: 400,
+                    }}
+                  >
+                    <Link
+                      href={link.url}
+                      underline="none"
+                      sx={{
+                        color: "inherit",
+                        "&:hover": {
+                          color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          </Box>
+
+          {/* Lower Right Box for contacts*/}
+          <Box>
+            <Typography variant="subtitle1" gutterBottom sx={{ fontWeight: 600 }}>Contact</Typography>
+            <Typography variant="body2">Email: darefinersfire@gmail.com</Typography>
+          </Box>
+        </Box>
       </Box>
 
       {/* Bottom Section: Copyright */}
@@ -147,9 +256,12 @@ const FooterComponent = () => {
           textAlign: "center",
           fontSize: "0.9rem",
           color: alpha(theme.palette.primary.contrastText, 0.7),
+          borderTop: `1px solid ${theme.palette.divider}`,
+          mt: 10,
+          pt: 4,
         }}
       >
-        &copy; {new Date().getFullYear()} Da Refiner&apos;s Fire. All rights reserved.
+        &copy; {new Date().getFullYear()} Da Refiner&apos;s Fire Ministry. All rights reserved.
       </Typography>
     </Box>
   );
