@@ -25,12 +25,13 @@ const HomeTeamComponent = () => {
     <Box
       sx={{
         py: { xs: 6, md: 4 },
-        mx: { xs: 3, md: 28 },
+        px: { xs: 3, md: 28 },
         color: theme.palette.text.primary,
         display: "flex",
         flexDirection: { xs: "column", md: "column", lg: "column" },
         alignItems: "flex-start",
-        justifyContent: "flex-start"
+        justifyContent: "flex-start",
+        width: "100%",
       }}
     >
       <Box sx={{
@@ -38,7 +39,7 @@ const HomeTeamComponent = () => {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "flex-start",
-        width: 500,
+        width: { xs: "100%", sm: "80%", md: 500 },
         }}
       >
         <Typography
@@ -51,9 +52,24 @@ const HomeTeamComponent = () => {
         >
           <HorizontalRuleOutlined sx={{ fontSize: 30 }} /> MEET THE TEAM
         </Typography>
+        {/* <Typography
+          variant="body1"
+          sx={{
+            color: "text.secondary",
+            mb: { xs: 3, md: 4 },
+            textAlign: { xs: "center", sm: "left" },
+            maxWidth: { xs: "100%", sm: "85%", md: "70%", lg: "60%" },
+            // width: "50%",
+            // border: "1px solid red"
+          }}
+        > */}
         <Typography
           variant="body1"
-          sx={{ color: "text.secondary", mb: 4, textAlign: "left" }}
+          sx={{
+            maxWidth: "100%",
+            mb: 4,
+            textAlign: "left",
+          }}
         >
           Every story we tell is brought to life by a passionate team committed to
           sharing God&apos;s love through creativity and excellence.
@@ -81,7 +97,12 @@ const HomeTeamComponent = () => {
               alignItems: "space-between",
               justifyContent: "flex-start",
               borderRadius: 2,
-              width: "15%",
+              width: {
+                xs: "45%",
+                sm: "30%",
+                md: "22%",
+                lg: "16%",
+              },
               // transform: "scale(1)",
               transition: "transform 0.3s ease-in-out",
               "&:hover": {

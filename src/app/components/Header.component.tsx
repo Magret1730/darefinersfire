@@ -62,7 +62,7 @@ const HeaderComponent = ({ }) => {
         position="fixed"
         sx={{
           backgroundColor: theme.palette.background.default,
-          width: {md: "70%", xs: "85%"},
+          maxWidth: {md: "70%", sm: "70%", xs: "80%"},
           borderRadius: "10px",
           boxShadow: isDark
             ? "0 4px 12px rgba(0, 0, 0, 0.8)"
@@ -72,7 +72,7 @@ const HeaderComponent = ({ }) => {
           margin: "0 auto",
           mt: 3,
           left: 0,
-          right: 0,
+          right: 0
         }}
       >
         <Toolbar
