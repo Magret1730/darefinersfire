@@ -3,15 +3,11 @@
 import { EastOutlined, HorizontalRuleOutlined, Whatshot } from "@mui/icons-material";
 import { Box, Button, Card, Typography, useTheme } from "@mui/material";
 import Slider from "react-slick";
-import { secondaryButtonStyles } from "@/app/styles/buttonStyles";
 import { NavLinksEnum } from "@/app/enum";
+import "slick-carousel/slick/slick.css"; // ADD GLOBAL
+import "slick-carousel/slick/slick-theme.css";
 
-interface IVerse {
-  text: string;
-  ref: string;
-}
-
-const verses: IVerse[] = [
+export const verses: { text: string; ref: string; }[] = [
   {
     text: "For the earth shall be filled with the knowledge of the glory of the Lord, as the waters cover the sea.",
     ref: "Habakkuk 2:14",
@@ -23,7 +19,7 @@ const verses: IVerse[] = [
   },
 ];
 
-const settings = {
+export const settings = {
   dots: true,
   infinite: true,
   autoplay: true,
@@ -43,7 +39,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 12 },
+        py: { xs: 6, md: 4 },
         px: { xs: 3, md: 28 },
         backgroundColor: theme.palette.background.paper,
         color: theme.palette.text.primary,
@@ -90,7 +86,10 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
             justifyContent: "left",
             alignItems: "left",
             color: theme.palette.secondary.contrastText,
-
+            "&:hover": {
+              backgroundColor: "transparent",
+              transform: "translateX(5px)",
+            },
           }}
         >
           Learn More

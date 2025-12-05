@@ -1,5 +1,5 @@
 import { NavLinksEnum, SocialsEnum } from "@/app/enum";
-import { ArrowRightAltOutlined, EastOutlined, PlayCircleOutline, YouTube } from "@mui/icons-material";
+import { EastOutlined, PlayCircleOutline, YouTube } from "@mui/icons-material";
 import {
   Box,
   Typography,
@@ -44,7 +44,11 @@ const CarouselImages: ICarousel[] = [
   },
   {
     name: "together",
-    src: "together.png",
+    src: "/together.png",
+  },
+  {
+    name: "SheForgotWhoSheLivesWith",
+    src: "/SheForgotWhoSheLivesWith.png",
   },
 ];
 
@@ -59,7 +63,6 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
   pauseOnHover: false,
-  // fade: true,
 };
 
 interface THeroComponent {

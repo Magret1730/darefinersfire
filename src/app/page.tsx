@@ -3,11 +3,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { Box, useTheme } from "@mui/material";
-import HeroComponent from "@/app/components/Home/Hero.component";
-import HomeAboutComponent from "@/app/components/Home/HomeAbout.component";
-import SpotLightSection from "@/app/components/Home/SpotLight.component";
-import HomeTeamComponent from "@/app/components/Home/HomeTeam.component";
-import FaqSection from "@/app/components/Home/Faq.component";
+import HeroComponent from "@/app/(pages)/home/Hero.component";
+import HomeAboutComponent from "@/app/(pages)/home/HomeAbout.component";
+import SpotLightSection from "@/app/(pages)/home/SpotLight.component";
+import HomeTeamComponent from "@/app/(pages)/home/HomeTeam.component";
+import FaqSection from "@/app/components/Faq.component";
 
 export interface IVideos {
   id: number;
