@@ -1,7 +1,6 @@
-import { Box, CircularProgress, useTheme } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 
 const LoadingSpinner = () => {
-  const theme = useTheme();
 
   return (
     <Box

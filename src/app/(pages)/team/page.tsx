@@ -5,10 +5,8 @@ import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { TeamsData } from "@/app/data/team";
 import { useEffect, useState } from "react";
-import { ITeam } from "@/app/(pages)/home/HomeTeam.component";
+import { ITeam } from "@/app/types/";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
-
-
 
 export default function TeamPage() {
   const [ teams, setTeams ] = useState<ITeam[]>([]);

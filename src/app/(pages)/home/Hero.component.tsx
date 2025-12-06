@@ -6,7 +6,7 @@ import {
   useTheme,
   Button,
 } from "@mui/material";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 
 interface ICarousel {
   name: string;
@@ -52,7 +52,7 @@ const CarouselImages: ICarousel[] = [
   },
 ];
 
-const settings = {
+const settings: Settings = {
   dots: false,
   arrows: false,
   infinite: true,

@@ -16,14 +16,7 @@ import {
   MusicNote
 } from "@mui/icons-material";
 import { useState } from "react";
-import { IVideos } from "@/app/page";
-
-interface TYouTubeCard {
-  video: IVideos;
-  wid?: number;
-  paddingTop?: string;
-  bgColor?: string;
-}
+import { TYouTubeCard } from "@/app/types";
 
 const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -35,14 +28,9 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
       sx={{
         width: "100%",
         maxWidth: wid || 320,
-        // borderRadius: 4,
-        // backgroundColor: bgColor || "#ffffffd9",
         backgroundColor: theme.palette.background.default,
         color: theme.palette.primary.contrastText,
         overflow: "hidden",
-        // boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-        // transition: "0.3s ease",
-        // border: `1px solid red`,
         boxShadow: "none",
         border: "none",
       }}
@@ -57,7 +45,6 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
           cursor: "pointer",
           backgroundColor: "#000",
           borderRadius: 5,
-          // border: `1px solid ${theme.palette.divider}`,
         }}
         onClick={() => setIsPlaying(true)}
       >
@@ -74,7 +61,6 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
                 height: "100%",
                 objectFit: "cover",
                 borderRadius: 20,
-                // border: `1px solid ${theme.palette.divider}`,
               }}
               loading="lazy"
             />
@@ -144,11 +130,9 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
           <Box
             sx={{
               display: "flex",
-              // flexDirection: "column",
               justifyContent: "flex-start",
               alignItems: "center",
               gap: 2,
-              // border: `1px solid ${theme.palette.divider}`,
               py: 2,
               px: 1,
             }}
@@ -161,7 +145,6 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
                 width: 50,
                 height: 50,
                 borderRadius: "50%",
-                // border: `1px solid ${theme.palette.action.active}`,
                 objectFit: "cover",
               }}
             />

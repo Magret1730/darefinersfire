@@ -9,12 +9,7 @@ import {
 } from "@mui/material";
 import { ExpandMore, HorizontalRuleOutlined } from "@mui/icons-material";
 
-type FaqItem = {
-  question: string;
-  answer: string;
-};
-
-const faqs: FaqItem[] = [
+const faqs: {question: string, answer: string}[] = [
   {
     question: "What is Da Refiner's Fire?",
     answer:

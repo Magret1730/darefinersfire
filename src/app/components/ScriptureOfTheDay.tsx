@@ -1,18 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Box, Typography, CircularProgress, useTheme } from "@mui/material";
-
-interface Verse {
-  bookname: string;
-  chapter: number;
-  verse: number;
-  text: string;
-}
+import { IScriptureOfTheDayVerse } from "@/app/types/";
 
 const STORAGE_KEY: string = process.env.NEXT_PUBLIC_STORAGE_KEY || "SCRIPTURE_OF_THE_DAY##";
 
 const ScriptureOfTheDay: React.FC<{ isDark: boolean }> = ({ isDark }) => {
-  const [verse, setVerse] = useState<Verse | null>(null);
+  const [verse, setVerse] = useState<IScriptureOfTheDayVerse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -24,7 +18,7 @@ const ScriptureOfTheDay: React.FC<{ isDark: boolean }> = ({ isDark }) => {
     try {
       const res = await fetch(process.env.NEXT_PUBLIC_BIBLE_API_URL!);
       if (!res.ok) throw new Error("Failed to fetch scripture");
-      const data: Verse[] = await res.json();
+      const data: IScriptureOfTheDayVerse[] = await res.json();
       const verse = data[0];
 
       // save verse with today’s date

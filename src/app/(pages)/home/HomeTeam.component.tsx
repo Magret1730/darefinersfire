@@ -9,14 +9,7 @@ import { HorizontalRuleOutlined } from "@mui/icons-material";
 import { TeamsData } from "@/app/data/team";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
-
-export interface ITeam {
-  id: number;
-  name: string;
-  role: string;
-  photo: string;
-  [key: string]: any;
-}
+import { ITeam } from "@/app/types/";
 
 const HomeTeamComponent = () => {
   const [ teams, setTeams ] = useState<ITeam[]>([]);

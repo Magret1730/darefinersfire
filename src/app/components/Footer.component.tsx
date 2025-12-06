@@ -16,18 +16,7 @@ const FooterComponent = () => {
     ? theme.palette.secondary.main
     : theme.palette.primary.contrastText;
 
-  interface TSocialLinks {
-    label: string;
-    icon: ReactNode;
-    url: typeof SocialsEnum[keyof typeof SocialsEnum];
-  }
-
-  interface QuickLinks {
-    label: string;
-    href: string;
-  }
-
-  const socialLinks: TSocialLinks[] = [
+  const socialLinks: { label: string; icon: ReactNode; url: typeof SocialsEnum[keyof typeof SocialsEnum] }[] = [
     { label: "Instagram", icon: <Instagram />, url: SocialsEnum.INSTAGRAM },
     { label: "YouTube", icon: <YouTube />, url: SocialsEnum.YOUTUBE },
     { label: "TikTok", icon: <MusicNoteIcon />, url: SocialsEnum.TIKTOK },
@@ -35,7 +24,7 @@ const FooterComponent = () => {
     { label: "X", icon: <XIcon />, url: SocialsEnum.X },
   ];
 
-  const quickLinks: QuickLinks[] = [
+  const quickLinks: { label: string; href: string }[] = [
     { label: "Home", href: `${NavLinksEnum.HOME}` },
     { label: "About", href: `${NavLinksEnum.ABOUT}` },
     { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },

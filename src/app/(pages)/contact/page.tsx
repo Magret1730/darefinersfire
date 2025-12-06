@@ -232,12 +232,12 @@ const ContactPage = () => {
         </Typography>
 
         <Typography>
-          We’re here to listen, support, and connect with you.For prayers, inquiries,
-          or collaborations, reach out we’d love to hear from you.
+          We&apos;re here to listen, support, and connect with you. For prayers, testimonies,
+          inquiries, or collaborations, reach out we&apos;d love to hear from you.
         </Typography>
 
         <Typography
-          sx={{ my:2, fontStyle: "italic", fontWeight: 300 }}
+          sx={{ my: 1, fontStyle: "italic", fontWeight: 300 }}
         >
           Get in Touch With Us Today.
         </Typography>

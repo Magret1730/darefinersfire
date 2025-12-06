@@ -24,19 +24,14 @@ import { useThemeMode } from "../providers/providers";
 import { NavLinksEnum, SocialsEnum } from "@/app/enum/";
 import { usePathname } from "next/navigation";
 
-interface NavLink {
-  label: string;
-  href: string;
-}
-
-const NAV_LINKS: NavLink[] = [
+const NAV_LINKS: {label: string; href: string}[] = [
   { label: "About", href: `${NavLinksEnum.ABOUT}` },
   { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
   { label: "Team", href: `${NavLinksEnum.TEAM}` },
   { label: "Contact", href: `${NavLinksEnum.CONTACT}` },
 ];
 
-const MENU_NAV_LINKS: NavLink[] = [
+const MENU_NAV_LINKS: {label: string; href: string}[] = [
   { label: "Home", href: `${NavLinksEnum.HOME}` },
   { label: "About", href: `${NavLinksEnum.ABOUT}` },
   { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
