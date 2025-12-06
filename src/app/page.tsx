@@ -8,6 +8,7 @@ import HomeAboutComponent from "@/app/(pages)/home/HomeAbout.component";
 import SpotLightSection from "@/app/(pages)/home/SpotLight.component";
 import HomeTeamComponent from "@/app/(pages)/home/HomeTeam.component";
 import FaqSection from "@/app/components/Faq.component";
+import ScriptureOfTheDay from "@/app/components/ScriptureOfTheDay";
 
 export interface IVideos {
   id: number;
@@ -31,6 +32,7 @@ export default function Home() {
       <HeroComponent isDark={isDark} />
       <HomeAboutComponent isDark={isDark} />
       <SpotLightSection />
+      <ScriptureOfTheDay isDark={isDark} />
       <HomeTeamComponent />
       <FaqSection />
     </Box>
