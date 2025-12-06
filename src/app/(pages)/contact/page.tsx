@@ -6,6 +6,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import isEmail from "validator/lib/isEmail";
+import { HorizontalRuleOutlined } from "@mui/icons-material";
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement | null>(null);
@@ -24,6 +25,14 @@ const ContactPage = () => {
     }
     if (value.length < 2) {
       toast.error("Name must be at least 2 characters long!");
+      return false;
+    }
+    if (value.length > 50) {
+      toast.error("Name must be under 50 characters.");
+      return false;
+    }
+    if (value.match(/[^a-zA-Z\s]/)) {
+      toast.error("Name can only contain letters and spaces!");
       return false;
     }
     return true;
@@ -46,8 +55,8 @@ const ContactPage = () => {
       toast.error("Subject is required!");
       return false;
     }
-    if (value.length > 50) {
-      toast.error("Subject must be under 50 characters.");
+    if (value.length > 100) {
+      toast.error("Subject must be under 100 characters.");
       return false;
     }
     return true;
@@ -103,24 +112,23 @@ const ContactPage = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, px: { xs: 2, md: 6 } }}>
-      <Typography
-        sx={{
-          color: theme.palette.primary.contrastText,
-          typography: { xs: "h4", md: "h2" },
-          textAlign: "center",
-          fontWeight: 700,
-          mb: 8,
-        }}
-      >
-        Contact Us
-      </Typography>
-
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column-reverse", sm: "column-reverse", md: "row", lg: "row" },
+        gap: {xs: 8, md: 4, lg: 8},
+        my: 30,
+        px: 5,
+        width: "100%",
+        justifyContent: "center",
+        alignItems: {xs: "center", md: "flex-start"},
+      }}
+    >
       <Paper
         elevation={4}
         sx={{
-          maxWidth: 600,
-          mx: "auto",
+          width: "100%",
+          maxWidth: 500,
           p: { xs: 3, md: 5 },
           borderRadius: 4,
           backgroundColor: isDark ? "#1e1e1e" : "#ffffffd9",
@@ -193,6 +201,8 @@ const ContactPage = () => {
                 fontWeight: 600,
                 borderRadius: 2,
                 textTransform: "none",
+                backgroundColor: theme.palette.action.active,
+                color: theme.palette.primary.dark,
               }}
             >
               Send Message
@@ -200,6 +210,42 @@ const ContactPage = () => {
           </Box>
         </form>
       </Paper>
+
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: 400,
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          mt: 5,
+        }}
+      >
+        <Typography
+          sx={{
+            fontWeight: 900,
+            mb: 3,
+            fontSize: { xs: "1.5rem", md: "2.5rem" },
+          }}
+        >
+          <HorizontalRuleOutlined sx={{ fontSize: 30 }} /> OUR CONTACT.
+        </Typography>
+
+        <Typography>
+          We’re here to listen, support, and connect with you.For prayers, inquiries,
+          or collaborations, reach out we’d love to hear from you.
+        </Typography>
+
+        <Typography
+          sx={{ my:2, fontStyle: "italic", fontWeight: 300 }}
+        >
+          Get in Touch With Us Today.
+        </Typography>
+
+        <Typography sx={{ fontWeight: 500 }}>
+          Email: darefinersfire@gmail.com
+        </Typography>
+      </Box>
     </Box>
   );
 };
