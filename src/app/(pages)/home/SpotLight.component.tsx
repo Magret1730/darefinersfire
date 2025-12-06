@@ -80,7 +80,6 @@ const SpotLightSection = () => {
           sx={{ fontWeight: "700 !important", mb: 2, color: "#2A1A16" }}
         >
           Spotlight on our Films
-          {/* <HorizontalRuleOutlined sx={{ fontSize: 30 }} /> Spotlight */}
         </Typography>
 
         <Typography
@@ -137,6 +136,7 @@ const SpotLightSection = () => {
           ))}
         </Box>
 
+        {/* RESTYLE THIS CARD SEPARATELY FROM THE REST OF VIDEO CARDS */}
         {/* Video Card */}
         <Box
           sx={{

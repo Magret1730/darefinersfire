@@ -35,12 +35,16 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
       sx={{
         width: "100%",
         maxWidth: wid || 320,
-        borderRadius: 4,
-        backgroundColor: bgColor || "#ffffffd9",
+        // borderRadius: 4,
+        // backgroundColor: bgColor || "#ffffffd9",
+        backgroundColor: theme.palette.background.default,
         color: theme.palette.primary.contrastText,
         overflow: "hidden",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-        transition: "0.3s ease",
+        // boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        // transition: "0.3s ease",
+        // border: `1px solid red`,
+        boxShadow: "none",
+        border: "none",
       }}
     >
 
@@ -52,6 +56,8 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
           paddingTop: paddingTop || "56.25%",
           cursor: "pointer",
           backgroundColor: "#000",
+          borderRadius: 5,
+          // border: `1px solid ${theme.palette.divider}`,
         }}
         onClick={() => setIsPlaying(true)}
       >
@@ -67,6 +73,8 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                borderRadius: 20,
+                // border: `1px solid ${theme.palette.divider}`,
               }}
               loading="lazy"
             />
@@ -78,8 +86,8 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: 70,
-                height: 70,
+                width: 40,
+                height: 40,
                 borderRadius: "50%",
                 background: "rgba(0,0,0,0.6)",
                 display: "flex",
@@ -91,9 +99,9 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
                 sx={{
                   width: 0,
                   height: 0,
-                  borderTop: "14px solid transparent",
-                  borderBottom: "14px solid transparent",
-                  borderLeft: "24px solid white",
+                  borderTop: "10px solid transparent",
+                  borderBottom: "10px solid transparent",
+                  borderLeft: "20px solid white",
                   marginLeft: "6px",
                 }}
               />
@@ -114,6 +122,7 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
               left: 0,
               width: "100%",
               height: "100%",
+              borderRadius: 20,
             }}
             loading="lazy"
           />
@@ -152,6 +161,8 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
                 width: 50,
                 height: 50,
                 borderRadius: "50%",
+                // border: `1px solid ${theme.palette.action.active}`,
+                objectFit: "cover",
               }}
             />
 
