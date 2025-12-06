@@ -45,7 +45,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
         sx={{
           maxWidth: 500,
           width: "100%",
-          ml: { xs: "4px", sm: "50px", md: "150px", lg: "300px" },
+          ml: { xs: "4px", sm: "50px", md: "150px", lg: "250px" },
         }}
       >
         <Typography
