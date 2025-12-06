@@ -22,6 +22,7 @@ import {
 } from "@mui/icons-material";
 import { useThemeMode } from "../providers/providers";
 import { NavLinksEnum, SocialsEnum } from "@/app/enum/";
+import { usePathname } from "next/navigation";
 
 interface NavLink {
   label: string;
@@ -46,7 +47,9 @@ const MENU_NAV_LINKS: NavLink[] = [
 const HeaderComponent = ({ }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { mode, toggleMode } = useThemeMode();
+
   const theme = useTheme();
+  const pathname = usePathname();
 
   const isDark = theme.palette.mode === "dark";
 
@@ -115,22 +118,26 @@ const HeaderComponent = ({ }) => {
               gap: 4,
             }}
           >
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                sx={{
-                  fontWeight: 400,
-                  color: theme.palette.text.primary,
-                  textDecoration: "none",
-                  "&:hover": {
-                    color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
-                  },
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  sx={{
+                    borderBottom: isActive ? `2px solid ${theme.palette.action.active}` : "2px solid transparent",
+                    fontWeight: 400,
+                    color: theme.palette.text.primary,
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: isDark ? theme.palette.secondary.main : theme.palette.secondary.light,
+                    },
+                  }}
+                >
+                  {link.label}
+                </Link>
+            )})}
             <IconButton onClick={toggleMode}>
               {mode === "dark" ? (
                 <LightMode sx={{

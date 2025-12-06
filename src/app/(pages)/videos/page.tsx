@@ -117,10 +117,8 @@ export default function VideosPage() {
                   setActiveButton(VideoTab.Skit);
                 }}
                 sx={{
-                  backgroundColor: theme.palette.action.active,
+                  backgroundColor: activeButton === VideoTab.Skit ? theme.palette.action.active : theme.palette.primary.light,
                   color: theme.palette.primary.main,
-                  borderLeft: activeButton === VideoTab.Skit ? `4px solid black` : "none",
-                  fontWeight: activeButton === VideoTab.Skit ? 900 : 400,
                   // mb: 4,
                   // "&:hover": {
                   //   bgcolor: theme.palette.secondary.dark,
@@ -138,11 +136,8 @@ export default function VideosPage() {
                   setActiveButton(VideoTab.Short);
                 }}
                 sx={{
-                  backgroundColor: theme.palette.primary.light,
+                  backgroundColor: activeButton === VideoTab.Short ? theme.palette.action.active : theme.palette.primary.light,
                   color: theme.palette.text.primary,
-                  borderLeft: activeButton === VideoTab.Short ? `4px solid black` : "none",
-                  fontWeight: activeButton === VideoTab.Short ? 900 : 400,
-                  // mb: 4,
                   ml: 2,
                   // "&:hover": {
                   //   bgcolor: theme.palette.secondary.dark,

@@ -7,19 +7,27 @@ import {
 } from "@mui/material";
 import { HorizontalRuleOutlined } from "@mui/icons-material";
 import { TeamsData } from "@/app/data/team";
+import { useEffect, useState } from "react";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
 
 export interface ITeam {
   id: number;
   name: string;
   role: string;
-  image: string;
+  photo: string;
   [key: string]: any;
 }
 
 const HomeTeamComponent = () => {
+  const [ teams, setTeams ] = useState<ITeam[]>([]);
+
   const theme = useTheme();
 
-  const Teams = TeamsData();
+  useEffect(() => {
+    setTeams(TeamsData());
+  }, []);
+
+  if(!teams.length) return <LoadingSpinner />;                                                                                                                                                                                       
 
   return (
     <Box
@@ -88,7 +96,7 @@ const HomeTeamComponent = () => {
           mt: 4,
         }}
       >
-        {Teams.map((member) => (
+        {teams.map((member) => (
           <Box
             key={member.name}
             sx={{

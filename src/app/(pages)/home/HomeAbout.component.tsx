@@ -39,7 +39,7 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 4 },
+        py: { xs: 6, md: 12 },
         px: { xs: 3, md: 28 },
         backgroundColor: theme.palette.background.paper,
         color: theme.palette.text.primary,

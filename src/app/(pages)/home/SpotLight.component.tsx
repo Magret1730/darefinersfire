@@ -1,25 +1,16 @@
-import React from "react";
-import { Box, Button, Stack, Typography, IconButton, useTheme } from "@mui/material";
+import React, { useEffect, useMemo, useState } from "react";
+import { Box, Typography, IconButton, useTheme } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slider, { Settings } from "react-slick";
 import YouTubeCard from "@/app/components/YoutubeCard.component";
 import { VideosData } from "@/app/data/videos";
 import { IVideos } from "@/app/page";
-import { HorizontalRuleOutlined } from "@mui/icons-material";
-
-type SpotlightTab = "latest" | "shorts" | "behind" | "upcoming";
-
-interface Video {
-  id: number | string;
-  text: string; // "Video", "Shorts", etc.
-  title: string;
-  YouTubeId: string;
-  [key: string]: any;
-}
+import LoadingSpinner from "@/app/components/LoadingSpinner";
+import { SpotlightTab } from "@/app/enum";
 
 const TABS: { id: SpotlightTab; label: string }[] = [
-  { id: "latest", label: "Latest Movies" },
-  { id: "shorts", label: "Inspirational shorts" },
+  { id: SpotlightTab.LATEST, label: "Latest Movies" },
+  { id: SpotlightTab.SHORTS, label: "Inspirational shorts" },
   // { id: "behind", label: "Behind-the-Scenes" },
   // { id: "upcoming", label: "Upcoming Releases" },
 ];
@@ -37,19 +28,20 @@ const sliderSettings: Settings = {
 };
 
 const SpotLightSection = () => {
-  const [activeTab, setActiveTab] = React.useState<SpotlightTab>("latest");
+  const [videos, setVideos] = useState<IVideos[]>([]);
+  const [activeTab, setActiveTab] = useState<SpotlightTab>(SpotlightTab.LATEST);
+  // const [loading, setLoading] = useState(false);
+
   const theme = useTheme();
 
-  const Videos: IVideos[] = VideosData().reverse();
-
-  const categorized = React.useMemo(() => {
+  const categorized = useMemo(() => {
     return {
-      latest: Videos.filter((v) => v.text === "Video"),
-      shorts: Videos.filter((v) => v.text === "Shorts" || v.text === "Short"),
-      behind: Videos.filter((v) => v.text === "Behind-the-Scenes"),
-      upcoming: Videos.filter((v) => v.text === "Upcoming"),
+      latest: videos.filter((v) => v.text === "Video"),
+      shorts: videos.filter((v) => v.text === "Shorts" || v.text === "Short"),
+      behind: videos.filter((v) => v.text === "Behind-the-Scenes"),
+      upcoming: videos.filter((v) => v.text === "Upcoming"),
     };
-  }, [Videos]);
+  }, [videos]);
 
   const activeVideos = categorized[activeTab] ?? [];
 
@@ -57,6 +49,15 @@ const SpotLightSection = () => {
 
   // for Latest Movies & Shorts: only first 5 in slider
   const videosForCarousel = isCarouselTab ? activeVideos.slice(0, 5) : activeVideos;
+
+  useEffect(() => {
+    const Videos: IVideos[] = VideosData().reverse();
+    setVideos(Videos);
+  }, []);
+
+  if (!videos.length) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <Box
@@ -66,7 +67,7 @@ const SpotLightSection = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: { sm: "flex-start", md: "flex-start", lg: "flex-start" },
-        justifyContent: { sm: "flex-start", md: "flex-start", lg: "flex-start"},
+        justifyContent: { sm: "flex-start", md: "flex-start", lg: "flex-start" },
         backgroundColor: theme.palette.background.default,
       }}
     >
@@ -113,7 +114,10 @@ const SpotLightSection = () => {
           {TABS.map((tab) => (
             <Box
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => {
+                // setLoading(true);
+                setActiveTab(tab.id)
+              }}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -126,7 +130,7 @@ const SpotLightSection = () => {
                 width: "100%",
               }}
             >
-              <Typography variant="body2" sx={{  }}>
+              <Typography variant="body2" sx={{}}>
                 {tab.label}
               </Typography>
               <IconButton size="small" sx={{ ml: 1, p: 0 }}>
@@ -153,7 +157,7 @@ const SpotLightSection = () => {
                   key={video.id}
                   sx={{
                     width: "100%",
-                    px: {sm: 0, md: 4},
+                    px: { sm: 0, md: 4 },
                     py: 2,
                     display: "flex",
                     justifyContent: "center",
