@@ -11,9 +11,9 @@ import { ExpandMore, HorizontalRuleOutlined } from "@mui/icons-material";
 
 const faqs: {question: string, answer: string}[] = [
   {
-    question: "What is Da Refiner's Fire?",
+    question: "What is Da Refiner\'s Fire?",
     answer:
-      "Da Refiner's Fire is a Christian drama ministry dedicated to creating Spirit-filled films, skits, and media content that edify, convict, and draw souls to Christ.",
+      "Da Refiner\'s Fire is a Christian drama ministry dedicated to creating Spirit-filled films, skits, and media content that edify, convict, and draw souls to Christ.",
   },
   {
     question: "What is your mission?",

@@ -26,9 +26,11 @@ const ScriptureOfTheDay: React.FC<{ isDark: boolean }> = ({ isDark }) => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ verse, date: today }));
 
       setVerse(verse);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Failed to load scripture", err);
-      setError(err.message || "Error fetching scripture");
+      const message =
+        err instanceof Error ? err.message : typeof err === "string" ? err : String(err);
+      setError(message || "Error fetching scripture");
     } finally {
       setLoading(false);
     }
