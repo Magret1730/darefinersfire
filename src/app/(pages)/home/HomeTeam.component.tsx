@@ -41,7 +41,6 @@ const HomeTeamComponent = () => {
         justifyContent: "flex-start",
         alignItems: "flex-start",
         width: { xs: "100%", sm: "80%", md: 500 },
-        // px: { xs: 3, md: 28, lg: 28 },
         }}
       >
         <Typography

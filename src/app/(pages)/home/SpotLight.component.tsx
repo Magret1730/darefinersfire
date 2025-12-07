@@ -169,7 +169,8 @@ const SpotLightSection = () => {
                     video={video}
                     wid={1000}
                     paddingTop="45%"
-                    bgColor={isDark ? "none" : theme.palette.background.paper}
+                    // bgColor={isDark ? "none" : theme.palette.background.paper}
+                    alignItems="center"
                   />
                 </Box>
               ))}

@@ -4,9 +4,10 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useState, useMemo, useEffect, createContext, useContext } from "react";
 
+
 // Creates a context for theme mode
 type ThemeModeContextType = {
-  mode: "light" | "dark";
+  mode: "light" | "dark" | null;
   toggleMode: () => void;
 };
 
@@ -19,20 +20,19 @@ const ThemeModeContext = createContext<ThemeModeContextType>({
 export const useThemeMode = () => useContext(ThemeModeContext);
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const [mode, setMode] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {
-    const storedMode = localStorage.getItem("themeMode");
-    if (storedMode === "dark") {
-      setMode("dark");
-    }
+    const saved = localStorage.getItem("themeMode") as "light" | "dark" | null;
+    setMode(saved || "light");
   }, []);
 
   const toggleMode = () => {
     setMode((prev) => {
-      const newMode = prev === "light" ? "dark" : "light";
-      localStorage.setItem("themeMode", newMode);
-      return newMode;
+      const next = prev === "light" ? "dark" : "light";
+      localStorage.setItem("themeMode", next);
+      document.documentElement.setAttribute("data-theme", next);
+      return next;
     });
   };
 
@@ -40,7 +40,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     () =>
       createTheme({
         palette: {
-          mode,
+          mode: mode ?? "light",
           primary: {
             main: mode === "dark" ? "#FFFFFF" : "#212121", // text color // Change - not used
             light: mode === "dark" ? "#212121" : "#FFFFFF", // button text color opposite
@@ -82,8 +82,10 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     [mode]
   );
 
+  if (mode === null) return null;
+
   return (
-    <ThemeModeContext.Provider value={{ mode, toggleMode }}>
+    <ThemeModeContext.Provider value={{ mode: mode ?? "light", toggleMode }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}

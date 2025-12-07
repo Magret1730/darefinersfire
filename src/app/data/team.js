@@ -36,7 +36,7 @@ export const TeamsData = () => [
   },
   {
     id: 6,
-    name: "Comfort Egboigbe",
+    name: "Comfort Eboigbe",
     role: "DevOps Engineer",
     photo: "/6.png",
     bio: "Frank manages our infrastructure and deployment pipelines to ensure smooth and efficient operations."

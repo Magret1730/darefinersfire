@@ -15,7 +15,7 @@ import {
 import { useState } from "react";
 import { TYouTubeCard } from "@/app/types";
 
-const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
+const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const theme = useTheme();
   const thumbnail = `https://img.youtube.com/vi/${video.YouTubeId}/hqdefault.jpg`;
@@ -115,7 +115,9 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "flex-start",
+          alignItems: alignItems || "flex-start",
+          // alignItems: "center", // Home
+          // alignItems: "flex-start", // Videos
           pb: 2,
           backgroundColor: "none",
         }}

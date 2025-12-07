@@ -4,5 +4,5 @@ export interface TYouTubeCard {
   video: IVideos;
   wid?: number;
   paddingTop?: string;
-  bgColor?: string;
+  alignItems?: string;
 }
