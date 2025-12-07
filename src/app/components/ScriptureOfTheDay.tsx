@@ -113,7 +113,7 @@ const ScriptureOfTheDay: React.FC<{ isDark: boolean }> = ({ isDark }) => {
         Scripture of the Day
       </Typography>
       <Typography variant="body1" sx={{ fontStyle: "italic", mb: 1 }}>
-        \"{verse.text}\"
+        &quot;{verse.text}&quot;
       </Typography>
       <Typography
         sx={{
