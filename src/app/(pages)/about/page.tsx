@@ -1,7 +1,7 @@
 "use client";
 
 import { SocialsEnum } from "@/app/enum";
-import { HorizontalRuleOutlined, PlayCircleOutline, Whatshot } from "@mui/icons-material";
+import { HorizontalRuleOutlined, PlayCircleOutline } from "@mui/icons-material";
 import { Box, Button, Card, Typography, useTheme } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -19,11 +19,7 @@ const settings = {
   fade: false,
 };
 
-interface THomeAboutComponent {
-  isDark: boolean;
-}
-
-const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
+const AboutComponent = () => {
   const theme = useTheme();
 
   return (
@@ -193,4 +189,4 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
   );
 };
 
-export default HomeAboutComponent;
+export default AboutComponent;

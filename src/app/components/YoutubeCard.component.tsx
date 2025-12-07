@@ -14,6 +14,7 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 import { TYouTubeCard } from "@/app/types";
+import Image from "next/image";
 
 const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -45,9 +46,12 @@ const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
       >
         {!isPlaying && (
           <>
-            <img
+            <Box
+              component="img"
               src={thumbnail}
               alt="YouTube thumbnail"
+              // width={320}
+              // height={180}
               style={{
                 position: "absolute",
                 top: 0,
@@ -91,7 +95,8 @@ const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
         )}
 
         {isPlaying && (
-          <iframe
+          <Box
+            component="iframe"
             src={`https://www.youtube.com/embed/${video.YouTubeId}?autoplay=1`}
             title={video.title}
             frameBorder="0"

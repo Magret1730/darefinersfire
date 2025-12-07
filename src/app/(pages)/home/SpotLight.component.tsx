@@ -34,8 +34,6 @@ const SpotLightSection = () => {
 
   const theme = useTheme();
 
-  const isDark = theme.palette.mode === "dark";
-
   const categorized = useMemo(() => {
     return {
       latest: videos.filter((v) => v.text === "Video"),

@@ -1,5 +1,5 @@
 import { NavLinksEnum, SocialsEnum } from "@/app/enum";
-import { EastOutlined, PlayCircleOutline, YouTube } from "@mui/icons-material";
+import { EastOutlined, PlayCircleOutline } from "@mui/icons-material";
 import {
   Box,
   Typography,

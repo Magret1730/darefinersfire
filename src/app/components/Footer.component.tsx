@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Typography, IconButton, useTheme, alpha, Link } from "@mui/material";
+import { Box, Typography, IconButton, useTheme, Link } from "@mui/material";
 import { Instagram, YouTube, Facebook, Whatshot } from "@mui/icons-material";
 import XIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
@@ -11,10 +11,6 @@ const FooterComponent = () => {
   const theme = useTheme();
 
   const isDark = theme.palette.mode === "dark";
-
-  // const iconColor = isDark
-  //   ? theme.palette.secondary.main
-  //   : theme.palette.primary.contrastText;
 
   const socialLinks: { label: string; icon: ReactNode; url: typeof SocialsEnum[keyof typeof SocialsEnum] }[] = [
     { label: "Instagram", icon: <Instagram />, url: SocialsEnum.INSTAGRAM },
