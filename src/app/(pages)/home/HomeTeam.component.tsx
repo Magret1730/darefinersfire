@@ -26,7 +26,7 @@ const HomeTeamComponent = () => {
     <Box
       sx={{
         py: { xs: 6, md: 4 },
-        px: { xs: 3, md: 28 },
+        px: { xs: 3, md: 28, lg: 28 },
         color: theme.palette.text.primary,
         display: "flex",
         flexDirection: { xs: "column", md: "column", lg: "column" },
@@ -41,6 +41,7 @@ const HomeTeamComponent = () => {
         justifyContent: "flex-start",
         alignItems: "flex-start",
         width: { xs: "100%", sm: "80%", md: 500 },
+        // px: { xs: 3, md: 28, lg: 28 },
         }}
       >
         <Typography
@@ -81,7 +82,7 @@ const HomeTeamComponent = () => {
         sx={{
           display: "flex",
           flexDirection: "row",
-          gap: 1,
+          gap: {lg: 6, md: 2, sm: 4, xs: 3  },
           flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "center",
@@ -99,12 +100,12 @@ const HomeTeamComponent = () => {
               justifyContent: "flex-start",
               borderRadius: 2,
               width: {
-                xs: "45%",
-                sm: "30%",
+                xs: "100%",
+                sm: "40%",
                 md: "22%",
-                lg: "16%",
+                lg: "20%",
               },
-              // transform: "scale(1)",
+              transform: "scale(1)",
               transition: "transform 0.3s ease-in-out",
               "&:hover": {
                 transform: "scale(1.05)",

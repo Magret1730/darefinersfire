@@ -34,6 +34,8 @@ const SpotLightSection = () => {
 
   const theme = useTheme();
 
+  const isDark = theme.palette.mode === "dark";
+
   const categorized = useMemo(() => {
     return {
       latest: videos.filter((v) => v.text === "Video"),
@@ -78,14 +80,14 @@ const SpotLightSection = () => {
       >
         <Typography
           variant="h4"
-          sx={{ fontWeight: "700 !important", mb: 2, color: "#2A1A16" }}
+          sx={{ fontWeight: "700 !important", mb: 2,  }}
         >
           Spotlight on our Films
         </Typography>
 
         <Typography
           variant="body1"
-          sx={{ maxWidth: 450, color: "text.secondary", mb: 4 }}
+          sx={{ maxWidth: 450, mb: 4 }}
         >
           A curated selection of impactful films and moments that reflect our
           mission to share God&apos;s love through media.
@@ -163,7 +165,12 @@ const SpotLightSection = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <YouTubeCard video={video} wid={1000} paddingTop="45%" bgColor={theme.palette.background.paper} />
+                  <YouTubeCard
+                    video={video}
+                    wid={1000}
+                    paddingTop="45%"
+                    bgColor={isDark ? "none" : theme.palette.background.paper}
+                  />
                 </Box>
               ))}
             </Slider>

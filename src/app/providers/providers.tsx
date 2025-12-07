@@ -54,7 +54,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           },
           background: {
             default: mode === "dark" ? "#212121" : "#FEFEFE",
-            // default: mode === "dark" ? "#3B240F" : "#FDEBD1",
             paper: mode === "dark" ? "#2B2B2B" : "#FFEFE6", // homeAbout background
           },
           text: {
@@ -63,16 +62,10 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             // secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
             disabled: mode === "dark" ? "#FFB804" : "#BA5C12",
           },
-          // mode: {
-          //   common: mode === "dark" ? "#C6C6C6" : "#000000"
-          // },
-          // action: {
-          //   primary: mode === "dark" ? "#BA5C12" : "#BA5C12",
-          // },
           divider:
             mode === "dark" ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.1)",
           action: {
-            active: mode === "dark" ? "#3B240F" : "#FF5C01",
+            active: "#FF5C01",
             hover:
               mode === "dark"
                 ? "rgba(255, 184, 4, 0.1)"

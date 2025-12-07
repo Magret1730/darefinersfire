@@ -140,9 +140,10 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           sx={{
             maxWidth: 1000,
             width: "100%",
-            backgroundColor: isDark
-              ? theme.palette.background.paper
-              : theme.palette.primary.dark,
+            backgroundColor: theme.palette.background.paper,
+            // backgroundColor: isDark
+            //   ? theme.palette.background.paper
+            //   : theme.palette.primary.dark,
             boxShadow: 6,
             borderRadius: 4,
             p: 1.5,

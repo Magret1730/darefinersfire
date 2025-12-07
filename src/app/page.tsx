@@ -23,6 +23,11 @@ export interface IVideos {
   youtube: string;
 }
 
+// To do
+// 1. SpotLight section image in home page
+// 2. When refreshing takes place, if on dark mode, it goes to light mode first then dark mode again
+
+
 export default function Home() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";

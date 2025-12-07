@@ -12,9 +12,9 @@ const FooterComponent = () => {
 
   const isDark = theme.palette.mode === "dark";
 
-  const iconColor = isDark
-    ? theme.palette.secondary.main
-    : theme.palette.primary.contrastText;
+  // const iconColor = isDark
+  //   ? theme.palette.secondary.main
+  //   : theme.palette.primary.contrastText;
 
   const socialLinks: { label: string; icon: ReactNode; url: typeof SocialsEnum[keyof typeof SocialsEnum] }[] = [
     { label: "Instagram", icon: <Instagram />, url: SocialsEnum.INSTAGRAM },
@@ -96,7 +96,7 @@ const FooterComponent = () => {
               justifyContent: "center",
               gap: { xs: 1, sm: 1, md: 1, lg: 3 },
               flexWrap: "wrap",
-              mt: 4,
+              mt: 2,
             }}
           >
             {socialLinks.map((item, idx) => (
@@ -107,17 +107,21 @@ const FooterComponent = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
+                  // border: "1px solid red",
                   fontSize: 30,
                   width: 40,
                   height: 40,
-                  border: `1px solid ${theme.palette.divider}`,
-                  borderRadius: "50%",
-                  color: iconColor,
-                  backgroundColor: "white",
+                  // border: `1px solid ${theme.palette.divider}`,
+                  // borderRadius: "50%",
+                  // color: iconColor,
+                  color: isDark ? "white" : theme.palette.primary.contrastText,
+                  backgroundColor: "none",
                   transition: "0.3s ease",
                   "&:hover": {
+                    backgroundColor: "none",
+                    border: "none",
                     transform: "translateY(-4px)",
-                    backgroundColor: alpha(iconColor, 0.2),
+                    // backgroundColor: alpha(iconColor, 0.2),
                   },
                 }}
               >
@@ -169,7 +173,6 @@ const FooterComponent = () => {
                     component="li"
                     key={idx}
                     sx={{
-                      color: theme.palette.primary.contrastText,
                       fontWeight: 400,
                     }}
                   >
@@ -209,7 +212,6 @@ const FooterComponent = () => {
                     component="li"
                     key={idx}
                     sx={{
-                      color: theme.palette.primary.contrastText,
                       fontWeight: 400,
                     }}
                   >
@@ -244,7 +246,7 @@ const FooterComponent = () => {
         sx={{
           textAlign: "center",
           fontSize: "0.9rem",
-          color: alpha(theme.palette.primary.contrastText, 0.7),
+          // color: alpha(theme.palette.primary.contrastText, 0.7),
           borderTop: `1px solid ${theme.palette.divider}`,
           mt: 10,
           pt: 4,

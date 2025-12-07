@@ -1,8 +1,5 @@
 import {
   Box,
-  Card,
-  CardActions,
-  CardContent,
   IconButton,
   Tooltip,
   Typography,
@@ -23,16 +20,15 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
   const theme = useTheme();
   const thumbnail = `https://img.youtube.com/vi/${video.YouTubeId}/hqdefault.jpg`;
 
+  const isDark = theme.palette.mode === "dark";
+
   return (
-    <Card
+    <Box
       sx={{
         width: "100%",
         maxWidth: wid || 320,
-        backgroundColor: theme.palette.background.default,
-        color: theme.palette.primary.contrastText,
         overflow: "hidden",
         boxShadow: "none",
-        border: "none",
       }}
     >
 
@@ -43,7 +39,6 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
           width: "100%",
           paddingTop: paddingTop || "56.25%",
           cursor: "pointer",
-          backgroundColor: "#000",
           borderRadius: 5,
         }}
         onClick={() => setIsPlaying(true)}
@@ -121,148 +116,145 @@ const YouTubeCard = ({ video, wid, paddingTop, bgColor }: TYouTubeCard) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "flex-start",
-          pb: 2
+          pb: 2,
+          backgroundColor: "none",
         }}
       >
         {/* TITLE */}
-        <CardContent
-          sx={{ p: 0 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 2,
+            py: 2,
+            px: 1,
+          }}
+        >
+          <Box
+            component="img"
+            src={thumbnail}
+            alt={video.title}
+            sx={{
+              width: 50,
+              height: 50,
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+
           <Box
             sx={{
               display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              gap: 2,
-              py: 2,
-              px: 1,
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "flex-start",
             }}
           >
-            <Box
-              component="img"
-              src={thumbnail}
-              alt={video.title}
-              sx={{
-                width: 50,
-                height: 50,
-                borderRadius: "50%",
-                objectFit: "cover",
-              }}
-            />
-
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "flex-start",
+            <Typography
+              sx={{ 
+                fontSize: 16, 
+                fontWeight: 300, 
+                lineHeight: 1.2
               }}
             >
-              <Typography
-                sx={{ 
-                  fontSize: 16, 
-                  fontWeight: 300, 
-                  lineHeight: 1.2
-                }}
-              >
-                {video.title}
-              </Typography>
+              {video.title}
+            </Typography>
 
-              {/* SOCIAL ICONS */}
-              <CardActions
-                disableSpacing
-                sx={{
-                  p: 0,
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  pt: 1,
-                  gap: 2,
-                }}
-              >
-                <Tooltip title="facebook account">
+            {/* SOCIAL ICONS */}
+            <Box
+              sx={{
+                p: 0,
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                pt: 1,
+                gap: 2,
+              }}
+            >
+              <Tooltip title="facebook account">
+                <IconButton
+                  href={video.facebookAccount}
+                  target="_blank"
+                  sx={{
+                    color: isDark ? "#fff" : "#000",
+                    p: 0,
+                  }}
+                >
+                  <Facebook sx={{ fontSize: 16 }} />
+                </IconButton>
+              </Tooltip>
+
+              {video.facebookPage && (
+                <Tooltip title="Facebook Page">
                   <IconButton
-                    href={video.facebookAccount}
+                    href={video.facebookPage}
                     target="_blank"
                     sx={{
-                      color: "#000",
+                      color: isDark ? "#fff" : "#000",
                       p: 0,
-                    }}
-                  >
+                    }}>
                     <Facebook sx={{ fontSize: 16 }} />
                   </IconButton>
                 </Tooltip>
+              )}
 
-                {video.facebookPage && (
-                  <Tooltip title="Facebook Page">
-                    <IconButton
-                      href={video.facebookPage}
-                      target="_blank"
-                      sx={{
-                        color: "#000",
-                        p: 0,
-                      }}>
-                      <Facebook sx={{ fontSize: 16 }} />
-                    </IconButton>
-                  </Tooltip>
-                )}
+              <Tooltip title="X">
+                <IconButton
+                  href={video.x}
+                  target="_blank"
+                  sx={{
+                    color: isDark ? "#fff" : "#000",
+                    p: 0,
+                  }}>
+                  <X sx={{ fontSize: 14 }} />
+                </IconButton>
+              </Tooltip>
 
-                <Tooltip title="X">
+              {video.instagram && (
+                <Tooltip title="Instagram">
                   <IconButton
-                    href={video.x}
+                    href={video.instagram}
                     target="_blank"
                     sx={{
-                      color: "#000",
                       p: 0,
+                      color: isDark ? "#fff" : "#000",
                     }}>
-                    <X sx={{ fontSize: 14 }} />
+                    <Instagram sx={{ fontSize: 15 }} />
                   </IconButton>
                 </Tooltip>
+              )}
 
-                {video.instagram && (
-                  <Tooltip title="Instagram">
-                    <IconButton
-                      href={video.instagram}
-                      target="_blank"
-                      sx={{
-                        p: 0,
-                        color: "#000",
-                      }}>
-                      <Instagram sx={{ fontSize: 15 }} />
-                    </IconButton>
-                  </Tooltip>
-                )}
+              <Tooltip title="YouTube">
+                <IconButton
+                  href={video.youtube}
+                  target="_blank"
+                  sx={{
+                    p: 0,
+                    color: isDark ? "#fff" : "#000",
+                  }}>
+                  <YouTube sx={{ fontSize: 18 }} />
+                </IconButton>
+              </Tooltip>
 
-                <Tooltip title="YouTube">
-                  <IconButton
-                    href={video.youtube}
-                    target="_blank"
-                    sx={{
-                      p: 0,
-                      color: "#000",
-                    }}>
-                    <YouTube sx={{ fontSize: 18 }} />
-                  </IconButton>
-                </Tooltip>
-
-                <Tooltip title="TikTok">
-                  <IconButton
-                    href={video.tiktok}
-                    target="_blank"
-                    sx={{
-                      color: "#000",
-                      p: 0,
-                    }}
-                  >
-                    <MusicNote sx={{ fontSize: 15 }} />
-                  </IconButton>
-                </Tooltip>
-              </CardActions>
+              <Tooltip title="TikTok">
+                <IconButton
+                  href={video.tiktok}
+                  target="_blank"
+                  sx={{
+                    color: isDark ? "#fff" : "#000",
+                    p: 0,
+                  }}
+                >
+                  <MusicNote sx={{ fontSize: 15 }} />
+                </IconButton>
+              </Tooltip>
             </Box>
           </Box>
-        </CardContent>
+        </Box>
       </Box>
-        </Card>
+        </Box>
   );
 };
 
