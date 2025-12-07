@@ -28,8 +28,8 @@ const ScriptureOfTheDay: React.FC<{ isDark: boolean }> = ({ isDark }) => {
       setVerse(verse);
     } catch (err) {
       console.error("Failed to load scripture", err);
-      const message =
-        err instanceof Error ? err.message : typeof err === "string" ? err : String(err);
+      // const message =
+      //   err instanceof Error ? err.message : typeof err === "string" ? err : String(err);
       // setError(message || "Error fetching scripture");
     } finally {
       setLoading(false);
@@ -113,7 +113,7 @@ const ScriptureOfTheDay: React.FC<{ isDark: boolean }> = ({ isDark }) => {
         Scripture of the Day
       </Typography>
       <Typography variant="body1" sx={{ fontStyle: "italic", mb: 1 }}>
-        "{verse.text}"
+        \"{verse.text}\"
       </Typography>
       <Typography
         sx={{

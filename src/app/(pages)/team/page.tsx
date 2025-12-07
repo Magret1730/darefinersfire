@@ -12,7 +12,6 @@ export default function TeamPage() {
   const [ teams, setTeams ] = useState<ITeam[]>([]);
 
   const theme = useTheme();
-  const isDark = theme.palette.mode === "dark";
 
   useEffect(() => {
     setTeams(TeamsData());

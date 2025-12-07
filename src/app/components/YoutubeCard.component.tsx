@@ -14,7 +14,6 @@ import {
 } from "@mui/icons-material";
 import { useState } from "react";
 import { TYouTubeCard } from "@/app/types";
-import Image from "next/image";
 
 const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
   const [isPlaying, setIsPlaying] = useState(false);
