@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     "hope and inspiration",
   ],
   icons: {
-    icon: "/logo1.svg",
+    icon: "/rmbg.svg",
   },
   openGraph: {
     title: "Da Refiner's Fire | Inspirational Skits",
     description:
       "Uplifting dramas and skits from Da Refiner's Fire — stories that challenge, inspire, and awaken purpose.",
-    url: "https://darefinersfire.netlify.app/",
+    url: "https://darefinersfire.org",
     siteName: "Da Refiner's Fire",
     images: [
       {
-        url: "https://darefinersfire.netlify.app/logo1.svg",
+        url: "https://darefinersfire.org/rmbg.png",
         width: 1200,
         height: 630,
         alt: "Da Refiner's Fire",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title: "Da Refiner's Fire | Inspirational Skits",
     description:
       "Watch skits from Da Refiner's Fire — inspiring stories that ignite hope and transform lives.",
-    images: ["https://darefinersfire.netlify.app/logo1.svg"],
+    images: ["https://darefinersfire.org/rmbg.png"],
     creator: "@darefinersfire",
     site: "@darefinersfire",
   },

@@ -48,7 +48,7 @@ const AboutComponent = () => {
           sx={{
             fontWeight: 900,
             mb: 3,
-            fontSize: { xs: "1.5rem", md: "2.5rem"},
+            fontSize: { xs: "1.5rem", md: "2.5rem" },
           }}
         >
           <HorizontalRuleOutlined sx={{ fontSize: 26, mr: 1 }} />
@@ -63,9 +63,8 @@ const AboutComponent = () => {
           }}
         >
           Da Refiner&apos;s Fire Ministry is a Spirit-led gospel drama and film ministry committed to
-          spreading the light of Christ through transformative storytelling. We create short
-          Christian skits that illuminate biblical truth, inspire spiritual growth, and draw hearts
-          back to God.
+          spreading the light of Christ through transformative storytelling. We create Christian skits
+          that illuminate biblical truth, inspire spiritual growth, and draw hearts back to God.
         </Typography>
 
         <Typography
