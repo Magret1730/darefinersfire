@@ -65,7 +65,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           divider:
             mode === "dark" ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.1)",
           action: {
-            active: "#FF5C01",
+            active: mode === "dark" ? "#a83c00" : "#FF5C01",
             hover:
               mode === "dark"
                 ? "rgba(255, 184, 4, 0.1)"

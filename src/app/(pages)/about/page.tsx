@@ -75,7 +75,7 @@ const AboutComponent = () => {
             mb: 2,
           }}
         >
-          Our name comes from Malachi 3:3 — the Refiner&apos;s Fire — reminding us that God
+          Our name comes from Malachi 3:3 — Refiner&apos;s Fire — reminding us that God
           purifies, transforms, and prepares His people for His purpose. Every production is
           birthed in prayer, guided by the Holy Spirit, and crafted with excellence to glorify
           Jesus.
@@ -89,7 +89,7 @@ const AboutComponent = () => {
           }}
         >
           Through drama, film, evangelism, and media ministry, our mission remains simple: to
-          refine hearts, awaken purpose, and draw souls to Christ.
+          draw souls to Christ, expose the work of the enemy, refine hearts and awaken purpose.
         </Typography>
 
         <Typography

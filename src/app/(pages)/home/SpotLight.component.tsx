@@ -9,8 +9,8 @@ import LoadingSpinner from "@/app/components/LoadingSpinner";
 import { SpotlightTab } from "@/app/enum";
 
 const TABS: { id: SpotlightTab; label: string }[] = [
-  { id: SpotlightTab.LATEST, label: "Latest Movies" },
-  { id: SpotlightTab.SHORTS, label: "Inspirational shorts" },
+  { id: SpotlightTab.LATEST, label: "Latest Skits" },
+  { id: SpotlightTab.SHORTS, label: "Inspirational Shorts" },
   // { id: "behind", label: "Behind-the-Scenes" },
   // { id: "upcoming", label: "Upcoming Releases" },
 ];

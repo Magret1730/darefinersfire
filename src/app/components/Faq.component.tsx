@@ -13,17 +13,17 @@ const faqs: {question: string, answer: string}[] = [
   {
     question: "What is Da Refiner\'s Fire?",
     answer:
-      "Da Refiner\'s Fire is a Christian drama ministry dedicated to creating Spirit-filled films, skits, and media content that edify, convict, and draw souls to Christ.",
+      "Da Refiner\'s Fire is a Christian drama ministry dedicated to creating Spirit-filled skits, and media content that edify, convict, and draw souls to Christ.",
   },
   {
     question: "What is your mission?",
     answer:
-      "Our mission is to use drama as a vessel to spread the Word of God far and near—reaching souls across social media and beyond.",
+      "Our mission is to use drama as a vessel to spread the Word of God far and near, reaching souls across social media and beyond.",
   },
   {
     question: "How often do you upload new content?",
     answer:
-      "We aim to release new content twice every month.",
+      "We aim to release new content once every two weeks.",
   },
   {
     question: "Can I send in my testimony?",
@@ -33,7 +33,7 @@ const faqs: {question: string, answer: string}[] = [
   {
     question: "Where can I watch full videos?",
     answer:
-      "You can watch all our full videos on YouTube. They will also be listed on the Videos page of this website.",
+      "You can watch all our full videos on YouTube or any of our social media platforms. They will also be listed on the Videos page of this website.",
   },
   {
     question: "Do you accept script ideas or collaborations?",

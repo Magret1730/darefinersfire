@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import isEmail from "validator/lib/isEmail";
 import { HorizontalRuleOutlined } from "@mui/icons-material";
+import FaqSection from "@/app/components/Faq.component";
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement | null>(null);
@@ -112,141 +113,147 @@ const ContactPage = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: { xs: "column-reverse", sm: "column-reverse", md: "row", lg: "row" },
-        gap: {xs: 8, md: 4, lg: 8},
-        my: 30,
-        px: 5,
-        width: "100%",
-        justifyContent: "center",
-        alignItems: {xs: "center", md: "flex-start"},
-      }}
-    >
-      <Paper
-        elevation={4}
-        sx={{
-          width: "100%",
-          maxWidth: 500,
-          p: { xs: 3, md: 5 },
-          borderRadius: 4,
-          backgroundColor: isDark ? "#1e1e1e" : "#ffffffd9",
-          backdropFilter: "blur(6px)",
-        }}
-      >
-        <form ref={form} onSubmit={handleSend}>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-            <TextField
-              label="Full Name"
-              name="user_name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              fullWidth
-              slotProps={{
-                input: { style: { color: isDark ? "white" : "black" } },
-                inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
-              }}
-            />
-
-            <TextField
-              label="Subject"
-              name="subject"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              required
-              fullWidth
-              slotProps={{
-                input: { style: { color: isDark ? "white" : "black" } },
-                inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
-              }}
-            />
-
-            <TextField
-              label="Email Address"
-              name="user_email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              fullWidth
-              slotProps={{
-                input: { style: { color: isDark ? "white" : "black" } },
-                inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
-              }}
-            />
-
-            <TextField
-              label="Message"
-              name="message"
-              multiline
-              rows={5}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              fullWidth
-              slotProps={{
-                input: { style: { color: isDark ? "white" : "black" } },
-                inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
-              }}
-            />
-
-            <Button
-              type="submit"
-              variant="contained"
-              size="large"
-              sx={{
-                py: 1.3,
-                fontWeight: 600,
-                borderRadius: 2,
-                textTransform: "none",
-                backgroundColor: theme.palette.action.active,
-                color: theme.palette.primary.dark,
-              }}
-            >
-              Send Message
-            </Button>
-          </Box>
-        </form>
-      </Paper>
-
+    <>
       <Box
         sx={{
-          width: "100%",
-          maxWidth: 400,
           display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          mt: 5,
+          flexDirection: { xs: "column-reverse", sm: "column-reverse", md: "row", lg: "row" },
+          gap: {xs: 8, md: 4, lg: 8},
+          mt: 30,
+          mb: 15,
+          px: 5,
+          width: "100%",
+          justifyContent: "center",
+          alignItems: {xs: "center", md: "flex-start"},
         }}
       >
-        <Typography
+        <Paper
+          elevation={4}
           sx={{
-            fontWeight: 900,
-            mb: 3,
-            fontSize: { xs: "1.5rem", md: "2.5rem" },
+            width: "100%",
+            maxWidth: 500,
+            p: { xs: 3, md: 5 },
+            borderRadius: 4,
+            backgroundColor: isDark ? "#1e1e1e" : "#ffffffd9",
+            backdropFilter: "blur(6px)",
           }}
         >
-          <HorizontalRuleOutlined sx={{ fontSize: 30 }} /> OUR CONTACT.
-        </Typography>
+          <form ref={form} onSubmit={handleSend}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+              <TextField
+                label="Full Name"
+                name="user_name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                fullWidth
+                slotProps={{
+                  input: { style: { color: isDark ? "white" : "black" } },
+                  inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
+                }}
+              />
 
-        <Typography>
-          We&apos;re here to listen, support, and connect with you. For prayers, testimonies,
-          inquiries, or collaborations, reach out we&apos;d love to hear from you.
-        </Typography>
+              <TextField
+                label="Subject"
+                name="subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                required
+                fullWidth
+                slotProps={{
+                  input: { style: { color: isDark ? "white" : "black" } },
+                  inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
+                }}
+              />
 
-        <Typography
-          sx={{ my: 1, fontStyle: "italic", fontWeight: 300 }}
+              <TextField
+                label="Email Address"
+                name="user_email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                fullWidth
+                slotProps={{
+                  input: { style: { color: isDark ? "white" : "black" } },
+                  inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
+                }}
+              />
+
+              <TextField
+                label="Message"
+                name="message"
+                multiline
+                rows={5}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                fullWidth
+                slotProps={{
+                  input: { style: { color: isDark ? "white" : "black" } },
+                  inputLabel: { style: { color: isDark ? "#ccc" : "#333" } },
+                }}
+              />
+
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                sx={{
+                  py: 1.3,
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  textTransform: "none",
+                  backgroundColor: theme.palette.action.active,
+                  color: theme.palette.primary.dark,
+                }}
+              >
+                Send Message
+              </Button>
+            </Box>
+          </form>
+        </Paper>
+
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 400,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            mt: 5,
+          }}
         >
-          Get in Touch With Us Today.
-        </Typography>
+          <Typography
+            sx={{
+              fontWeight: 900,
+              mb: 3,
+              fontSize: { xs: "1.5rem", md: "2.5rem" },
+            }}
+          >
+            <HorizontalRuleOutlined sx={{ fontSize: 30 }} /> OUR CONTACT.
+          </Typography>
 
-        <Typography sx={{ fontWeight: 500 }}>
-          Email: darefinersfire@gmail.com
-        </Typography>
+          <Typography>
+            We&apos;re here to listen, support, and connect with you. For prayers, testimonies,
+            inquiries, or collaborations, reach out we&apos;d love to hear from you.
+          </Typography>
+
+          <Typography
+            sx={{ my: 1, fontStyle: "italic", fontWeight: 300 }}
+          >
+            Get in Touch With Us Today.
+          </Typography>
+
+          <Box sx={{ fontWeight: 300 }}>
+            Email: {" "}
+            <Typography sx={{ display: "inline", fontWeight: 500}}>darefinersfire@gmail.com</Typography>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+
+      <FaqSection />
+    </>
   );
 };
 

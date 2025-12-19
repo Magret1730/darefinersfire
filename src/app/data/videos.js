@@ -407,6 +407,17 @@ export const VideosData = () => [
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7578572187439795477",
     facebookAccount: "https://www.facebook.com/reel/1167915895531017",
     x: "https://x.com/darefinersfire/status/1995181607020544349",
-    // instagram:"https://www.instagram.com/p/DRm8oWkLz6N/",
+    instagram:"https://www.instagram.com/p/DR21Z-LEc4-/",
+  },
+  {
+    id: 37,
+    text: "Video",
+    title: "Unseen Steps",
+    YouTubeId: "zZiG8qv86Xk",
+    youtube: "https://youtu.be/zZiG8qv86Xk",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7583774709599292690",
+    facebookAccount: "https://www.facebook.com/reel/828018543546389",
+    x: "https://x.com/darefinersfire/status/2000263243949043929",
+    instagram:"https://www.instagram.com/p/DSQQQPwkTm_/",
   }
 ]

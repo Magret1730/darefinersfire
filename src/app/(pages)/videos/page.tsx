@@ -65,7 +65,7 @@ export default function VideosPage() {
           sx={{
             fontWeight: 900,
             mb: 3,
-            fontSize: { xs: "1.5rem", md: "2.5rem"},
+            fontSize: { xs: "1.5rem", md: "2.5rem" },
           }}
         >
           <HorizontalRuleOutlined sx={{ fontSize: 26, mr: 1 }} />
@@ -94,12 +94,12 @@ export default function VideosPage() {
             sx={{
               display: "flex",
               flexDirection: { xs: "column", sm: "column", md: "row", lg: "row" },
-              justifyContent: {lg: "space-between", md: "space-between", sm: "center", xs: "center"},
-              alignItems: { xs: "center", md: "flex-start"},
+              justifyContent: { lg: "space-between", md: "space-between", sm: "center", xs: "center" },
+              alignItems: { xs: "center", md: "flex-start" },
               flexWrap: "wrap",
-              mx: {sm: 4, lg: 6},
+              mx: { sm: 4, lg: 6 },
               mt: 8,
-              gap: { xs: 4, sm: 4, md: 0, lg: 0},
+              gap: { xs: 4, sm: 4, md: 0, lg: 0 },
             }}
           >
             <Box
@@ -119,10 +119,6 @@ export default function VideosPage() {
                 sx={{
                   backgroundColor: activeButton === VideoTab.Skit ? theme.palette.action.active : theme.palette.primary.light,
                   color: theme.palette.primary.main,
-                  // mb: 4,
-                  // "&:hover": {
-                  //   bgcolor: theme.palette.secondary.dark,
-                  // },
                   px: 6,
                 }}
               >
@@ -139,9 +135,6 @@ export default function VideosPage() {
                   backgroundColor: activeButton === VideoTab.Short ? theme.palette.action.active : theme.palette.primary.light,
                   color: theme.palette.text.primary,
                   ml: 2,
-                  // "&:hover": {
-                  //   bgcolor: theme.palette.secondary.dark,
-                  // },
                   px: 5,
                 }}
               >
@@ -160,8 +153,8 @@ export default function VideosPage() {
                 setSearch(e.target.value);
               }}
               sx={{
-                mb: {xs: 8, sm: 8, md: 0, lg: 0},
-                mx: {sm: 0, lg: 6},
+                mb: { xs: 8, sm: 8, md: 0, lg: 0 },
+                mx: { sm: 0, lg: 6 },
                 width: { xs: "270px", sm: "400px", md: "400px" },
               }}
             />
@@ -173,9 +166,9 @@ export default function VideosPage() {
             mt: 4,
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: { xs: "center", lg: "flex-start"},
+            justifyContent: { xs: "center", lg: "flex-start" },
             gap: { xs: 2, sm: 2, md: 2, lg: 12 },
-            mx: {xs: 0, lg: 6},
+            mx: { xs: 0, lg: 6 },
           }}
         >
           {skit && (
@@ -193,7 +186,7 @@ export default function VideosPage() {
         <Pagination
           shape="rounded"
           variant="outlined"
-          count={ skit ? skitTotalPages : shortTotalPages }
+          count={skit ? skitTotalPages : shortTotalPages}
           page={page}
           onChange={handlePageChange}
           color="primary"

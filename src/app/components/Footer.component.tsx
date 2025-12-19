@@ -81,8 +81,8 @@ const FooterComponent = () => {
 
           {/* Text section */}
           <Typography sx={{ textAlign: "left", maxWidth: { sm: 400, md: 400, lg: 400 }, mt: 2 }}>
-            Sharing the gospel through creative storytelling one movie, show, and testimony
-            at a time. Our mission is to inspire, uplift, and bring hope to every viewer.
+            Sharing the gospel through creative storytelling.
+            Our mission is to inspire, uplift, and bring hope to every viewer.
           </Typography>
 
           {/* Social Icons */}
@@ -242,7 +242,6 @@ const FooterComponent = () => {
         sx={{
           textAlign: "center",
           fontSize: "0.9rem",
-          // color: alpha(theme.palette.primary.contrastText, 0.7),
           borderTop: `1px solid ${theme.palette.divider}`,
           mt: 10,
           pt: 4,

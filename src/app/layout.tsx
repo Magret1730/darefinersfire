@@ -12,9 +12,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
-  title: "Da Refiner's Fire | Inspirational Skits & Short Films",
+  title: "Da Refiner's Fire | Inspirational Skits",
   description:
-    "Discover Da Refiner's Fire - thought-provoking dramas, short films, and skits that inspire reflection, ignite purpose, and transform lives. Watch our latest productions and stories online.",
+    "Discover Da Refiner's Fire - thought-provoking dramas and skits that inspire reflection, ignite purpose, and transform lives. Watch our latest productions and stories online.",
   keywords: [
     "inspirational videos",
     "motivational short films",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     icon: "/logo1.svg",
   },
   openGraph: {
-    title: "Da Refiner's Fire | Inspirational Skits & Short Films",
+    title: "Da Refiner's Fire | Inspirational Skits",
     description:
-      "Uplifting dramas and short films from Da Refiner's Fire — stories that challenge, inspire, and awaken purpose.",
+      "Uplifting dramas and skits from Da Refiner's Fire — stories that challenge, inspire, and awaken purpose.",
     url: "https://darefinersfire.netlify.app/",
     siteName: "Da Refiner's Fire",
     images: [
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Da Refiner's Fire | Inspirational Skits & Short Films",
+    title: "Da Refiner's Fire | Inspirational Skits",
     description:
-      "Watch short films and skits from Da Refiner's Fire — inspiring stories that ignite hope and transform lives.",
+      "Watch skits from Da Refiner's Fire — inspiring stories that ignite hope and transform lives.",
     images: ["https://darefinersfire.netlify.app/logo1.svg"],
     creator: "@darefinersfire",
     site: "@darefinersfire",
