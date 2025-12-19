@@ -118,7 +118,7 @@ export default function VideosPage() {
                 }}
                 sx={{
                   backgroundColor: activeButton === VideoTab.Skit ? theme.palette.action.active : theme.palette.primary.light,
-                  color: theme.palette.primary.main,
+                  color: activeButton === VideoTab.Skit ? theme.palette.primary.light : theme.palette.primary.main,
                   px: 6,
                 }}
               >
@@ -133,7 +133,7 @@ export default function VideosPage() {
                 }}
                 sx={{
                   backgroundColor: activeButton === VideoTab.Short ? theme.palette.action.active : theme.palette.primary.light,
-                  color: theme.palette.text.primary,
+                  color: activeButton === VideoTab.Short ? theme.palette.primary.light : theme.palette.primary.main,
                   ml: 2,
                   px: 5,
                 }}

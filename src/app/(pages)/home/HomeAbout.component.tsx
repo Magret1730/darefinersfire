@@ -71,11 +71,6 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           illuminate biblical truths, inspire deeper faith, and encourage believers to walk in obedience
           and purpose.
         </Typography>
-        {/* <Typography sx={{ fontSize: {xs: "0.9rem", md: "1.1rem"}, lineHeight: 1.8, textAlign: "left" }}>
-            Every production is Spirit-led, prayed over, and crafted with excellence to honor God and
-            impact lives. From stories of transformation to moments of divine encounter, our skits carry
-            the light of Christ into a world that desperately needs His love.
-          </Typography> */}
         <Button
           variant="text"
           href={NavLinksEnum.ABOUT}
@@ -142,11 +137,17 @@ const HomeAboutComponent = ({ isDark }: THomeAboutComponent) => {
           <Box sx={{ width: "100%" }}>
             <Slider {...settings}>
               {verses.map((verse, index) => (
-                <Box key={index}>
-                  <Whatshot
+                <Box
+                  key={index}
+                >
+                  <Box
+                    component="img"
+                    src={isDark ? "/rmbg.png" : "/rmbg.png"}
+                    alt="Da Refiner's Fire Logo"
                     sx={{
-                      color: theme.palette.primary.main,
-                      fontSize: 40,
+                      height: { xs: 30, md: 70 },
+                      width: "auto",
+                      margin: "0 auto",
                     }}
                   />
                   <Typography

@@ -61,12 +61,20 @@ const FooterComponent = () => {
             href={NavLinksEnum.HOME}
             style={{
               display: "flex",
-              alignItems: "center",
+              alignItems: "flex-end",
               cursor: "pointer",
               textDecoration: "none",
             }}
           >
-            <Whatshot sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
+            <Box
+              component="img"
+              src={isDark ? "/rmbg.png" : "/rmbg.png"}
+              alt="Da Refiner's Fire Logo"
+              sx={{
+                height: { xs: 30, md: 40 },
+                width: "auto",
+              }}
+            />
             <Typography
               variant="h6"
               sx={{
@@ -103,13 +111,9 @@ const FooterComponent = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  // border: "1px solid red",
                   fontSize: 30,
                   width: 40,
                   height: 40,
-                  // border: `1px solid ${theme.palette.divider}`,
-                  // borderRadius: "50%",
-                  // color: iconColor,
                   color: isDark ? "white" : theme.palette.primary.contrastText,
                   backgroundColor: "none",
                   transition: "0.3s ease",
@@ -117,7 +121,6 @@ const FooterComponent = () => {
                     backgroundColor: "none",
                     border: "none",
                     transform: "translateY(-4px)",
-                    // backgroundColor: alpha(iconColor, 0.2),
                   },
                 }}
               >

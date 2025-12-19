@@ -15,7 +15,6 @@ import {
 import {
   Menu,
   Close,
-  Whatshot,
   DarkMode,
   LightMode,
   PlayCircleOutline
@@ -24,14 +23,14 @@ import { useThemeMode } from "../providers/providers";
 import { NavLinksEnum, SocialsEnum } from "@/app/enum/";
 import { usePathname } from "next/navigation";
 
-const NAV_LINKS: {label: string; href: string}[] = [
+const NAV_LINKS: { label: string; href: string }[] = [
   { label: "About", href: `${NavLinksEnum.ABOUT}` },
   { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
   { label: "Team", href: `${NavLinksEnum.TEAM}` },
   { label: "Contact", href: `${NavLinksEnum.CONTACT}` },
 ];
 
-const MENU_NAV_LINKS: {label: string; href: string}[] = [
+const MENU_NAV_LINKS: { label: string; href: string }[] = [
   { label: "Home", href: `${NavLinksEnum.HOME}` },
   { label: "About", href: `${NavLinksEnum.ABOUT}` },
   { label: "Videos", href: `${NavLinksEnum.VIDEOS}` },
@@ -60,7 +59,7 @@ const HeaderComponent = ({ }) => {
         position="fixed"
         sx={{
           backgroundColor: theme.palette.background.default,
-          maxWidth: {md: "70%", sm: "70%", xs: "80%"},
+          maxWidth: { md: "70%", sm: "70%", xs: "80%" },
           borderRadius: "10px",
           boxShadow: isDark
             ? "0 4px 12px rgba(0, 0, 0, 0.8)"
@@ -89,15 +88,23 @@ const HeaderComponent = ({ }) => {
               alignItems: "center",
               cursor: "pointer",
               textDecoration: "none",
+              gap: 5
+
             }}
           >
-            <Whatshot sx={{ color: theme.palette.text.primary }} />
+            <Box
+              component="img"
+              src={isDark ? "/rmbg.png" : "/rmbg.png"}
+              alt="Da Refiner's Fire Logo"
+              sx={{
+                height: { xs: 30, md: 40 },
+                width: "auto",
+              }}
+            />
             <Typography
-              variant="h6"
               sx={{
                 fontSize: { xs: "0.8rem", md: "1.2rem" },
                 fontWeight: 700,
-                pl: { md: 1, xs: 0.5 },
                 color: theme.palette.text.primary,
               }}
             >
@@ -132,7 +139,8 @@ const HeaderComponent = ({ }) => {
                 >
                   {link.label}
                 </Link>
-            )})}
+              )
+            })}
             <IconButton onClick={toggleMode}>
               {mode === "dark" ? (
                 <LightMode sx={{
@@ -163,7 +171,7 @@ const HeaderComponent = ({ }) => {
           </Box>
 
           {/* Mobile Menu Button */}
-          <Box sx={{ display: { xs: "flex", md: "flex", lg: "none" }, gap: {xs: 0, md: 4, lg: 6} }}>
+          <Box sx={{ display: { xs: "flex", md: "flex", lg: "none" }, gap: { xs: 0, md: 4, lg: 6 } }}>
             <IconButton onClick={toggleMode} sx={{ padding: 0 }}>
               {mode === "dark" ? (
                 <LightMode sx={{ color: isDark ? theme.palette.secondary.contrastText : theme.palette.primary.contrastText }} />
