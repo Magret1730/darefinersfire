@@ -419,5 +419,16 @@ export const VideosData = () => [
     facebookAccount: "https://www.facebook.com/reel/828018543546389",
     x: "https://x.com/darefinersfire/status/2000263243949043929",
     instagram:"https://www.instagram.com/p/DSQQQPwkTm_/",
+  },
+  {
+    id: 38,
+    text: "Video",
+    title: "When guilt has a voice",
+    YouTubeId: "KbyI8RMaad8",
+    youtube: "https://youtu.be/KbyI8RMaad8",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7590402489397038344",
+    facebookAccount: "https://www.facebook.com/reel/3214000872107037",
+    x: "https://x.com/darefinersfire/status/2006752326539948466",
+    instagram: "https://www.instagram.com/p/DS-Jbe6kQfm/",
   }
 ]
