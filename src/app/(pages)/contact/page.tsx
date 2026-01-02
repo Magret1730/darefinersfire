@@ -119,7 +119,7 @@ const ContactPage = () => {
           display: "flex",
           flexDirection: { xs: "column-reverse", sm: "column-reverse", md: "row", lg: "row" },
           gap: {xs: 8, md: 4, lg: 8},
-          mt: 30,
+          mt: 18,
           mb: 15,
           px: 5,
           width: "100%",
@@ -221,7 +221,6 @@ const ContactPage = () => {
             display: "flex",
             flexDirection: "column",
             gap: 2,
-            mt: 5,
           }}
         >
           <Typography

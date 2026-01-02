@@ -25,7 +25,7 @@ const AboutComponent = () => {
   return (
     <Box
       sx={{
-        pt: { xs: 10, md: 24 },
+        pt: { xs: 18, md: 24 },
         pb: { xs: 6, md: 12 },
         px: { xs: 2.5, md: 8 },
         bgcolor: theme.palette.background.default,
