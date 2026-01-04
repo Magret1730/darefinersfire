@@ -1,6 +1,6 @@
 "use client";
 
-import { EastOutlined, HorizontalRuleOutlined, Whatshot } from "@mui/icons-material";
+import { EastOutlined, HorizontalRuleOutlined } from "@mui/icons-material";
 import { Box, Button, Card, Typography, useTheme } from "@mui/material";
 import Slider from "react-slick";
 import { NavLinksEnum } from "@/app/enum";

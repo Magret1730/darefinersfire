@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Typography, IconButton, useTheme, Link } from "@mui/material";
-import { Instagram, YouTube, Facebook, Whatshot } from "@mui/icons-material";
+import { Instagram, YouTube, Facebook } from "@mui/icons-material";
 import XIcon from "@mui/icons-material/Close";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import { NavLinksEnum, SocialsEnum } from "@/app/enum";
