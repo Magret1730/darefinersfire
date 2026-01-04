@@ -430,5 +430,16 @@ export const VideosData = () => [
     facebookAccount: "https://www.facebook.com/reel/3214000872107037",
     x: "https://x.com/darefinersfire/status/2006752326539948466",
     instagram: "https://www.instagram.com/p/DS-Jbe6kQfm/",
+  },
+  {
+    id: 39,
+    text: "Short",
+    title: "DRF Recap 2025 || Happy New Year 2026",
+    YouTubeId: "wOI9nimSxvI",
+    youtube: "https://youtube.com/shorts/wOI9nimSxvI",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7590782465854295304",
+    facebookAccount: "https://www.facebook.com/reel/3243631549133206",
+    x: "https://x.com/darefinersfire/status/2007641798039220542",
+    instagram:"https://www.instagram.com/p/DTA2ty3kWkA/",
   }
 ]
