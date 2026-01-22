@@ -50,6 +50,14 @@ const CarouselImages: ICarousel[] = [
     name: "SheForgotWhoSheLivesWith",
     src: "/SheForgotWhoSheLivesWith.png",
   },
+  {
+    name: "WhenGuiltHasAVoice",
+    src: "/WhenGuiltHasAVoice.jpeg"
+  },
+  {
+    name: "Already Sorted",
+    src: "/alreadySorted.png",
+  }
 ];
 
 const settings: Settings = {
