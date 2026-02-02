@@ -496,6 +496,17 @@ export const VideosData = () => [
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7596784643538521351",
     facebookAccount: "https://www.facebook.com/reel/1539199197313006",
     x: "https://x.com/darefinersfire/status/2012958079881466316",
-    instagram: ""
+    instagram: "https://www.instagram.com/p/DTy1WZVDfgK/",
+  },
+  {
+    id: 41,
+    text: "Video",
+    title: "Sight",
+    YouTubeId: "-zv2sWPjhiA",
+    youtube: "https://youtu.be/-zv2sWPjhiA",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7601712090570738964",
+    facebookAccount: "https://www.facebook.com/reel/777744591422635",
+    x: "https://x.com/darefinersfire/status/2017765365955064068",
+    instagram: "https://www.instagram.com/p/DUMqb00jZzU/",
   },
 ];
