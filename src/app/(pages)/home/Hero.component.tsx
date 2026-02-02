@@ -57,6 +57,10 @@ const CarouselImages: ICarousel[] = [
   {
     name: "Already Sorted",
     src: "/alreadySorted.png",
+  },
+  {
+    name: "Sight",
+    src: "/Sight.jpeg",
   }
 ];
 
