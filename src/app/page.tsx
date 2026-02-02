@@ -1,37 +1,40 @@
 "use client";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import HeaderComponent from "./components/header.component";
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
+import HeroComponent from "@/app/(pages)/home/Hero.component";
+import HomeAboutComponent from "@/app/(pages)/home/HomeAbout.component";
+import SpotLightSection from "@/app/(pages)/home/SpotLight.component";
+import HomeTeamComponent from "@/app/(pages)/home/HomeTeam.component";
+import FaqSection from "@/app/components/Faq.component";
+import ScriptureOfTheDay from "@/app/components/ScriptureOfTheDay";
+
+export interface IVideos {
+  id: number;
+  text: string;
+  title: string;
+  YouTubeId: string;
+  tiktok: string;
+  facebookAccount: string;
+  facebookPage?: string;
+  x: string;
+  instagram?: string;
+  youtube: string;
+}
 
 export default function Home() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
 
   return (
-    <>
-      <HeaderComponent />
-      <Box
-        sx={{
-          mt: 10,
-          p: { xs: 2, md: 4 },
-          textAlign: "center",
-          color: isDark ? "#FFB804" : "#BA5C12",
-        }}
-      >
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{
-            fontWeight: 700,
-          }}
-        >
-          Welcome to Da Refiner&apos;s Fire Media
-        </Typography>
-        <Typography sx={{ fontSize: "1.1rem", maxWidth: 600, mx: "auto" }}>
-          Explore our inspirational Christian skits and videos that refine,
-          inspire, and ignite faith through storytelling.
-        </Typography>
-      </Box>
-    </>
+    <Box sx={{ minWidth: 300, textAlign: "center", width: "100%" }}>
+      <HeroComponent isDark={isDark} />
+      <HomeAboutComponent isDark={isDark} />
+      <SpotLightSection />
+      <ScriptureOfTheDay isDark={isDark} />
+      <HomeTeamComponent />
+      <FaqSection />
+    </Box>
   );
 }

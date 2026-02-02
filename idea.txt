@@ -1,0 +1,385 @@
+To DO
+1. Proper Posthog capturing
+
+DA REFINER’S FIRE (DRF) WEBSITE – PROJECT OUTLINE
+
+==================================================
+PHASE 1 – FIRST MVP (CURRENT FOCUS)
+==================================================
+
+1.1 MVP PAGES
+Home Page
+About Us Page
+Teams Page
+Contact Page
+Videos Page
+Shorts Page
+Footer (Global)
+Header (Global)
+Analytics (PostHog)
+
+1.2 HOME PAGE SECTIONS
+1.2.1 Header & Hero Section
+Already built.
+
+1.2.2 About Us Preview Section
+Short summary (2–3 lines).
+Button linking to About Us page.
+Social media handles displayed beneath.
+
+1.2.3 Connect With Us Section
+Larger social icons.
+Strong call-to-action leading to the Contact Page.
+
+1.2.4 Upcoming Events Preview
+Display the nearest 1–2 events.
+Add a “View All Events” button (events page comes later).
+
+1.2.5 Our Videos Preview
+Latest video appears first.
+“More Videos” button linking to Videos Page.
+
+1.2.6 Shorts Preview
+Latest short clip displayed first.
+“More Shorts” button linking to Shorts Page.
+
+1.2.7 Meet Our Team Preview
+Show each member’s picture and social handles only.
+Button linking to the Teams Page.
+
+1.2.8 Contact Us Banner
+Strong call to action.
+Button linking to the Contact Page.
+
+1.2.9 Footer
+Includes quick links, ministry information, and social media.
+
+1.3 STANDALONE MVP PAGES
+1.3.1 About Us Page
+Full ministry description.
+Vision and mission.
+DRF story.
+Banner image.
+Social media links.
+
+1.3.2 Teams Page
+Banner.
+Grid layout of team members.
+Each member includes: picture, name, role, social links.
+Optional detailed modal or profile page.
+
+1.3.3 Contact Page
+Built with EmailJS and DRF Gmail.
+Fields: name, email, subject, message.
+Success message and email notification.
+
+1.3.4 Videos Page
+Grid of all videos.
+Latest video shown first.
+Optional category filtering.
+
+1.3.5 Shorts Page
+Grid of all shorts.
+Latest short shown first.
+
+1.4 REUSABLE FRONTEND COMPONENTS
+
+1.4.1 Shared Banner Component
+1.4.2 Connect With Us Component
+1.4.3 Event Card Component
+1.4.4 Video Card Component
+
+1.5 ANALYTICS (POSTHOG)
+
+1.5.1 Track page views
+1.5.2 Track button clicks
+1.5.3 Track videos played
+1.5.4 Track contact form events
+1.5.5 Track newsletter events (Phase 2)
+
+==================================================
+2. PHASE 2 – BACKEND FEATURES
+
+2.1 Commenting System
+Users must log in to comment on videos.
+
+2.2 User Authentication
+Signup, login, logout.
+
+2.3 User Dashboard
+Includes:
+Recently watched videos
+Complete watch history
+Reviews per video
+Bookmarked videos (optional)
+Upcoming events
+
+2.4 Newsletter Subscription
+Email field saves subscriber to database.
+Admin can view list.
+
+2.5 Admin Dashboard
+Admin can access:
+Users list
+User activity
+Comments moderation
+Newsletter subscribers
+Contact messages
+Video analytics
+Event management (optional)
+
+==================================================
+3. PHASE 3 – ADVANCED / FUTURE IMPROVEMENTS
+
+3.1 SEO Optimization
+Meta tags
+Open Graph metadata
+Social media preview image
+Schema markup for videos, organization, people
+
+3.2 Accessibility
+Alt text on images
+High contrast
+Keyboard navigation
+ARIA attributes
+
+3.3 Performance Optimization
+Lazy load videos
+Compress images
+Enable caching
+Use CDN for static assets
+
+3.4 Content Workflow
+Structured method for adding videos
+Structured method for adding shorts
+Updating team members
+Adding event posters
+Managing contact submissions
+
+3.5 Branding Package
+Color palette
+Typography
+Logo variations
+Custom icons
+
+3.6 Security Enhancements
+Rate limiting
+Spam protection
+HTTPS enforcement
+Secure token handling
+
+==================================================
+4. FINAL PROJECT STRUCTURE (RECOMMENDED)
+4.1 Frontend
+Next.js (App Router)
+Material UI or Tailwind CSS
+PostHog analytics
+Responsive design
+EmailJS for contact messages
+
+4.2 Backend (Future)
+Node.js with Express or Next.js API routes
+PostgreSQL or MongoDB database
+Authentication system
+Admin dashboard
+Newsletter system
+Video + comments service
+
+==================================================
+5. NEXT STEPS (OPTIONAL HELP)
+
+5.1 Folder structure setup
+5.2 Component architecture design
+5.3 UI mockups
+5.4 Page-by-page build guide
+5.5 Backend planning
+5.6 Full roadmap timeline
+5.7 Branding and design system creation
+
+==================================================
+END OF DOCUMENT
+
+
+
+
+
+******************OR PRODUCT DESIGNER**************
+Below is what I need designed:
+
+1. Pages Needed for the First MVP
+Home Page
+About Us Page
+Teams Page
+Contact Page
+Videos Page
+Shorts Page
+Global Header
+Global Footer
+
+2. Specific Sections on the Home Page
+Hero section (already roughly built; needs refinement)
+About Us preview
+Connect With Us (social media section) / Contact Us banner
+Upcoming Events preview
+Latest Videos preview
+Latest Shorts preview
+Meet Our Team preview
+
+
+3. Design Requirements
+Clean, simple, modern Christian/ministry feel
+Consistent theme across all pages
+Well-structured layouts for desktop and mobile
+Colors and typography that reflect spiritual warmth and professionalism
+Clear hierarchy and intuitive navigation
+Easy-to-build components since I’m using Next.js for frontend development
+Reusable components such as:
+Banner component
+Event card
+Video card
+Social media block
+Wireframes first, then high-fidelity mockups
+Final export in Figma (preferred)
+
+4. What You’ll Get From Me
+I will provide:
+Detailed project outline
+All content (text, pictures, videos, team member profiles, etc.)
+My current logo and brand direction
+Color preferences (I want us to decide the best palette together)
+A few reference designs or inspirations if needed
+
+5. Deliverables I Expect
+Complete wireframes (low-fidelity) for all pages
+Complete high-fidelity mockups
+Mobile + Desktop versions
+Component library
+Color palette and typography guide
+Exportable assets for development
+
+6. Timeline
+Please let me know how long it would take to design each stage (wireframes + high-fidelity).
+
+7. Additional Notes
+This website is ministry-centered, so the feel should be:
+Peaceful
+Clean
+Inspirational
+Professional
+
+I aim for something visually excellent and easy for users to navigate, especially first-time visitors seeking sermons, videos, and ministry details.
+
+Please let me know if you need any clarification or additional details.
+I look forward to working with you and seeing your creative direction for DRF.
+
+Thank you!
+
+
+
+
+******ROUGH IDEA**********
+<!-- FIRST MVP -->
+<!-- Home Page -->
+<!-- Header, Hero - built already -->
+<!-- Posthog -->
+<!-- Our handles under about us section and a button to lead to contact us page -->
+<!-- Connect with us -->
+<!-- Upcoming events -->
+<!-- Our videos - Latest in front of the newest one with a 'more video' button that will lead to video page -->
+<!-- Shorts - Latest in front of the newest one with a 'more video' button that will lead to short page -->
+<!-- Meet our team with a button that will lead to teams page 
+  1. Home page team - Only Picture and social media handles
+  2. Team page - More info about each team memebers - collect it from each person
+-->
+<!-- Contact us banner with contact us button that willl lead to contact us page -->
+<!-- Footer -->
+<!-- About us page -->
+<!-- Contact Page -->
+<!-- Teams page -->
+
+<!-- 
+CHATGPT
+🔹 Meet Our Team Page Template
+🔹 Contact Page Template
+🔹 Upcoming Events Page
+🔹 Shared themed banner component
+🔹 Social media “Connect With Us” section -->
+
+
+
+<!-- WILL REQUIRE BACKEND -->
+<!-- On each video, drop comments that will lead to login process -->
+<!-- AUTHENTICATION but what will be in their dashboard
+  0. REVIEWS PER VIDEOS 
+  1. Videos they've watched
+  2. Reviews per videos
+  3. AUTH will come in after the first MVP
+  4. Watched Video
+  5. Latest Video (5) with a button to see all videos
+  6. Upcoming events
+-->
+<!-- 
+  1.Contact Us using EmailJS and DaRefiner'sFire gmail account
+  2. Contact us will be on its own page
+-->
+<!-- NEWSLETTER/SUBSCRIPTION -->
+<!-- Admin Dashboard to view authenticated user activities -->
+
+
+
+
+--->>>>>step-by-step guide to create a restricted YouTube API Key for your project:
+
+STEP 1 — Go to Google Cloud Console
+Visit: https://console.cloud.google.com/
+Sign in with your Google account.
+
+STEP 2 — Create a New Project
+Click the project dropdown at the top
+Click New Project
+Name it something like: DRF YouTube API
+Click Create
+
+STEP 3 — Enable YouTube Data API v3
+Left sidebar → APIs & Services → Library
+Search: YouTube Data API v3
+Click it → Click Enable
+
+STEP 4 — Create API Key
+Go to APIs & Services → Credentials
+Click Create Credentials → API Key
+Google will generate a key like:
+AIzaSyB...something
+
+STEP 5 — Restrict Your API Key (HIGHLY RECOMMENDED)
+1️⃣ Application restrictions
+Select Websites
+Add your allowed referrers:
+Development:
+http://localhost:3000/*
+Production (example):
+https://yourdomain.com/*
+2️⃣ API restrictions
+Select Restrict Key
+Choose YouTube Data API v3
+Click Save
+
+STEP 6 — Add Key to Your Project
+In your project root, create .env.local
+Add:
+NEXT_PUBLIC_YOUTUBE_API_KEY=YOUR_KEY_HERE
+Restart your development server
+
+**BIO**
+List of What You Should Use for Each Member 
+1. Full Name 
+2. Image 
+3. Bio 
+4. Social Links 
+6. Favorite Scripture 
+7. Favourite Passion Line 
+
+Bio Structure 
+1: Who they are + passion
+2: What area they enjoy in ministry / creativity
+3: 

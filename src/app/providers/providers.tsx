@@ -1,0 +1,95 @@
+"use client";
+
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { useState, useMemo, useEffect, createContext, useContext } from "react";
+
+
+// Creates a context for theme mode
+type ThemeModeContextType = {
+  mode: "light" | "dark" | null;
+  toggleMode: () => void;
+};
+
+const ThemeModeContext = createContext<ThemeModeContextType>({
+  mode: "light",
+  toggleMode: () => { },
+});
+
+// Exports a hook for easy use
+export const useThemeMode = () => useContext(ThemeModeContext);
+
+export default function Providers({ children }: { children: React.ReactNode }) {
+  const [mode, setMode] = useState<"light" | "dark" | null>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("themeMode") as "light" | "dark" | null;
+    setMode(saved || "light");
+  }, []);
+
+  const toggleMode = () => {
+    setMode((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      localStorage.setItem("themeMode", next);
+      document.documentElement.setAttribute("data-theme", next);
+      return next;
+    });
+  };
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: mode ?? "light",
+          primary: {
+            main: mode === "dark" ? "#FFFFFF" : "#212121", // text color // Change - not used
+            light: mode === "dark" ? "#212121" : "#FFFFFF", // button text color opposite
+            dark: mode === "dark" ?  "#FFFFFA" : "#FFFFFF", // button text color
+            contrastText: "#1A1A1A",
+          },
+          secondary: {
+            main: "#FFCCB0",
+            light: "#141414",
+            contrastText: "#FF5C01",
+          },
+          background: {
+            default: mode === "dark" ? "#212121" : "#FEFEFE",
+            paper: mode === "dark" ? "#2B2B2B" : "#FFEFE6", // homeAbout background
+          },
+          text: {
+            primary: mode === "dark" ? "#FFFFFF" : "#212121", // text color
+            secondary: mode === "dark" ? "#C6C6C6" : "#000000",
+            // secondary: mode === "dark" ? "#E9C77B" : "#5A4632",
+            disabled: mode === "dark" ? "#FFB804" : "#BA5C12",
+          },
+          divider:
+            mode === "dark" ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.1)",
+          action: {
+            active: mode === "dark" ? "#a83c00" : "#FF5C01",
+            hover:
+              mode === "dark"
+                ? "rgba(255, 184, 4, 0.1)"
+                : "rgba(186, 92, 18, 0.08)",
+            selected:
+              mode === "dark"
+                ? "rgba(255, 184, 4, 0.18)"
+                : "rgba(186, 92, 18, 0.16)",
+            disabled:
+              mode === "dark" ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.3)",
+          },
+        },
+      }),
+    [mode]
+  );
+
+  if (mode === null) return null;
+
+  return (
+    <ThemeModeContext.Provider value={{ mode: mode ?? "light", toggleMode }}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </ThemeModeContext.Provider>
+  );
+}
