@@ -509,4 +509,15 @@ export const VideosData = () => [
     x: "https://x.com/darefinersfire/status/2017765365955064068",
     instagram: "https://www.instagram.com/p/DUMqb00jZzU/",
   },
+  {
+    id: 42,
+    text: "Video",
+    title: "Why is it not working? || Stage Play",
+    YouTubeId: "lwc7SbTVYkA",
+    youtube: "https://youtu.be/lwc7SbTVYkA",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7607170033583738132",
+    facebookAccount: "https://www.facebook.com/reel/4363361480576092",
+    facebookPage: "https://www.facebook.com/reel/1194321939449724",
+    x: "https://x.com/darefinersfire/status/2023103937851629910",
+  },
 ];
