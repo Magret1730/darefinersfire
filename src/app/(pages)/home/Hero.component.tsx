@@ -65,6 +65,10 @@ const CarouselImages: ICarousel[] = [
   {
     name: "WhyIsItNotWorkingNamesteFebruary",
     src: "/WhyIsITNotWorkingNamesteFebruary.png",
+  },
+  {
+    name: "Abide",
+    src: "/Abide.jpeg",
   }
 ];
 
