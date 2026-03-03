@@ -520,4 +520,14 @@ export const VideosData = () => [
     facebookPage: "https://www.facebook.com/reel/1194321939449724",
     x: "https://x.com/darefinersfire/status/2023103937851629910",
   },
+  {
+    id: 43,
+    text: "Video",
+    title: "Abide",
+    YouTubeId: "uqhihtMj81Y",
+    youtube: "https://www.youtube.com/watch?v=uqhihtMj81Y",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7612663776050941185",
+    facebookAccount: "https://www.facebook.com/reel/1440525824273147",
+    x: "https://x.com/darefinersfire/status/2028474762817638525",
+  },
 ];
