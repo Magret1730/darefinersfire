@@ -530,4 +530,15 @@ export const VideosData = () => [
     facebookAccount: "https://www.facebook.com/reel/1440525824273147",
     x: "https://x.com/darefinersfire/status/2028474762817638525",
   },
+  {
+    id: 44,
+    text: "Video",
+    title: "Why is your light hiding?",
+    YouTubeId: "fr_Z0dnBTa4",
+    youtube: "https://youtu.be/fr_Z0dnBTa4",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7617471806374563093",
+    facebookAccount: "https://www.facebook.com/reel/823216900062021",
+    x: "https://x.com/darefinersfire/status/2033164287397556429",
+    instagram: "https://www.instagram.com/p/DV6BB_XDbQZ/",
+  },
 ];
