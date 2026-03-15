@@ -413,7 +413,7 @@ export const VideosData = () => [
   {
     id: 33,
     text: "Short",
-    title: "What will Marilyn do? 'SHORT'",
+    title: "What will Marilyn do?",
     YouTubeId: "ixyXd5a9yjg",
     youtube: "https://youtube.com/shorts/ixyXd5a9yjg",
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7567729613615533320",
@@ -511,8 +511,8 @@ export const VideosData = () => [
   },
   {
     id: 42,
-    text: "Video",
-    title: "Why is it not working? || Stage Play",
+    text: "Stage",
+    title: "Why is it not working?",
     YouTubeId: "lwc7SbTVYkA",
     youtube: "https://youtu.be/lwc7SbTVYkA",
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7607170033583738132",

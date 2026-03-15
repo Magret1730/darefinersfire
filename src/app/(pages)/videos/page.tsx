@@ -7,12 +7,14 @@ import { IVideos } from "@/app/page";
 import YouTubeCard from "@/app/components/YoutubeCard.component";
 import { useState } from "react";
 import { HorizontalRuleOutlined } from "@mui/icons-material";
-import { VideoTab } from "@/app/enum/videoTab.enum";
+import { VideoTab, VideoCategory } from "@/app/enum/";
 
 export default function VideosPage() {
   const theme = useTheme();
 
   const [skit, setSkit] = useState(true);
+  const [short, setShort] = useState(false);
+  const [stage, setStage] = useState(false);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [activeButton, setActiveButton] = useState<VideoTab>(VideoTab.Skit);
@@ -27,8 +29,9 @@ export default function VideosPage() {
 
   const startIndex = (page - 1) * VIDEOS_PER_PAGE;
 
-  const allSkits = videos.filter(v => v.text === "Video");
-  const allShorts = videos.filter(v => v.text === "Short");
+  const allSkits = videos.filter(v => v.text === VideoCategory.VIDEO);
+  const allShorts = videos.filter(v => v.text === VideoCategory.SHORT);
+  const allStage = videos.filter(v => v.text === VideoCategory.STAGE);
 
   const filteredSkits = allSkits.filter(video =>
     video.title.toLowerCase().includes(search.toLowerCase())
@@ -38,11 +41,17 @@ export default function VideosPage() {
     video.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  const filteredStage = allStage.filter(video =>
+    video.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   const skitTotalPages = Math.ceil(filteredSkits.length / VIDEOS_PER_PAGE);
   const shortTotalPages = Math.ceil(filteredShorts.length / VIDEOS_PER_PAGE);
+  const stageTotalPages = Math.ceil(filteredStage.length / VIDEOS_PER_PAGE);
 
   const paginatedSkits = filteredSkits.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
   const paginatedShorts = filteredShorts.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
+  const paginatedStage = filteredStage.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
 
   return (
     <Box
@@ -113,6 +122,8 @@ export default function VideosPage() {
                 variant="contained"
                 onClick={() => {
                   setSkit(true);
+                  setShort(false);
+                  setStage(false);
                   setPage(1);
                   setActiveButton(VideoTab.Skit);
                 }}
@@ -127,7 +138,9 @@ export default function VideosPage() {
               <Button
                 variant="contained"
                 onClick={() => {
+                  setShort(true);
                   setSkit(false);
+                  setStage(false);
                   setPage(1);
                   setActiveButton(VideoTab.Short);
                 }}
@@ -140,6 +153,24 @@ export default function VideosPage() {
               >
                 Shorts
               </Button>
+              <Button
+                variant="contained"
+                onClick={() => {
+                  setStage(true);
+                  setSkit(false);
+                  setShort(false);
+                  setPage(1);
+                  setActiveButton(VideoTab.Stage);
+                }}
+                sx={{
+                  backgroundColor: activeButton === VideoTab.Stage ? theme.palette.action.active : theme.palette.primary.light,
+                  color: activeButton === VideoTab.Stage ? theme.palette.primary.light : theme.palette.primary.main,
+                  ml: 2,
+                  px: 5,
+                }}
+              >
+                Stage Plays
+              </Button>
             </Box>
 
             <TextField
@@ -149,7 +180,7 @@ export default function VideosPage() {
               size="small"
               value={search}
               onChange={(e) => {
-                setPage(1); // Reset to first page on new search
+                setPage(1);
                 setSearch(e.target.value);
               }}
               sx={{
@@ -176,8 +207,13 @@ export default function VideosPage() {
               <YouTubeCard key={index} video={video} />
             ))
           )}
-          {!skit && (
+          {short && (
             paginatedShorts.map((video, index) => (
+              <YouTubeCard key={index} video={video} />
+            ))
+          )}
+          {stage && (
+            paginatedStage.map((video, index) => (
               <YouTubeCard key={index} video={video} />
             ))
           )}
