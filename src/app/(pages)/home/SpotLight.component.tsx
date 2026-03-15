@@ -11,6 +11,7 @@ import { SpotlightTab } from "@/app/enum";
 const TABS: { id: SpotlightTab; label: string }[] = [
   { id: SpotlightTab.LATEST, label: "Latest Skits" },
   { id: SpotlightTab.SHORTS, label: "Inspirational Shorts" },
+  { id: SpotlightTab.STAGE, label: "Stage Plays" },
   // { id: "behind", label: "Behind-the-Scenes" },
   // { id: "upcoming", label: "Upcoming Releases" },
 ];
@@ -38,6 +39,7 @@ const SpotLightSection = () => {
     return {
       latest: videos.filter((v) => v.text === "Video"),
       shorts: videos.filter((v) => v.text === "Shorts" || v.text === "Short"),
+      stage: videos.filter((v) => v.text === "Stage"),
       behind: videos.filter((v) => v.text === "Behind-the-Scenes"),
       upcoming: videos.filter((v) => v.text === "Upcoming"),
     };
@@ -45,7 +47,7 @@ const SpotLightSection = () => {
 
   const activeVideos = categorized[activeTab] ?? [];
 
-  const isCarouselTab = activeTab === "latest" || activeTab === "shorts";
+  const isCarouselTab = activeTab === "latest" || activeTab === "shorts" || activeTab === "stage";
 
   // for Latest Movies & Shorts: only first 5 in slider
   const videosForCarousel = isCarouselTab ? activeVideos.slice(0, 5) : activeVideos;
@@ -98,9 +100,8 @@ const SpotLightSection = () => {
           flexDirection: { xs: "column", sm: "column", md: "column", lg: "row" },
           gap: { sm: 4, md: 10, lg: 0 },
           width: "100%",
-          mt: 4,
           justifyContent: "space-between",
-          alignItems: { sm: "center", md: "center", lg: "left" },
+          alignItems: { sm: "center", md: "center", lg: "normal" },
         }}
       >
         {/* Tabs */}
@@ -108,7 +109,8 @@ const SpotLightSection = () => {
           minWidth: { xs: "100%", sm: "100%", md: "100%", lg: 250 },
           display: "flex",
           flexDirection: "column",
-          gap: 6,
+          gap: 2,
+          mt: { lg: 8 },
         }}
         >
           {TABS.map((tab) => (
@@ -140,7 +142,6 @@ const SpotLightSection = () => {
           ))}
         </Box>
 
-        {/* RESTYLE THIS CARD SEPARATELY FROM THE REST OF VIDEO CARDS */}
         {/* Video Card */}
         <Box
           sx={{

@@ -413,7 +413,7 @@ export const VideosData = () => [
   {
     id: 33,
     text: "Short",
-    title: "What will Marilyn do? 'SHORT'",
+    title: "What will Marilyn do?",
     YouTubeId: "ixyXd5a9yjg",
     youtube: "https://youtube.com/shorts/ixyXd5a9yjg",
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7567729613615533320",
@@ -511,8 +511,8 @@ export const VideosData = () => [
   },
   {
     id: 42,
-    text: "Video",
-    title: "Why is it not working? || Stage Play",
+    text: "Stage",
+    title: "Why is it not working?",
     YouTubeId: "lwc7SbTVYkA",
     youtube: "https://youtu.be/lwc7SbTVYkA",
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7607170033583738132",
@@ -529,5 +529,16 @@ export const VideosData = () => [
     tiktok: "https://www.tiktok.com/@darefinersfire/video/7612663776050941185",
     facebookAccount: "https://www.facebook.com/reel/1440525824273147",
     x: "https://x.com/darefinersfire/status/2028474762817638525",
+  },
+  {
+    id: 44,
+    text: "Video",
+    title: "Why is your light hiding?",
+    YouTubeId: "fr_Z0dnBTa4",
+    youtube: "https://youtu.be/fr_Z0dnBTa4",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7617471806374563093",
+    facebookAccount: "https://www.facebook.com/reel/823216900062021",
+    x: "https://x.com/darefinersfire/status/2033164287397556429",
+    instagram: "https://www.instagram.com/p/DV6BB_XDbQZ/",
   },
 ];
