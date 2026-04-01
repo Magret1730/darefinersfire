@@ -541,4 +541,15 @@ export const VideosData = () => [
     x: "https://x.com/darefinersfire/status/2033164287397556429",
     instagram: "https://www.instagram.com/p/DV6BB_XDbQZ/",
   },
+  {
+    id: 45,
+    text: "Video",
+    title: "She Had to Decide… Love or Obedience?",
+    YouTubeId: "Mtsn6KwRe4Q",
+    youtube: "https://youtu.be/Mtsn6KwRe4Q",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7623088123089620240",
+    facebookAccount: "https://www.facebook.com/reel/1608078090460985",
+    x: "https://x.com/darefinersfire/status/2038656443277078978",
+    instagram: "https://www.instagram.com/p/DWjaX22jcmM/",
+  },
 ];
