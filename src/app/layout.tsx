@@ -8,8 +8,8 @@ import Providers from "@/app/providers/providers";
 import { PostHogProvider } from "@/app/providers/PosthogProvider";
 import HeaderComponent from "@/app/components/Header.component";
 import FooterComponent from "@/app/components/Footer.component";
-import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: "Da Refiner's Fire | Inspirational Skits",
