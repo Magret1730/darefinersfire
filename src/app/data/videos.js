@@ -552,4 +552,16 @@ export const VideosData = () => [
     x: "https://x.com/darefinersfire/status/2038656443277078978",
     instagram: "https://www.instagram.com/p/DWjaX22jcmM/",
   },
+  {
+    id: 46,
+    text: "Video",
+    title: "The Spirit behind the Hands",
+    YouTubeId: "Sz8Z-xdSm6M",
+    youtube: "https://youtu.be/Sz8Z-xdSm6M",
+    tiktok: "https://www.tiktok.com/@darefinersfire/video/7630541558244281601",
+    facebookPage: "https://www.facebook.com/reel/1531799465220015",
+    facebookAccount: "https://www.facebook.com/reel/1479613337170087",
+    x: "https://x.com/darefinersfire/status/2045922303507091760",
+    instagram: "https://www.instagram.com/p/DXUuy4NEZw4/",
+  },
 ];
