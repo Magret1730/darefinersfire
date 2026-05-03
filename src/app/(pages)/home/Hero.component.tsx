@@ -77,6 +77,10 @@ const CarouselImages: ICarousel[] = [
   {
     name: "Spirit behind the Hand",
     src: "/hand.png",
+  },
+  {
+    name: "Intentional",
+    src: "./Intentional.png"
   }
 ];
 
