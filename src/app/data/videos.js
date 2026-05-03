@@ -1,5 +1,3 @@
-import { YouTube } from "@mui/icons-material";
-
 export const VideosData = () => [
 	{
 		id: 1,
@@ -571,7 +569,7 @@ export const VideosData = () => [
 		YouTubeId: "jKRlJSQLPA0",
 		youtube: "https://youtu.be/jKRlJSQLPA0",
 		tiktok: "https://www.tiktok.com/@darefinersfire/video/7635719994277514512",
-		facebookPage: "https://www.facebook.com/reel/1917181172271082",
+		facebookAccount: "https://www.facebook.com/reel/1917181172271082",
 		x: "https://x.com/darefinersfire/status/2050982199088894198",
 		instagram: "https://www.instagram.com/p/DX4pZbkxPTo/",
 	},
