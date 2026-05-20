@@ -573,4 +573,15 @@ export const VideosData = () => [
 		x: "https://x.com/darefinersfire/status/2050982199088894198",
 		instagram: "https://www.instagram.com/p/DX4pZbkxPTo/",
 	},
+	{
+		id: 48,
+		text: "Video",
+		title: "The Only Way In",
+		YouTubeId: "i3GuI6IZaqk",
+		youtube: "https://youtu.be/i3GuI6IZaqk",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7641394585389796609",
+		facebookAccount: "https://www.facebook.com/reel/1326058009458537",
+		x: "https://x.com/darefinersfire/status/2056535924834439611",
+		instagram: "https://www.instagram.com/p/DYgBrbrRvMj/",
+	},
 ];
