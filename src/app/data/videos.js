@@ -584,4 +584,15 @@ export const VideosData = () => [
 		x: "https://x.com/darefinersfire/status/2056535924834439611",
 		instagram: "https://www.instagram.com/p/DYgBrbrRvMj/",
 	},
+	{
+		id: 49,
+		text: "Video",
+		title: "1 Hour",
+		YouTubeId: "khKxh8UaDoo",
+		youtube: "https://youtu.be/khKxh8UaDoo",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7648600601852611861",
+		facebookAccount: "https://www.facebook.com/reel/3059247547619106",
+		x: "https://x.com/darefinersfire/status/2063652201449287742",
+		instagram: "https://www.instagram.com/p/DZROpPfRLUs/",
+	},
 ];
