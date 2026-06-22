@@ -595,4 +595,15 @@ export const VideosData = () => [
 		x: "https://x.com/darefinersfire/status/2063652201449287742",
 		instagram: "https://www.instagram.com/p/DZROpPfRLUs/",
 	},
+	{
+		id: 50,
+		text: "Video",
+		title: "N/Ever Present",
+		YouTubeId: "k5AbgMNwVmk",
+		youtube: "https://youtu.be/k5AbgMNwVmk",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7654177516835458324",
+		facebookAccount: "https://www.facebook.com/reel/846570078233723",
+		x: "https://x.com/darefinersfire/status/2069018218023272860",
+		instagram: "https://www.instagram.com/p/DZ4vHoqRUyT/",
+	},
 ];
