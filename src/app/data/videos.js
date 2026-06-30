@@ -606,4 +606,16 @@ export const VideosData = () => [
 		x: "https://x.com/darefinersfire/status/2069018218023272860",
 		instagram: "https://www.instagram.com/p/DZ4vHoqRUyT/",
 	},
+	{
+		id: 51,
+		text: "Short",
+		title: "The Only Way Out",
+		YouTubeId: "l0TwKmNIUMY",
+		youtube: "https://youtube.com/shorts/l0TwKmNIUMY",
+		tiktok:
+			"https://www.tiktok.com/@darefinersfire/video/7656088924162493717?is_from_webapp=1&sender_device=pc&web_id=7465535527388874246",
+		facebookAccount: "https://www.facebook.com/reel/1736584617534222",
+		x: "https://x.com/darefinersfire/status/2070885481844293861",
+		instagram: "https://www.instagram.com/p/DaF_XadRIjp/",
+	},
 ];
