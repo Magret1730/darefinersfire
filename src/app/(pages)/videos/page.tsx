@@ -169,7 +169,7 @@ export default function VideosPage() {
                   px: 5,
                 }}
               >
-                Stage Plays
+                Stage
               </Button>
             </Box>
 
