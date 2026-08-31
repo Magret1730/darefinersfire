@@ -640,4 +640,27 @@ export const VideosData = () => [
 		x: "https://x.com/darefinersfire/status/2087557798179549185",
 		instagram: "https://www.instagram.com/p/DbjGh6sESpb/",
 	},
+	{
+		id: 54,
+		text: "Video",
+		title: "Rest or Fight?",
+		YouTubeId: "DcKCwcItG9g",
+		youtube: "https://youtu.be/DcKCwcItG9g",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7676603342914735368",
+		facebookAccount: "https://www.facebook.com/share/v/1G93FQPUsf/",
+		x: "https://x.com/darefinersfire/status/2091548516963508585",
+		instagram: "https://www.instagram.com/p/Dcb0zMNRMi7/",
+	},
+	{
+		id: 55,
+		text: "Short",
+		title: "Rest or Fight?",
+		YouTubeId: "KhH2bA-bTtQ",
+		youtube: "https://www.youtube.com/shorts/KhH2bA-bTtQ",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7676617030757403911",
+		facebookAccount:
+			"https://www.facebook.com/reel/923955767423487/?s=single_unit",
+		x: "https://x.com/darefinersfire/status/2094436678307910019",
+		instagram: "https://www.instagram.com/p/DcrpLXuEQCp/",
+	},
 ];
