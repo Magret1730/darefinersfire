@@ -15,6 +15,7 @@ export default function VideosPage() {
   const [skit, setSkit] = useState(true);
   const [short, setShort] = useState(false);
   const [stage, setStage] = useState(false);
+  // const [post, setPost] = useState(false);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [activeButton, setActiveButton] = useState<VideoTab>(VideoTab.Skit);
@@ -32,6 +33,7 @@ export default function VideosPage() {
   const allSkits = videos.filter(v => v.text === VideoCategory.VIDEO);
   const allShorts = videos.filter(v => v.text === VideoCategory.SHORT);
   const allStage = videos.filter(v => v.text === VideoCategory.STAGE);
+  // const allPosts = videos.filter(v => v.text === VideoCategory.POST);
 
   const filteredSkits = allSkits.filter(video =>
     video.title.toLowerCase().includes(search.toLowerCase())
@@ -45,13 +47,19 @@ export default function VideosPage() {
     video.title.toLowerCase().includes(search.toLowerCase())
   );
 
+  // const filteredPosts = allPosts.filter(video =>
+  //   video.title.toLowerCase().includes(search.toLowerCase())
+  // );
+
   const skitTotalPages = Math.ceil(filteredSkits.length / VIDEOS_PER_PAGE);
   const shortTotalPages = Math.ceil(filteredShorts.length / VIDEOS_PER_PAGE);
   const stageTotalPages = Math.ceil(filteredStage.length / VIDEOS_PER_PAGE);
+  // const postTotalPages = Math.ceil(filteredPosts.length / VIDEOS_PER_PAGE);
 
   const paginatedSkits = filteredSkits.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
   const paginatedShorts = filteredShorts.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
   const paginatedStage = filteredStage.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
+  // const paginatedPosts = filteredPosts.slice(startIndex, startIndex + VIDEOS_PER_PAGE);
 
   return (
     <Box
@@ -171,6 +179,25 @@ export default function VideosPage() {
               >
                 Stage
               </Button>
+              {/* <Button
+                variant="contained"
+                onClick={() => {
+                  setPost(true);
+                  setStage(false);
+                  setSkit(false);
+                  setShort(false);
+                  setPage(1);
+                  setActiveButton(VideoTab.Post);
+                }}
+                sx={{
+                  backgroundColor: activeButton === VideoTab.Post ? theme.palette.action.active : theme.palette.primary.light,
+                  color: activeButton === VideoTab.Post ? theme.palette.primary.light : theme.palette.primary.main,
+                  ml: 2,
+                  px: 5,
+                }}
+              >
+                Posts
+              </Button> */}
             </Box>
 
             <TextField
@@ -217,12 +244,17 @@ export default function VideosPage() {
               <YouTubeCard key={index} video={video} />
             ))
           )}
+          {/* {post && (
+            paginatedPosts.map((video, index) => (
+              <YouTubeCard key={index} video={video} />
+            ))
+          )} */}
         </Box>
 
         <Pagination
           shape="rounded"
           variant="outlined"
-          count={skit ? skitTotalPages : shortTotalPages}
+          count={skit ? skitTotalPages : short ? shortTotalPages : stage ? stageTotalPages : 1}
           page={page}
           onChange={handlePageChange}
           color="primary"

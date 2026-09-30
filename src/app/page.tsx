@@ -15,10 +15,10 @@ export interface IVideos {
   text: string;
   title: string;
   YouTubeId: string;
-  tiktok: string;
-  facebookAccount: string;
+  tiktok?: string;
+  facebookAccount?: string;
   facebookPage?: string;
-  x: string;
+  x?: string;
   instagram?: string;
   youtube: string;
 }

@@ -179,18 +179,20 @@ const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
                 gap: 2,
               }}
             >
-              <Tooltip title="facebook account">
-                <IconButton
-                  href={video.facebookAccount}
-                  target="_blank"
-                  sx={{
-                    color: isDark ? "#fff" : "#000",
-                    p: 0,
-                  }}
-                >
-                  <Facebook sx={{ fontSize: 16 }} />
-                </IconButton>
-              </Tooltip>
+              {video.facebookAccount && (
+                <Tooltip title="facebook account">
+                  <IconButton
+                    href={video.facebookAccount}
+                    target="_blank"
+                    sx={{
+                      color: isDark ? "#fff" : "#000",
+                      p: 0,
+                    }}
+                  >
+                    <Facebook sx={{ fontSize: 16 }} />
+                  </IconButton>
+                </Tooltip>
+              )}
 
               {video.facebookPage && (
                 <Tooltip title="Facebook Page">
@@ -206,17 +208,19 @@ const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
                 </Tooltip>
               )}
 
-              <Tooltip title="X">
-                <IconButton
-                  href={video.x}
-                  target="_blank"
-                  sx={{
-                    color: isDark ? "#fff" : "#000",
-                    p: 0,
-                  }}>
-                  <X sx={{ fontSize: 14 }} />
-                </IconButton>
-              </Tooltip>
+              {video.x && (
+                <Tooltip title="X">
+                  <IconButton
+                    href={video.x}
+                    target="_blank"
+                    sx={{
+                      color: isDark ? "#fff" : "#000",
+                      p: 0,
+                    }}>
+                    <X sx={{ fontSize: 14 }} />
+                  </IconButton>
+                </Tooltip>
+              )}
 
               {video.instagram && (
                 <Tooltip title="Instagram">
@@ -232,30 +236,34 @@ const YouTubeCard = ({ video, wid, paddingTop, alignItems}: TYouTubeCard) => {
                 </Tooltip>
               )}
 
-              <Tooltip title="YouTube">
-                <IconButton
-                  href={video.youtube}
-                  target="_blank"
-                  sx={{
-                    p: 0,
-                    color: isDark ? "#fff" : "#000",
-                  }}>
-                  <YouTube sx={{ fontSize: 18 }} />
-                </IconButton>
-              </Tooltip>
+              {video.youtube && (
+                <Tooltip title="YouTube">
+                  <IconButton
+                    href={video.youtube}
+                    target="_blank"
+                    sx={{
+                      p: 0,
+                      color: isDark ? "#fff" : "#000",
+                    }}>
+                    <YouTube sx={{ fontSize: 18 }} />
+                  </IconButton>
+                </Tooltip>
+              )}
 
-              <Tooltip title="TikTok">
-                <IconButton
-                  href={video.tiktok}
-                  target="_blank"
-                  sx={{
+              {video.tiktok && (
+                <Tooltip title="TikTok">
+                  <IconButton
+                    href={video.tiktok}
+                    target="_blank"
+                    sx={{
                     color: isDark ? "#fff" : "#000",
                     p: 0,
                   }}
                 >
                   <MusicNote sx={{ fontSize: 15 }} />
-                </IconButton>
-              </Tooltip>
+                  </IconButton>
+                </Tooltip>
+              )}
             </Box>
           </Box>
         </Box>

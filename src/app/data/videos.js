@@ -674,4 +674,34 @@ export const VideosData = () => [
 		x: "https://x.com/darefinersfire/status/2096976797867094459",
 		instagram: "https://www.instagram.com/p/Dc_iNQKER0N/",
 	},
+	{
+		id: 57,
+		text: "Video",
+		title: "What He Didn't Know",
+		YouTubeId: "1hhoCdmnZ3M",
+		youtube: "https://youtu.be/1hhoCdmnZ3M",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7688904160862850311",
+		x: "https://x.com/darefinersfire/status/2104239650114023765",
+		instagram: "https://www.instagram.com/p/Ddy78oIjcYN/",
+	},
+	{
+		id: 58,
+		text: "Short",
+		title: "SPECIAL SESSION WITH EVANGELIST OLUWASEUN ADEJUMOBI",
+		YouTubeId: "TwQaj_qPaxc",
+		youtube: "https://www.youtube.com/shorts/TwQaj_qPaxc",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7689754269913992468",
+		x: "https://x.com/darefinersfire/status/2103765455714320501",
+	},
+	// {
+	// 	id: 59,
+	// 	text: "Post",
+	// 	title: "SPECIAL SESSION WITH EVANGELIST OLUWASEUN ADEJUMOBI",
+	// 	YouTubeId: "",
+	// 	youtube:
+	// 		"http://youtube.com/post/UgkxdY8HM0neKqy4Nlil0KeDFmZBrLmU58Oo?si=9A5JQXbJJcqxaWrH",
+	// 	instagram: "https://www.instagram.com/p/DdvkdyxxZOV/",
+	// 	facebookAccount:
+	// 		"https://www.facebook.com/photo?fbid=122254229708272291&set=a.122254229900272291",
+	// },
 ];
