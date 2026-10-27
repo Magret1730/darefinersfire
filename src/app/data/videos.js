@@ -704,4 +704,16 @@ export const VideosData = () => [
 	// 	facebookAccount:
 	// 		"https://www.facebook.com/photo?fbid=122254229708272291&set=a.122254229900272291",
 	// },
+	{
+		id: 60,
+		text: "Video",
+		title: "Shame",
+		YouTubeId: "nPHXpYrwOcM",
+		youtube: "https://youtu.be/nPHXpYrwOcM",
+		tiktok: "https://www.tiktok.com/@darefinersfire/video/7694325636982213895",
+		facebookAccount: "https://www.facebook.com/reel/1618015783351853",
+		facebookPage: "https://www.facebook.com/reel/2651681705277328",
+		x: "https://x.com/darefinersfire/status/2111842239412654516",
+		instagram: "https://www.instagram.com/p/DepAlCSkUEv/",
+	},
 ];
